@@ -22,12 +22,13 @@
   .color-grid { display: grid; grid-template-columns: 1fr; gap: clamp(8px, 1.5vw, 16px); }
   .color-item {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) auto;
     gap: clamp(6px, 1vw, 10px);
     width: min(100%, 56rem);
     margin-inline: auto;
     text-decoration: none;
     color: inherit;
+    align-items: stretch;
   }
   .color-cell {
     display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
@@ -54,6 +55,27 @@
     width: 100%; height: 100%; object-fit: cover; border: 2px solid #333;
     display: block; aspect-ratio: 16 / 9; background: #ddd;
   }
+  .photo-cell {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+  }
+  .collapse-btn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 2px solid #333;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    align-self: center;
+  }
+  .color-item.collapsed .ppg-link { display: none; }
+  .color-item.collapsed .color-cell { padding-block: 6px; }
+  .color-item.collapsed .color-image { display: none; }
+  .color-item.collapsed .photo-cell { border: 2px solid #333; }
   .firecracker-red{background:#C41E3A;color:#fff}
   .trans-am-red{background:#B31B1B;color:#fff}
   .sebring-red{background:#B22222;color:#fff}
@@ -130,7 +152,6 @@
   .khaki{background:#A08B5E;color:#000}
   .oak-leaf-brown{background:#8B5A2B;color:#fff}
   .british-bronze{background:#8A5A2A;color:#fff}
-  .aztec-copper{background:#9A4A28;color:#fff}
   .alpaca-brown-met{background:#8B6914;color:#fff}
   .russet-met{background:#8B4513;color:#fff}
   .copper-brown-met{background:#8B4513;color:#fff}
@@ -159,7 +180,7 @@
 </head>
 <body>
 <h1>Jeep CJ Color Choices</h1>
-<p class="note">Click a swatch or photo for image search. Click the underlined PPG number for the PaintRef chip page. Metallics are approximate solids. Missing photos use placeholder filenames.</p>
+<p class="note">Click a swatch or photo for image search. Click the underlined PPG number for the PaintRef chip page. Metallics are approximate solids. Missing photos use placeholder filenames. Use − / + to collapse or expand a row.</p>
 <fieldset class="engine-bar">
   <legend>Image search:</legend>
   <label><input type="radio" name="engine" value="google" checked> Google</label>
@@ -244,7 +265,6 @@
 <div class="color-item"><div class="color-cell khaki"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8A+%22Khaki%22+1978" target="_blank" rel="noopener noreferrer">8A Khaki</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3028" target="_blank" rel="noopener noreferrer">PPG: 3028</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8A+%22Khaki%22+1978" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-Khaki.webp" alt="Khaki"></a></div>
 <div class="color-item"><div class="color-cell oak-leaf-brown"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7E+%22Oak+Leaf+Brown%22+1977" target="_blank" rel="noopener noreferrer">7E Oak Leaf Brown</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=24443" target="_blank" rel="noopener noreferrer">PPG: 24443</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7E+%22Oak+Leaf+Brown%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OakLeafBrown.webp" alt="Oak Leaf Brown"></a></div>
 <div class="color-item"><div class="color-cell british-bronze"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8B+%22British+Bronze%22+1978" target="_blank" rel="noopener noreferrer">8B British Bronze</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3029" target="_blank" rel="noopener noreferrer">PPG: 3029</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8B+%22British+Bronze%22+1978" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-BritishBronze.webp" alt="British Bronze"></a></div>
-<div class="color-item"><div class="color-cell aztec-copper"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H7+%22Aztec+Copper%22+1975" target="_blank" rel="noopener noreferrer">H7 Aztec Copper</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2710" target="_blank" rel="noopener noreferrer">PPG: 2710</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H7+%22Aztec+Copper%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AztecCopper.webp" alt="Aztec Copper"></a></div>
 <div class="color-item"><div class="color-cell alpaca-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9A+%22Alpaca+Brown+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9A Alpaca Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3106" target="_blank" rel="noopener noreferrer">PPG: 3106</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9A+%22Alpaca+Brown+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AlpacaBrownMetallic.webp" alt="Alpaca Brown Metallic"></a></div>
 <div class="color-item"><div class="color-cell russet-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9C+%22Russet+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9C Russet Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3108" target="_blank" rel="noopener noreferrer">PPG: 3108</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9C+%22Russet+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-RussetMetallic.webp" alt="Russet Metallic"></a></div>
 <div class="color-item"><div class="color-cell copper-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1E+%22Copper+Brown+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1E Copper Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3370" target="_blank" rel="noopener noreferrer">PPG: 3370</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1E+%22Copper+Brown+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CopperBrownMetallic.webp" alt="Copper Brown Metallic"></a></div>
@@ -313,6 +333,35 @@
   });
 
   apply(engine);
+})();
+
+(function () {
+  document.querySelectorAll(".color-item").forEach(function (item) {
+    var cell = item.querySelector(".color-cell");
+    var photo = item.querySelector(":scope > a.img-search");
+    if (!cell || !photo) return;
+
+    photo.classList.add("photo-cell");
+    cell.classList.forEach(function (name) {
+      if (name !== "color-cell") photo.classList.add(name);
+    });
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "collapse-btn";
+    btn.setAttribute("aria-expanded", "true");
+    btn.setAttribute("aria-label", "Collapse row");
+    btn.textContent = "−";
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var collapsed = item.classList.toggle("collapsed");
+      btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      btn.setAttribute("aria-label", collapsed ? "Expand row" : "Collapse row");
+      btn.textContent = collapsed ? "+" : "−";
+    });
+    item.appendChild(btn);
+  });
 })();
 </script>
 </body>
