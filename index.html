@@ -290,6 +290,34 @@
         "source": "Each color.years key is a model year. That year holds code, source tokens s, and optional override o."
       },
       "colors": [
+      {
+          "id": "president-red",
+          "code": "226",
+          "name": "President Red",
+          "ppg": "71334",
+          "hex": "#B31B1B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-PresidentRed.webp", "JeepColors-PresidentRed2.webp"],
+          "years": {
+            "1972": { "code": "226", "s": ["PR", "Chip"] }
+          }
+        },
+        {
+          "id": "trans-am-red",
+          "code": "515",
+          "name": "Trans-Am Red",
+          "ppg": "2400",
+          "hex": "#B31B1B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-TransAmRed.webp", "JeepColors-TransAmRed2.webp"],
+          "years": {
+            "1973": { "code": "515", "s": ["PR", "Chip", "Brochure"] },
+            "1974": { "code": "515", "s": ["PR", "Brochure"] },
+            "1975": { "code": "515", "s": ["PR", "Brochure"] }
+          }
+        },
         {
           "id": "firecracker-red",
           "code": "6P",
@@ -320,18 +348,17 @@
           }
         },
         {
-          "id": "trans-am-red",
-          "code": "515",
-          "name": "Trans-Am Red",
-          "ppg": "2400",
-          "hex": "#B31B1B",
+          "id": "oriental-red",
+          "code": "1M",
+          "name": "Oriental Red",
+          "ppg": "3375",
+          "hex": "#A52A2A",
           "text": "#fff",
           "metallic": false,
-          "images": ["JeepColors-TransAmRed.webp", "JeepColors-TransAmRed2.webp"],
+          "images": ["JeepColors-OrientalRed.webp", "JeepColors-OrientalRed2.webp"],
           "years": {
-            "1973": { "code": "515", "s": ["PR", "Chip", "Brochure"] },
-            "1974": { "code": "515", "s": ["PR", "Brochure"] },
-            "1975": { "code": "515", "s": ["PR", "Brochure"] }
+            "1981": { "code": "1M", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "1M", "s": ["PR", "FSM", "OL"] }
           }
         },
         {
@@ -351,33 +378,6 @@
           }
         },
         {
-          "id": "president-red",
-          "code": "226",
-          "name": "President Red",
-          "ppg": "71334",
-          "hex": "#B31B1B",
-          "text": "#fff",
-          "metallic": false,
-          "images": ["JeepColors-PresidentRed.webp", "JeepColors-PresidentRed2.webp"],
-          "years": {
-            "1972": { "code": "226", "s": ["PR", "Chip"] }
-          }
-        },
-        {
-          "id": "oriental-red",
-          "code": "1M",
-          "name": "Oriental Red",
-          "ppg": "3375",
-          "hex": "#A52A2A",
-          "text": "#fff",
-          "metallic": false,
-          "images": ["JeepColors-OrientalRed.webp", "JeepColors-OrientalRed2.webp"],
-          "years": {
-            "1981": { "code": "1M", "s": ["PR", "FSM", "OL"] },
-            "1982": { "code": "1M", "s": ["PR", "FSM", "OL"] }
-          }
-        },
-        {
           "id": "autumn-red-met",
           "code": "7C",
           "name": "Autumn Red Metallic",
@@ -392,34 +392,6 @@
           }
         },
         {
-          "id": "vintage-red-met",
-          "code": "1J",
-          "name": "Vintage Red Metallic",
-          "ppg": "3372",
-          "hex": "#8B1A1A",
-          "text": "#fff",
-          "metallic": true,
-          "images": ["JeepColors-VintageRedMetallic.webp", "JeepColors-VintageRedMetallic2.webp"],
-          "years": {
-            "1981": { "code": "1J", "s": ["PR", "FSM", "OL"] }
-          }
-        },
-        {
-          "id": "garnet-met",
-          "code": "3C",
-          "name": "Garnet Metallic",
-          "ppg": "3593",
-          "hex": "#7A1A2A",
-          "text": "#fff",
-          "metallic": true,
-          "images": ["JeepColors-GarnetMetallic.webp", "JeepColors-GarnetMetallic2.webp"],
-          "years": {
-            "1984": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
-            "1985": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
-            "1986": { "code": "3C", "s": ["PR", "OL", "Brochure"] }
-          }
-        },
-        {
           "id": "bordeaux-met",
           "code": "9P",
           "name": "Bordeaux Metallic",
@@ -431,6 +403,19 @@
           "years": {
             "1979": { "code": "9P", "s": ["PR", "FSM", "OL"] },
             "1980": { "code": "9P", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "vintage-red-met",
+          "code": "1J",
+          "name": "Vintage Red Metallic",
+          "ppg": "3372",
+          "hex": "#8B1A1A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-VintageRedMetallic.webp", "JeepColors-VintageRedMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1J", "s": ["PR", "FSM", "OL"] }
           }
         },
         {
@@ -449,6 +434,21 @@
           }
         },
         {
+          "id": "garnet-met",
+          "code": "3C",
+          "name": "Garnet Metallic",
+          "ppg": "3593",
+          "hex": "#7A1A2A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-GarnetMetallic.webp", "JeepColors-GarnetMetallic2.webp"],
+          "years": {
+            "1984": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "3C", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
           "id": "renegade-plum",
           "code": "509",
           "name": "Renegade Plum",
@@ -461,6 +461,49 @@
             "1972": { "code": "509", "s": ["PR"] },
             "1973": { "code": "509", "s": ["Chip"] },
             "1974": { "code": "509", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "renegade-orange-508",
+          "code": "508",
+          "name": "Renegade Orange (508)",
+          "searchName": "Renegade Orange",
+          "ppg": "60696",
+          "hex": "#C44B16",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-RenegadeOrange508.webp", "JeepColors-RenegadeOrange5082.webp"],
+          "years": {
+            "1972": { "code": "508", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "sienna-orange",
+          "code": "G6",
+          "name": "Sienna / Renegade Orange",
+          "searchName": "Renegade Orange",
+          "ppg": "2607",
+          "hex": "#E05A2B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-SiennaOrange.webp", "JeepColors-SiennaOrange2.webp"],
+          "years": {
+            "1973": { "code": "G6", "s": ["Chip"] },
+            "1975": { "code": "G6", "s": ["PR", "Brochure"] },
+            "1976": { "code": "G6", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "tawny-orange",
+          "code": "7Y",
+          "name": "Tawny Orange",
+          "ppg": "2902",
+          "hex": "#D2691E",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-TawnyOrange.webp", "JeepColors-TawnyOrange2.webp"],
+          "years": {
+            "1977": { "code": "7Y", "s": ["PR", "FSM", "OL"] }
           }
         },
         {
@@ -488,49 +531,6 @@
           "images": ["JeepColors-MandarinOrange.webp", "JeepColors-MandarinOrange2.webp"],
           "years": {
             "1979": { "code": "9W", "s": ["PR", "FSM", "OL"] }
-          }
-        },
-        {
-          "id": "tawny-orange",
-          "code": "7Y",
-          "name": "Tawny Orange",
-          "ppg": "2902",
-          "hex": "#D2691E",
-          "text": "#fff",
-          "metallic": false,
-          "images": ["JeepColors-TawnyOrange.webp", "JeepColors-TawnyOrange2.webp"],
-          "years": {
-            "1977": { "code": "7Y", "s": ["PR", "FSM", "OL"] }
-          }
-        },
-        {
-          "id": "sienna-orange",
-          "code": "G6",
-          "name": "Sienna / Renegade Orange",
-          "searchName": "Renegade Orange",
-          "ppg": "2607",
-          "hex": "#E05A2B",
-          "text": "#fff",
-          "metallic": false,
-          "images": ["JeepColors-SiennaOrange.webp", "JeepColors-SiennaOrange2.webp"],
-          "years": {
-            "1973": { "code": "G6", "s": ["Chip"] },
-            "1975": { "code": "G6", "s": ["PR", "Brochure"] },
-            "1976": { "code": "G6", "s": ["PR", "FSM", "OL"] }
-          }
-        },
-        {
-          "id": "renegade-orange-508",
-          "code": "508",
-          "name": "Renegade Orange (508)",
-          "searchName": "Renegade Orange",
-          "ppg": "60696",
-          "hex": "#C44B16",
-          "text": "#fff",
-          "metallic": false,
-          "images": ["JeepColors-RenegadeOrange508.webp", "JeepColors-RenegadeOrange5082.webp"],
-          "years": {
-            "1972": { "code": "508", "s": ["PR", "Brochure"] }
           }
         },
         {
