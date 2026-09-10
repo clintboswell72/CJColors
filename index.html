@@ -21,7 +21,11 @@
 
     h1 {
       margin: 0 0 6px 0;
-      font-size: clamp(18px, 2.4vw, 28px);
+      font-size: 20pt;
+      font-weight: bold;
+      line-height: 1.1;
+      color: #111;
+      font-family: inherit;
     }
 
     .note {
@@ -191,6 +195,7 @@
     .to-top:focus {
       background: #eee;
     }
+
   </style>
 </head>
 
@@ -200,29 +205,26 @@
     <h1>Jeep Colors 1972-1986</h1>
 
     <p class="note">
-      This tool was built to help choose a color for my rusty old CJ-7. I discovered that while there are many sources
-      for this information, they disagree with each other. With few authoritative sources we look for Factory Service
-      Manuals, Dealer Brochures as the best evidence. Firewall tags are the ultimate evidence but who can travel the world
-      to collect that data? AMC paint Brochures survive as scanned PDFs, but do not differentiate between AMC colors and
-      those used within Jeep. Olenik is a decent old reference as is PaintRef.com but they do not agree with each other.
-      Paintref conflicts with itself if you look at Jeeps by year versus on a color pages' listed years. Paint chips often include
-      prior year colors and are not authoritateive. So instead of
-      another list that nobody can adjudicate, this is a wholistic list with data confidence grades
-      assigned by year based on the quality of sources which are verified.
-    </p>
-
-    <p class="note">
+      This started as a way to pick a color for my rusty CJ-7. The published lists disagree, and there are few
+      authoritative sources. Factory service manuals and
+      dealer brochures are the strongest paper evidence; firewall tags would be better, but nobody can collect them all.
+      Surviving AMC paint brochures do not
+      separate AMC colors from Jeep colors, and supplier chips are not authoritative. Olenik and PaintRef.com are useful
+      but conflict with each other—and PaintRef
+      sometimes conflicts with itself by year versus by color. So this is one list with a confidence grade per year,
+      based on the quality of the sources behind it.
       Sources: <a href="">www.paintref.com</a>, <a
         href="https://www.bing.com/ck/a?!&&p=9d16d99f2424cdb07248778db034245ac04c6ecfb1e42cdad4faaf008b687148JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=1e9cba07-7df1-6255-06d7-af917cd8638c&psq=olenik+jeep+colors+chart&u=a1aHR0cDovL3d3dy44MmphbWJvLmNvbS9kb2N1bWVudHMvUGFpbnQlMjBhbmQlMjBUcmltJTIwQ29kZXMvMTk3Ni0xOTg2JTIwUGFpbnQlMjBDb2Rlcy5wZGY">Olenik</a>,
       and available PDF FSM and brochures.
+
     </p>
 
     <p class="note">How to Use</p>
     <ul class="note">
-      <li>Search Color On Web - click a swatch</li>
-      <li>Search PaintCode Info - click PPG hyperlink</li>
-      <li>Filter By Year - pick below</li>
-      <li>Collapse Row with − / + to hide colors</li>
+      <li>Click an image to search photos of that color</li>
+      <li>Click the PPG link for paint-code details</li>
+      <li>Use the year menu to show only that model year</li>
+      <li>Use − / + to collapse or expand a row</li>
     </ul>
 
     <div class="toolbar">
@@ -241,6 +243,7 @@
     </div>
 
     <p class="status" x-show="error" x-text="error"></p>
+
 
     <div class="color-grid">
       <template x-for="color in visibleColors" :key="color.id">
@@ -276,6 +279,7 @@
     </div>
   </div>
 
+
   <a class="to-top" href="#top" aria-label="Back to top">
     <span class="to-top-arrow" aria-hidden="true">↑</span>
     Top
@@ -290,7 +294,7 @@
         "source": "Each color.years key is a model year. That year holds code, source tokens s, and optional override o."
       },
       "colors": [
-      {
+        {
           "id": "president-red",
           "code": "226",
           "name": "President Red",
@@ -507,6 +511,29 @@
           }
         },
         {
+          "id": "omaha-orange",
+          "code": "FB",
+          "name": "Omaha Orange (Fleet)",
+          "searchName": "Omaha Orange",
+          "ppg": "60281",
+          "hex": "#FF8C00",
+          "text": "#000",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-OmahaOrange.webp", "JeepColors-OmahaOrange2.webp"],
+          "years": {
+            "1972": { "code": "135", "s": ["PR", "Chip"] },
+            "1973": { "code": "FB", "s": ["PR"] },
+            "1974": { "code": "135", "s": ["PR"] },
+            "1975": { "code": "135", "s": ["PR"] },
+            "1976": { "code": "FB", "s": ["PR", "OL"] },
+            "1980": { "code": "FB", "s": ["PR"] },
+            "1981": { "code": "FB", "s": ["PR"] },
+            "1982": { "code": "FB", "s": ["PR"] },
+            "1983": { "code": "FB", "s": ["PR"] }
+          }
+        },
+        {
           "id": "sun-orange",
           "code": "7Z",
           "name": "Sun Orange",
@@ -716,6 +743,29 @@
           }
         },
         {
+          "id": "transport-yellow",
+          "code": "FA",
+          "name": "Transport Yellow (Fleet)",
+          "searchName": "Transport Yellow",
+          "ppg": "80020",
+          "hex": "#E3C000",
+          "text": "#000",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-TransportYellow.webp", "JeepColors-TransportYellow2.webp"],
+          "years": {
+            "1972": { "code": "81", "s": ["PR", "Chip"] },
+            "1973": { "code": "FA", "s": ["PR"] },
+            "1974": { "code": "81", "s": ["PR"] },
+            "1975": { "code": "81", "s": ["PR"] },
+            "1976": { "code": "FA", "s": ["PR", "OL"] },
+            "1980": { "code": "FA", "s": ["PR"] },
+            "1981": { "code": "FA", "s": ["PR"] },
+            "1982": { "code": "FA", "s": ["PR"] },
+            "1983": { "code": "FA", "s": ["PR"] }
+          }
+        },
+        {
           "id": "butterscotch-gold",
           "code": "490",
           "name": "Butterscotch Gold",
@@ -798,6 +848,28 @@
           "years": {
             "1976": { "code": "7P", "s": ["PR"] },
             "1977": { "code": "7P", "s": ["OL"] }
+          }
+        },
+        {
+          "id": "forest-green",
+          "code": "FE",
+          "name": "Forest Green (Fleet)",
+          "searchName": "Forest Green",
+          "ppg": "44586",
+          "hex": "#2F4F2F",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-ForestGreen.webp", "JeepColors-ForestGreen2.webp"],
+          "years": {
+            "1972": { "code": "504", "s": ["PR", "Chip"] },
+            "1974": { "code": "504", "s": ["PR"] },
+            "1975": { "code": "604", "s": ["PR"] },
+            "1976": { "code": "FE", "s": ["PR", "OL"] },
+            "1980": { "code": "FE", "s": ["PR"] },
+            "1981": { "code": "FE", "s": ["PR"] },
+            "1982": { "code": "FE", "s": ["PR"] },
+            "1983": { "code": "FE", "s": ["PR"] }
           }
         },
         {
@@ -915,6 +987,28 @@
             "1977": { "code": "7L", "s": ["PR", "FSM", "OL"] },
             "1978": { "code": "7L", "s": ["PR", "FSM", "OL"] },
             "1979": { "code": "7L", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "olive-drab",
+          "code": "FH",
+          "name": "Olive Drab (Fleet)",
+          "searchName": "Olive Drab",
+          "ppg": "42955",
+          "hex": "#4B5320",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-OliveDrab.webp", "JeepColors-OliveDrab2.webp"],
+          "years": {
+            "1973": { "code": "FH", "alt": "134", "s": ["PR"] },
+            "1974": { "code": "134", "s": ["PR"] },
+            "1975": { "code": "134", "s": ["PR"] },
+            "1976": { "code": "FH", "s": ["PR"] },
+            "1980": { "code": "FH", "s": ["PR"] },
+            "1981": { "code": "FH", "s": ["PR"] },
+            "1982": { "code": "FH", "s": ["PR"] },
+            "1983": { "code": "FH", "s": ["PR"] }
           }
         },
         {
@@ -1212,6 +1306,25 @@
           "years": {
             "1977": { "code": "7K", "s": ["PR", "FSM", "OL"] },
             "1978": { "code": "7K", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "marlin-blue",
+          "code": "394",
+          "name": "Marlin Blue (Fleet)",
+          "searchName": "Marlin Blue",
+          "ppg": "13156",
+          "hex": "#2A4A6E",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": [],
+          "years": {
+            "1972": { "code": "394", "s": ["PR", "Chip"] },
+            "1973": { "code": "394", "s": ["PR"] },
+            "1974": { "code": "394", "s": ["PR"] },
+            "1975": { "code": "394", "s": ["PR"] },
+            "1976": { "code": "394", "s": ["PR"] }
           }
         },
         {
@@ -1774,6 +1887,29 @@
           }
         },
         {
+          "id": "federal-gray",
+          "code": "FC",
+          "name": "Federal Gray (Fleet)",
+          "searchName": "Federal Gray",
+          "ppg": "31817",
+          "hex": "#6B6E72",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": [],
+          "years": {
+            "1972": { "code": "221", "s": ["PR", "Chip"] },
+            "1973": { "code": "221", "s": ["PR"] },
+            "1974": { "code": "221", "s": ["PR"] },
+            "1975": { "code": "221", "s": ["PR"] },
+            "1976": { "code": "FC", "s": ["PR", "OL"] },
+            "1980": { "code": "FC", "s": ["PR"] },
+            "1981": { "code": "FC", "s": ["PR"] },
+            "1982": { "code": "FC", "s": ["PR"] },
+            "1983": { "code": "FC", "s": ["PR"] }
+          }
+        },
+        {
           "id": "steel-gray-met",
           "code": "1L",
           "name": "Steel Gray Metallic",
@@ -1828,139 +1964,6 @@
             "1985": { "code": "P1", "s": ["OL", "Brochure"] },
             "1986": { "code": "P1", "s": ["OL", "Brochure"] }
           }
-        },
-        {
-          "id": "transport-yellow",
-          "code": "FA",
-          "name": "Transport Yellow (Fleet)",
-          "searchName": "Transport Yellow",
-          "ppg": "80020",
-          "hex": "#E3C000",
-          "text": "#000",
-          "metallic": false,
-          "fleet": true,
-          "images": ["JeepColors-TransportYellow.webp", "JeepColors-TransportYellow2.webp"],
-          "years": {
-            "1972": { "code": "81", "s": ["PR", "Chip"] },
-            "1973": { "code": "FA", "s": ["PR"] },
-            "1974": { "code": "81", "s": ["PR"] },
-            "1975": { "code": "81", "s": ["PR"] },
-            "1976": { "code": "FA", "s": ["PR", "OL"] },
-            "1980": { "code": "FA", "s": ["PR"] },
-            "1981": { "code": "FA", "s": ["PR"] },
-            "1982": { "code": "FA", "s": ["PR"] },
-            "1983": { "code": "FA", "s": ["PR"] }
-          }
-        },
-        {
-          "id": "olive-drab",
-          "code": "FH",
-          "name": "Olive Drab (Fleet)",
-          "searchName": "Olive Drab",
-          "ppg": "42955",
-          "hex": "#4B5320",
-          "text": "#fff",
-          "metallic": false,
-          "fleet": true,
-          "images": ["JeepColors-OliveDrab.webp", "JeepColors-OliveDrab2.webp"],
-          "years": {
-            "1973": { "code": "FH", "s": ["PR"] },
-            "1974": { "code": "134", "s": ["PR"] },
-            "1975": { "code": "134", "s": ["PR"] },
-            "1976": { "code": "FH", "s": ["PR"] },
-            "1980": { "code": "FH", "s": ["PR"] },
-            "1981": { "code": "FH", "s": ["PR"] },
-            "1982": { "code": "FH", "s": ["PR"] },
-            "1983": { "code": "FH", "s": ["PR"] }
-          }
-        },
-        {
-          "id": "federal-gray",
-          "code": "FC",
-          "name": "Federal Gray (Fleet)",
-          "searchName": "Federal Gray",
-          "ppg": "31817",
-          "hex": "#6B6E72",
-          "text": "#fff",
-          "metallic": false,
-          "fleet": true,
-          "images": [],
-          "years": {
-            "1972": { "code": "221", "s": ["PR", "Chip"] },
-            "1973": { "code": "221", "s": ["PR"] },
-            "1974": { "code": "221", "s": ["PR"] },
-            "1975": { "code": "221", "s": ["PR"] },
-            "1976": { "code": "FC", "s": ["PR", "OL"] },
-            "1980": { "code": "FC", "s": ["PR"] },
-            "1981": { "code": "FC", "s": ["PR"] },
-            "1982": { "code": "FC", "s": ["PR"] },
-            "1983": { "code": "FC", "s": ["PR"] }
-          }
-        },
-        {
-          "id": "marlin-blue",
-          "code": "394",
-          "name": "Marlin Blue (Fleet)",
-          "searchName": "Marlin Blue",
-          "ppg": "13156",
-          "hex": "#2A4A6E",
-          "text": "#fff",
-          "metallic": false,
-          "fleet": true,
-          "images": [],
-          "years": {
-            "1972": { "code": "394", "s": ["PR", "Chip"] },
-            "1973": { "code": "394", "s": ["PR"] },
-            "1974": { "code": "394", "s": ["PR"] },
-            "1975": { "code": "394", "s": ["PR"] },
-            "1976": { "code": "394", "s": ["PR"] }
-          }
-        },
-        {
-          "id": "omaha-orange",
-          "code": "FB",
-          "name": "Omaha Orange (Fleet)",
-          "searchName": "Omaha Orange",
-          "ppg": "60281",
-          "hex": "#FF8C00",
-          "text": "#000",
-          "metallic": false,
-          "fleet": true,
-          "images": ["JeepColors-OmahaOrange.webp", "JeepColors-OmahaOrange2.webp"],
-          "years": {
-            "1972": { "code": "135", "s": ["PR", "Chip"] },
-            "1973": { "code": "FB", "s": ["PR"] },
-            "1974": { "code": "135", "s": ["PR"] },
-            "1975": { "code": "135", "s": ["PR"] },
-            "1976": { "code": "FB", "s": ["PR", "OL"] },
-            "1980": { "code": "FB", "s": ["PR"] },
-            "1981": { "code": "FB", "s": ["PR"] },
-            "1982": { "code": "FB", "s": ["PR"] },
-            "1983": { "code": "FB", "s": ["PR"] },
-            "1985": { "code": "FB", "s": ["PR"] }
-          }
-        },
-        {
-          "id": "forest-green",
-          "code": "FE",
-          "name": "Forest Green (Fleet)",
-          "searchName": "Forest Green",
-          "ppg": "44586",
-          "hex": "#2F4F2F",
-          "text": "#fff",
-          "metallic": false,
-          "fleet": true,
-          "images": ["JeepColors-ForestGreen.webp", "JeepColors-ForestGreen2.webp"],
-          "years": {
-            "1972": { "code": "504", "s": ["PR", "Chip"] },
-            "1974": { "code": "504", "s": ["PR"] },
-            "1975": { "code": "504", "s": ["PR"] },
-            "1976": { "code": "FE", "s": ["PR", "OL"] },
-            "1980": { "code": "504", "s": ["PR"] },
-            "1981": { "code": "504", "s": ["PR"] },
-            "1982": { "code": "504", "s": ["PR"] },
-            "1983": { "code": "504", "s": ["PR"] }
-          }
         }
       ]
     };
@@ -1971,7 +1974,7 @@
         google: function (q) { return "https://www.google.com/search?tbm=isch&udm=2&q=" + encodeURIComponent(q); },
         ddg: function (q) { return "https://duckduckgo.com/?iax=images&ia=images&q=" + encodeURIComponent(q); }
       };
-      const srcLabel = { PR: "PaintRef", FSM: "FSM", OL: "Olenik", Brochure: "Brochure" };
+      const srcLabel = { PR: "PaintRef", FSM: "FSM", OL: "Olenik", Brochure: "Brochure", Chip: "OEM Paint Chip" };
 
       function yearKeys(color) {
         return Object.keys(color.years || {});
@@ -2003,7 +2006,7 @@
           var star = !extra && ((pr && !ol) || (ol && !pr));
           return (star ? "*" : "") + y;
         });
-      }      
+      }
 
       function derivedBand(list) {
         const s = {};
@@ -2015,10 +2018,16 @@
         const pr = !!s.pr;
         const olenik = !!s.olenik;
 
+        // FSM or Brochure is confirmation
         if (fsm || brochure) return "confirmed";
-        if (chip && (pr || olenik)) return "high";
+        // OEM Chip + paintref or Olenik is confirmation
+        if (chip && (pr || olenik)) return "confirmed";
+        // OEM Chip alone is high
+        if (chip) return "high";
+        // BOTH paintref and Olenik is high
         if (pr && olenik) return "high";
-        if (pr || olenik || chip) return "moderate";
+        // if only one of paintref or olenik then moderate
+        if (pr || olenik) return "moderate";
         return "";
       }
 
@@ -2045,11 +2054,16 @@
         get years() {
           return (this.data && this.data.meta && this.data.meta.years) || [];
         },
+
         get visibleColors() {
           const colors = (this.data && this.data.colors) || [];
           if (this.year === "all") return colors;
           const key = String(this.year);
           return colors.filter(function (c) { return !!(c.years && c.years[key]); });
+        },
+
+        get yearLabel() {
+          return this.year === "all" ? "1972–1986" : String(this.year);
         },
 
         init() {
@@ -2078,7 +2092,7 @@
 
         label(color) {
           const code = this.displayCode(color);
-          return (code ? code + " " : "") + color.name;
+          return color.name + (code ? " " + code : "");
         },
 
         confidenceLine(color) {
