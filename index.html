@@ -1,368 +1,2143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jeep CJ Colors</title>
-<style>
-  * { box-sizing: border-box; }
-  body { font-family: Arial, sans-serif; margin: 16px; background: #f4f4f4; }
-  h1 { margin: 0 0 6px 0; font-size: clamp(18px, 2.4vw, 28px); }
-  .note { color: #555; font-size: clamp(13px, 1.6vw, 16px); margin-bottom: 12px; }
-  .engine-bar {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
-    margin: 0 0 20px 0; padding: 0; border: 0;
-    font-size: clamp(13px, 1.6vw, 16px);
-  }
-  .engine-bar legend {
-    float: left; width: auto; padding: 0; margin: 0 12px 0 0;
-    color: #555; font-size: inherit;
-  }
-  .engine-bar label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-  .color-grid { display: grid; grid-template-columns: 1fr; gap: clamp(8px, 1.5vw, 16px); }
-  .color-item {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) auto;
-    gap: clamp(6px, 1vw, 10px);
-    width: min(100%, 56rem);
-    margin-inline: auto;
-    text-decoration: none;
-    color: inherit;
-    align-items: stretch;
-  }
-  .color-cell {
-    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-    font-size: clamp(10px, 2vw, 16px); font-weight: bold; line-height: 1.25;
-    border: 2px solid #333; padding: clamp(4px, 1vw, 10px); min-height: 0;
-  }
-  .color-cell .img-search { color: inherit; text-decoration: none; }
-  .ppg-link {
-    display: inline-block;
-    margin-top: 4px;
-    padding: 1px 6px;
-    border-radius: 3px;
-    color: inherit;
-    background: rgba(255,255,255,0.22);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    font-weight: bold;
-  }
-  .ppg-link:hover,
-  .ppg-link:focus {
-    background: rgba(255,255,255,0.4);
-  }
-  .color-image {
-    width: 100%; height: 100%; object-fit: cover; border: 2px solid #333;
-    display: block; aspect-ratio: 16 / 9; background: #ddd;
-  }
-  .photo-cell {
-    display: block;
-    min-width: 0;
-    min-height: 0;
-  }
-  .collapse-btn {
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-    border: 2px solid #333;
-    background: #fff;
-    color: #111;
-    cursor: pointer;
-    font-size: 1.2rem;
-    line-height: 1;
-    align-self: center;
-  }
-  .color-item.collapsed .ppg-link { display: none; }
-  .color-item.collapsed .color-cell { padding-block: 6px; }
-  .color-item.collapsed .color-image { display: none; }
-  .color-item.collapsed .photo-cell { border: 2px solid #333; }
-  .firecracker-red{background:#C41E3A;color:#fff}
-  .trans-am-red{background:#B31B1B;color:#fff}
-  .sebring-red{background:#B22222;color:#fff}
-  .cardinal-red{background:#C41E3A;color:#fff}
-  .oriental-red{background:#A52A2A;color:#fff}
-  .autumn-red-met{background:#8B3A3A;color:#fff}
-  .vintage-red-met{background:#8B1A1A;color:#fff}
-  .claret{background:#6E1A2A;color:#fff}
-  .deep-maroon-met{background:#5C0A1A;color:#fff}
-  .brandywine-met{background:#6B2D3C;color:#fff}
-  .bordeaux-met{background:#5C1A2A;color:#fff}
-  .garnet-met{background:#7A1A2A;color:#fff}
-  .renegade-plum{background:#5A2A4A;color:#fff}
-  .mandarin-orange{background:#E36F1E;color:#fff}
-  .tawny-orange{background:#D2691E;color:#fff}
-  .sienna-orange{background:#E05A2B;color:#fff}
-  .sun-orange{background:#E67E22;color:#000}
-  .omaha-orange{background:#FF8C00;color:#000}
-  .orange-bronze{background:#C4622A;color:#fff}
-  .cinnamon-met{background:#A0522D;color:#fff}
-  .copper-met-74{background:#B87333;color:#000}
-  .renegade-yellow{background:#E6C200;color:#000}
-  .mellow-yellow{background:#E8D44D;color:#000}
-  .autumn-gold{background:#C9A227;color:#000}
-  .saxon-yellow{background:#E8C547;color:#000}
-  .sun-yellow{background:#F4D03F;color:#000}
-  .sunshine-yellow{background:#F5D76E;color:#000}
-  .topaz-gold-met{background:#C9A227;color:#000}
-  .golden-ginger-met{background:#B8860B;color:#000}
-  .dark-honey-met{background:#A67C3D;color:#000}
-  .green-apple{background:#A8C63E;color:#000}
-  .limefire-met{background:#7CB342;color:#000}
-  .lime-green{background:#8BC34A;color:#000}
-  .golden-jade{background:#6B8A3A;color:#000}
-  .fairway-green-met{background:#4A7A4A;color:#fff}
-  .medium-green-met{background:#3A6B4A;color:#fff}
-  .reef-green-met{background:#2E6B4F;color:#fff}
-  .loden-green-met{background:#3D5C45;color:#fff}
-  .nordic-green{background:#2E5A3C;color:#fff}
-  .sherwood-green-met{background:#2E4A3C;color:#fff}
-  .cumberland-green-met{background:#2F4F3F;color:#fff}
-  .forest-green{background:#2F4F2F;color:#fff}
-  .dark-green-met{background:#1E3A2F;color:#fff}
-  .olive-drab{background:#4B5320;color:#fff}
-  .powder-blue{background:#7BA3C9;color:#000}
-  .ice-blue-met{background:#6B8FA8;color:#000}
-  .wedgewood-blue{background:#5B8FA8;color:#fff}
-  .moonlight-blue{background:#4A6FA5;color:#fff}
-  .montana-blue{background:#3A6FA0;color:#fff}
-  .renegade-blue{background:#2A4A8A;color:#fff}
-  .jetset-blue-met{background:#3A5A8C;color:#fff}
-  .slate-blue-met{background:#4A5F7A;color:#fff}
-  .brilliant-blue{background:#2E5A88;color:#fff}
-  .medium-blue-met{background:#3A5F8A;color:#fff}
-  .medium-blue-aj{background:#3A5F8A;color:#fff}
-  .teal-blue{background:#2A6B7A;color:#fff}
-  .starboard-blue{background:#3A6B8C;color:#fff}
-  .captain-blue-met{background:#2E4A7A;color:#fff}
-  .ensign-blue{background:#2C4A6E;color:#fff}
-  .nautical-blue-met{background:#2C4A6E;color:#fff}
-  .navy-blue{background:#1A2A4A;color:#fff}
-  .midnight-blue-met{background:#1A2F4A;color:#fff}
-  .deep-night-blue{background:#14243C;color:#fff}
-  .almond-beige{background:#E8D5B7;color:#000}
-  .beige-ab{background:#D2C2A0;color:#000}
-  .champagne-met{background:#D4C4A8;color:#000}
-  .jamaica-beige{background:#C9B896;color:#000}
-  .fawn-beige{background:#C9B08A;color:#000}
-  .cameo-tan{background:#D2B48C;color:#000}
-  .morocco-buff{background:#C4A484;color:#000}
-  .sand-tan{background:#C2A878;color:#000}
-  .golden-tan-met{background:#C4A06A;color:#000}
-  .caramel{background:#C68E5B;color:#000}
-  .khaki{background:#A08B5E;color:#000}
-  .oak-leaf-brown{background:#8B5A2B;color:#fff}
-  .british-bronze{background:#8A5A2A;color:#fff}
-  .alpaca-brown-met{background:#8B6914;color:#fff}
-  .russet-met{background:#8B4513;color:#fff}
-  .copper-brown-met{background:#8B4513;color:#fff}
-  .chestnut-brown-met{background:#6B3A2A;color:#fff}
-  .chestnut-4e{background:#6B3A2A;color:#fff}
-  .mocha-brown-met{background:#5C4033;color:#fff}
-  .sable-brown-met{background:#5D4037;color:#fff}
-  .dark-cocoa-met{background:#4A3728;color:#fff}
-  .dark-brown-met{background:#3D2B1F;color:#fff}
-  .dark-brown-5e{background:#3A281C;color:#fff}
-  .champagne-white{background:#EFE8D8;color:#000}
-  .alpine-white{background:#F4F1E8;color:#000}
-  .olympic-white{background:#F2F0E6;color:#000}
-  .silver-frost-met{background:#C5C8CC;color:#000}
-  .quicksilver{background:#B8BDC4;color:#000}
-  .arrowhead-silver-met{background:#B0B6BE;color:#000}
-  .mist-silver-met{background:#C2C6CA;color:#000}
-  .sterling-met{background:#A8AEB6;color:#000}
-  .silver-met-4k{background:#B4B8BE;color:#000}
-  .pewter-gray-met{background:#8A8E94;color:#fff}
-  .smoke-gray-met{background:#6E7278;color:#fff}
-  .steel-gray-met{background:#5C6168;color:#fff}
-  .charcoal-met{background:#3A3D42;color:#fff}
-  .classic-black{background:#111;color:#fff}
-</style>
-</head>
-<body>
-<h1>Jeep CJ Color Choices</h1>
-<p class="note">Click a swatch or photo for image search. Click the underlined PPG number for the PaintRef chip page. Metallics are approximate solids. Missing photos use placeholder filenames. Use − / + to collapse or expand a row.</p>
-<fieldset class="engine-bar">
-  <legend>Image search:</legend>
-  <label><input type="radio" name="engine" value="google" checked> Google</label>
-  <label><input type="radio" name="engine" value="bing"> Bing</label>
-  <label><input type="radio" name="engine" value="ddg"> DuckDuckGo</label>
-</fieldset>
-<div class="color-grid">
-
-<div class="color-item"><div class="color-cell firecracker-red"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6P+%22Firecracker+Red%22+1976" target="_blank" rel="noopener noreferrer">6P Firecracker Red</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2824" target="_blank" rel="noopener noreferrer">PPG: 2824</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6P+%22Firecracker+Red%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-FirecrackerRed.webp" alt="Firecracker Red"></a></div>
-<div class="color-item"><div class="color-cell trans-am-red"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+515+%22Trans-Am+Red%22+1975" target="_blank" rel="noopener noreferrer">515 Trans-Am Red</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2400" target="_blank" rel="noopener noreferrer">PPG: 2400</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+515+%22Trans-Am+Red%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-TransAmRed.webp" alt="Trans-Am Red"></a></div>
-<div class="color-item"><div class="color-cell sebring-red"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3B+%22Sebring+Red%22+1983" target="_blank" rel="noopener noreferrer">3B Sebring Red</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3592" target="_blank" rel="noopener noreferrer">PPG: 3592</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3B+%22Sebring+Red%22+1983" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SebringRed.webp" alt="Sebring Red"></a></div>
-<div class="color-item"><div class="color-cell cardinal-red"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OP+%22Cardinal+Red%22+1980" target="_blank" rel="noopener noreferrer">OP Cardinal Red</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3248" target="_blank" rel="noopener noreferrer">PPG: 3248</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OP+%22Cardinal+Red%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CardinalRed.webp" alt="Cardinal Red"></a></div>
-<div class="color-item"><div class="color-cell oriental-red"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1M+%22Oriental+Red%22+1981" target="_blank" rel="noopener noreferrer">1M Oriental Red</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3375" target="_blank" rel="noopener noreferrer">PPG: 3375</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1M+%22Oriental+Red%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OrientalRed.webp" alt="Oriental Red"></a></div>
-<div class="color-item"><div class="color-cell autumn-red-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7C+%22Autumn+Red+Metallic%22+1977" target="_blank" rel="noopener noreferrer">7C Autumn Red Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2992" target="_blank" rel="noopener noreferrer">PPG: 2992</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7C+%22Autumn+Red+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AutumnRedMetallic.webp" alt="Autumn Red Metallic"></a></div>
-<div class="color-item"><div class="color-cell vintage-red-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1J+%22Vintage+Red+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1J Vintage Red Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3372" target="_blank" rel="noopener noreferrer">PPG: 3372</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1J+%22Vintage+Red+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-VintageRedMetallic.webp" alt="Vintage Red Metallic"></a></div>
-<div class="color-item"><div class="color-cell claret"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8D+%22Claret%22+1978" target="_blank" rel="noopener noreferrer">8D Claret</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3022" target="_blank" rel="noopener noreferrer">PPG: 3022</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8D+%22Claret%22+1978" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-Claret.webp" alt="Claret"></a></div>
-<div class="color-item"><div class="color-cell deep-maroon-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1K+%22Deep+Maroon+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1K Deep Maroon Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3373" target="_blank" rel="noopener noreferrer">PPG: 3373</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1K+%22Deep+Maroon+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DeepMaroonMetallic.webp" alt="Deep Maroon Metallic"></a></div>
-<div class="color-item"><div class="color-cell brandywine-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+J2+%22Brandywine+Metallic%22+1977" target="_blank" rel="noopener noreferrer">J2 Brandywine Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2714" target="_blank" rel="noopener noreferrer">PPG: 2714</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+J2+%22Brandywine+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-BrandywineMetallic.webp" alt="Brandywine Metallic"></a></div>
-<div class="color-item"><div class="color-cell bordeaux-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9P+%22Bordeaux+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9P Bordeaux Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3111" target="_blank" rel="noopener noreferrer">PPG: 3111</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9P+%22Bordeaux+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-BordeauxMetallic.webp" alt="Bordeaux Metallic"></a></div>
-<div class="color-item"><div class="color-cell garnet-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3C+%22Garnet+Metallic%22+1983" target="_blank" rel="noopener noreferrer">3C Garnet Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3593" target="_blank" rel="noopener noreferrer">PPG: 3593</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3C+%22Garnet+Metallic%22+1983" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-GarnetMetallic.webp" alt="Garnet Metallic"></a></div>
-<div class="color-item"><div class="color-cell renegade-plum"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+509+%22Renegade+Plum%22+1974" target="_blank" rel="noopener noreferrer">509 Renegade Plum</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=50902" target="_blank" rel="noopener noreferrer">PPG: 50902</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+509+%22Renegade+Plum%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-RenegadePlum.webp" alt="Renegade Plum"></a></div>
-<div class="color-item"><div class="color-cell mandarin-orange"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9W+%22Mandarin+Orange%22+1979" target="_blank" rel="noopener noreferrer">9W Mandarin Orange</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3116" target="_blank" rel="noopener noreferrer">PPG: 3116</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9W+%22Mandarin+Orange%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MandarinOrange.webp" alt="Mandarin Orange"></a></div>
-<div class="color-item"><div class="color-cell tawny-orange"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7Y+%22Tawny+Orange%22+1977" target="_blank" rel="noopener noreferrer">7Y Tawny Orange</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2902" target="_blank" rel="noopener noreferrer">PPG: 2902</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7Y+%22Tawny+Orange%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-TawnyOrange.webp" alt="Tawny Orange"></a></div>
-<div class="color-item"><div class="color-cell sienna-orange"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+G6+%22Renegade+Orange%22+1976" target="_blank" rel="noopener noreferrer">G6 Sienna / Renegade Orange</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2607" target="_blank" rel="noopener noreferrer">PPG: 2607</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+G6+%22Renegade+Orange%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SiennaOrange.webp" alt="Sienna Orange"></a></div>
-<div class="color-item"><div class="color-cell sun-orange"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7Z+%22Sun+Orange%22+1977" target="_blank" rel="noopener noreferrer">7Z Sun Orange</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2903" target="_blank" rel="noopener noreferrer">PPG: 2903</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7Z+%22Sun+Orange%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SunOrange.webp" alt="Sun Orange"></a></div>
-<div class="color-item"><div class="color-cell omaha-orange"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+FB+%22Omaha+Orange%22+1976" target="_blank" rel="noopener noreferrer">FB Omaha Orange</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=60281" target="_blank" rel="noopener noreferrer">PPG: 60281</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+FB+%22Omaha+Orange%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OmahaOrange.webp" alt="Omaha Orange"></a></div>
-<div class="color-item"><div class="color-cell orange-bronze"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+AD+%22Orange+Bronze%22+1985" target="_blank" rel="noopener noreferrer">AD Orange Bronze</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3701" target="_blank" rel="noopener noreferrer">PPG: 3701</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+AD+%22Orange+Bronze%22+1985" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OrangeBronze.webp" alt="Orange Bronze"></a></div>
-<div class="color-item"><div class="color-cell cinnamon-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3K+%22Cinnamon+Metallic%22+1984" target="_blank" rel="noopener noreferrer">3K Cinnamon Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3597" target="_blank" rel="noopener noreferrer">PPG: 3597</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3K+%22Cinnamon+Metallic%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CinnamonMetallic.webp" alt="Cinnamon Metallic"></a></div>
-<div class="color-item"><div class="color-cell copper-met-74"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+526+%22Copper+Metallic%22+1975" target="_blank" rel="noopener noreferrer">526 Copper Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=24000" target="_blank" rel="noopener noreferrer">PPG: 24000</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+526+%22Copper+Metallic%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CopperMetallic.webp" alt="Copper Metallic"></a></div>
-<div class="color-item"><div class="color-cell renegade-yellow"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+510+%22Renegade+Yellow%22+1974" target="_blank" rel="noopener noreferrer">510 Renegade Yellow</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=82054" target="_blank" rel="noopener noreferrer">PPG: 82054</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+510+%22Renegade+Yellow%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-RenegadeYellow.webp" alt="Renegade Yellow"></a></div>
-<div class="color-item"><div class="color-cell mellow-yellow"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+528+%22Mellow+Yellow%22+1975" target="_blank" rel="noopener noreferrer">528 Mellow Yellow</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=81911" target="_blank" rel="noopener noreferrer">PPG: 81911</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+528+%22Mellow+Yellow%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MellowYellow.webp" alt="Mellow Yellow"></a></div>
-<div class="color-item"><div class="color-cell autumn-gold"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1D+%22Autumn+Gold%22+1981" target="_blank" rel="noopener noreferrer">1D Autumn Gold</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3369" target="_blank" rel="noopener noreferrer">PPG: 3369</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1D+%22Autumn+Gold%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AutumnGold.webp" alt="Autumn Gold"></a></div>
-<div class="color-item"><div class="color-cell saxon-yellow"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9L+%22Saxon+Yellow%22+1979" target="_blank" rel="noopener noreferrer">9L Saxon Yellow</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3113" target="_blank" rel="noopener noreferrer">PPG: 3113</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9L+%22Saxon+Yellow%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SaxonYellow.webp" alt="Saxon Yellow"></a></div>
-<div class="color-item"><div class="color-cell sun-yellow"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2B+%22Sun+Yellow%22+1982" target="_blank" rel="noopener noreferrer">2B Sun Yellow</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3467" target="_blank" rel="noopener noreferrer">PPG: 3467</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2B+%22Sun+Yellow%22+1982" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SunYellow.webp" alt="Sun Yellow"></a></div>
-<div class="color-item"><div class="color-cell sunshine-yellow"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6V+%22Sunshine+Yellow%22+1976" target="_blank" rel="noopener noreferrer">6V Sunshine Yellow</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2827" target="_blank" rel="noopener noreferrer">PPG: 2827</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6V+%22Sunshine+Yellow%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SunshineYellow.webp" alt="Sunshine Yellow"></a></div>
-<div class="color-item"><div class="color-cell topaz-gold-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2H+%22Topaz+Gold+Metallic%22+1982" target="_blank" rel="noopener noreferrer">2H Topaz Gold Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3471" target="_blank" rel="noopener noreferrer">PPG: 3471</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2H+%22Topaz+Gold+Metallic%22+1982" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-TopazGoldMetallic.webp" alt="Topaz Gold Metallic"></a></div>
-<div class="color-item"><div class="color-cell golden-ginger-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7M+%22Golden+Ginger+Metallic%22+1977" target="_blank" rel="noopener noreferrer">7M Golden Ginger Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2899" target="_blank" rel="noopener noreferrer">PPG: 2899</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7M+%22Golden+Ginger+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-GoldenGingerMetallic.webp" alt="Golden Ginger Metallic"></a></div>
-<div class="color-item"><div class="color-cell dark-honey-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+5D+%22Dark+Honey+Metallic%22+1985" target="_blank" rel="noopener noreferrer">5D Dark Honey Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3696" target="_blank" rel="noopener noreferrer">PPG: 3696</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+5D+%22Dark+Honey+Metallic%22+1985" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DarkHoneyMetallic.webp" alt="Dark Honey Metallic"></a></div>
-<div class="color-item"><div class="color-cell green-apple"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+561+%22Green+Apple%22+1975" target="_blank" rel="noopener noreferrer">561 Green Apple</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2708" target="_blank" rel="noopener noreferrer">PPG: 2708</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+561+%22Green+Apple%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-GreenApple.webp" alt="Green Apple"></a></div>
-<div class="color-item"><div class="color-cell limefire-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6K+%22Limefire+Metallic%22+1976" target="_blank" rel="noopener noreferrer">6K Limefire Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2823" target="_blank" rel="noopener noreferrer">PPG: 2823</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6K+%22Limefire+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-LimefireMetallic.webp" alt="Limefire Metallic"></a></div>
-<div class="color-item"><div class="color-cell lime-green"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7P+%22Lime+Green%22+1977" target="_blank" rel="noopener noreferrer">7P Lime Green</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2900" target="_blank" rel="noopener noreferrer">PPG: 2900</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7P+%22Lime+Green%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-LimeGreen.webp" alt="Lime Green"></a></div>
-<div class="color-item"><div class="color-cell golden-jade"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H6+%22Golden+Jade%22+1975" target="_blank" rel="noopener noreferrer">H6 Golden Jade</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2709" target="_blank" rel="noopener noreferrer">PPG: 2709</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H6+%22Golden+Jade%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-GoldenJade.webp" alt="Golden Jade"></a></div>
-<div class="color-item"><div class="color-cell fairway-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+512+%22Fairway+Green+Metallic%22+1974" target="_blank" rel="noopener noreferrer">512 Fairway Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=44760" target="_blank" rel="noopener noreferrer">PPG: 44760</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+512+%22Fairway+Green+Metallic%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-FairwayGreenMetallic.webp" alt="Fairway Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell medium-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+5B+%22Medium+Green+Metallic%22+1985" target="_blank" rel="noopener noreferrer">5B Medium Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3693" target="_blank" rel="noopener noreferrer">PPG: 3693</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+5B+%22Medium+Green+Metallic%22+1985" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MediumGreenMetallic.webp" alt="Medium Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell reef-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H2+%22Reef+Green+Metallic%22+1976" target="_blank" rel="noopener noreferrer">H2 Reef Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=45020" target="_blank" rel="noopener noreferrer">PPG: 45020</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H2+%22Reef+Green+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ReefGreenMetallic.webp" alt="Reef Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell loden-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7L+%22Loden+Green+Metallic%22+1977" target="_blank" rel="noopener noreferrer">7L Loden Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2898" target="_blank" rel="noopener noreferrer">PPG: 2898</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7L+%22Loden+Green+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-LodenGreenMetallic.webp" alt="Loden Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell nordic-green"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4H+%22Nordic+Green%22+1984" target="_blank" rel="noopener noreferrer">4H Nordic Green</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3627" target="_blank" rel="noopener noreferrer">PPG: 3627</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4H+%22Nordic+Green%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-NordicGreen.webp" alt="Nordic Green"></a></div>
-<div class="color-item"><div class="color-cell sherwood-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1C+%22Sherwood+Green+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1C Sherwood Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3368" target="_blank" rel="noopener noreferrer">PPG: 3368</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1C+%22Sherwood+Green+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SherwoodGreenMetallic.webp" alt="Sherwood Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell cumberland-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9H+%22Cumberland+Green+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9H Cumberland Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3110" target="_blank" rel="noopener noreferrer">PPG: 3110</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9H+%22Cumberland+Green+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CumberlandGreenMetallic.webp" alt="Cumberland Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell forest-green"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+FE+%22Forest+Green%22+1976" target="_blank" rel="noopener noreferrer">FE Forest Green</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=44586" target="_blank" rel="noopener noreferrer">PPG: 44586</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+FE+%22Forest+Green%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ForestGreen.webp" alt="Forest Green"></a></div>
-<div class="color-item"><div class="color-cell dark-green-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OE+%22Dark+Green+Metallic%22+1980" target="_blank" rel="noopener noreferrer">OE Dark Green Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3242" target="_blank" rel="noopener noreferrer">PPG: 3242</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OE+%22Dark+Green+Metallic%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DarkGreenMetallic.webp" alt="Dark Green Metallic"></a></div>
-<div class="color-item"><div class="color-cell olive-drab"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+FH+%22Olive+Drab%22+1980" target="_blank" rel="noopener noreferrer">FH Olive Drab</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=42955" target="_blank" rel="noopener noreferrer">PPG: 42955</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+FH+%22Olive+Drab%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OliveDrab.webp" alt="Olive Drab"></a></div>
-<div class="color-item"><div class="color-cell powder-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7D+%22Powder+Blue%22+1977" target="_blank" rel="noopener noreferrer">7D Powder Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2896" target="_blank" rel="noopener noreferrer">PPG: 2896</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7D+%22Powder+Blue%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-PowderBlue.webp" alt="Powder Blue"></a></div>
-<div class="color-item"><div class="color-cell ice-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4C+%22Ice+Blue+Metallic%22+1984" target="_blank" rel="noopener noreferrer">4C Ice Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3624" target="_blank" rel="noopener noreferrer">PPG: 3624</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4C+%22Ice+Blue+Metallic%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-IceBlueMetallic.webp" alt="Ice Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell wedgewood-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9E+%22Wedgewood+Blue%22+1979" target="_blank" rel="noopener noreferrer">9E Wedgewood Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3109" target="_blank" rel="noopener noreferrer">PPG: 3109</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9E+%22Wedgewood+Blue%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-WedgewoodBlue.webp" alt="Wedgewood Blue"></a></div>
-<div class="color-item"><div class="color-cell moonlight-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1B+%22Moonlight+Blue%22+1981" target="_blank" rel="noopener noreferrer">1B Moonlight Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3367" target="_blank" rel="noopener noreferrer">PPG: 3367</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1B+%22Moonlight+Blue%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MoonlightBlue.webp" alt="Moonlight Blue"></a></div>
-<div class="color-item"><div class="color-cell montana-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1A+%22Montana+Blue%22+1981" target="_blank" rel="noopener noreferrer">1A Montana Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3366" target="_blank" rel="noopener noreferrer">PPG: 3366</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1A+%22Montana+Blue%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MontanaBlue.webp" alt="Montana Blue"></a></div>
-<div class="color-item"><div class="color-cell renegade-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+585+%22Renegade+Blue%22+1975" target="_blank" rel="noopener noreferrer">585 Renegade Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=14800" target="_blank" rel="noopener noreferrer">PPG: 14800</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+585+%22Renegade+Blue%22+1975" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-RenegadeBlue.webp" alt="Renegade Blue"></a></div>
-<div class="color-item"><div class="color-cell jetset-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+492+%22Jetset+Blue+Metallic%22+1974" target="_blank" rel="noopener noreferrer">492 Jetset Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=14529" target="_blank" rel="noopener noreferrer">PPG: 14529</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+492+%22Jetset+Blue+Metallic%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-JetsetBlueMetallic.webp" alt="Jetset Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell slate-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2C+%22Slate+Blue+Metallic%22+1982" target="_blank" rel="noopener noreferrer">2C Slate Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3468" target="_blank" rel="noopener noreferrer">PPG: 3468</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2C+%22Slate+Blue+Metallic%22+1982" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SlateBlueMetallic.webp" alt="Slate Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell brilliant-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6R+%22Brilliant+Blue%22+1976" target="_blank" rel="noopener noreferrer">6R Brilliant Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2825" target="_blank" rel="noopener noreferrer">PPG: 2825</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6R+%22Brilliant+Blue%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-BrilliantBlue.webp" alt="Brilliant Blue"></a></div>
-<div class="color-item"><div class="color-cell medium-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+G9+%22Medium+Blue+Metallic%22+1976" target="_blank" rel="noopener noreferrer">G9 Medium Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2704" target="_blank" rel="noopener noreferrer">PPG: 2704</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+G9+%22Medium+Blue+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MediumBlueMetallic.webp" alt="Medium Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell medium-blue-aj"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+AJ+%22Medium+Blue+Metallic%22+1986" target="_blank" rel="noopener noreferrer">AJ Medium Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3828" target="_blank" rel="noopener noreferrer">PPG: 3828</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+AJ+%22Medium+Blue+Metallic%22+1986" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MediumBlueMetallicAJ.webp" alt="Medium Blue Metallic AJ"></a></div>
-<div class="color-item"><div class="color-cell teal-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OJ+%22Teal+Blue%22+1980" target="_blank" rel="noopener noreferrer">OJ Teal Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3244" target="_blank" rel="noopener noreferrer">PPG: 3244</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OJ+%22Teal+Blue%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-TealBlue.webp" alt="Teal Blue"></a></div>
-<div class="color-item"><div class="color-cell starboard-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9M+%22Starboard+Blue%22+1979" target="_blank" rel="noopener noreferrer">9M Starboard Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3114" target="_blank" rel="noopener noreferrer">PPG: 3114</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9M+%22Starboard+Blue%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-StarboardBlue.webp" alt="Starboard Blue"></a></div>
-<div class="color-item"><div class="color-cell captain-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7W+%22Captain+Blue+Metallic%22+1977" target="_blank" rel="noopener noreferrer">7W Captain Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2901" target="_blank" rel="noopener noreferrer">PPG: 2901</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7W+%22Captain+Blue+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CaptainBlueMetallic.webp" alt="Captain Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell ensign-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9T+%22Ensign+Blue%22+1979" target="_blank" rel="noopener noreferrer">9T Ensign Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3117" target="_blank" rel="noopener noreferrer">PPG: 3117</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9T+%22Ensign+Blue%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-EnsignBlue.webp" alt="Ensign Blue"></a></div>
-<div class="color-item"><div class="color-cell nautical-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6T+%22Nautical+Blue+Metallic%22+1976" target="_blank" rel="noopener noreferrer">6T Nautical Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2826" target="_blank" rel="noopener noreferrer">PPG: 2826</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6T+%22Nautical+Blue+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-NauticalBlueMetallic.webp" alt="Nautical Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell navy-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OH+%22Navy+Blue%22+1980" target="_blank" rel="noopener noreferrer">OH Navy Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3243" target="_blank" rel="noopener noreferrer">PPG: 3243</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OH+%22Navy+Blue%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-NavyBlue.webp" alt="Navy Blue"></a></div>
-<div class="color-item"><div class="color-cell midnight-blue-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7K+%22Midnight+Blue+Metallic%22+1977" target="_blank" rel="noopener noreferrer">7K Midnight Blue Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2897" target="_blank" rel="noopener noreferrer">PPG: 2897</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7K+%22Midnight+Blue+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MidnightBlueMetallic.webp" alt="Midnight Blue Metallic"></a></div>
-<div class="color-item"><div class="color-cell deep-night-blue"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2D+%22Deep+Night+Blue%22+1982" target="_blank" rel="noopener noreferrer">2D Deep Night Blue</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3469" target="_blank" rel="noopener noreferrer">PPG: 3469</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2D+%22Deep+Night+Blue%22+1982" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DeepNightBlue.webp" alt="Deep Night Blue"></a></div>
-<div class="color-item"><div class="color-cell almond-beige"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3A+%22Almond+Beige%22+1984" target="_blank" rel="noopener noreferrer">3A Almond Beige</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3591" target="_blank" rel="noopener noreferrer">PPG: 3591</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3A+%22Almond+Beige%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AlmondBeige.webp" alt="Almond Beige"></a></div>
-<div class="color-item"><div class="color-cell beige-ab"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+AB+%22Beige%22+1986" target="_blank" rel="noopener noreferrer">AB Beige</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3826" target="_blank" rel="noopener noreferrer">PPG: 3826</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+AB+%22Beige%22+1986" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-BeigeAB.webp" alt="Beige"></a></div>
-<div class="color-item"><div class="color-cell champagne-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4D+%22Champagne+Metallic%22+1984" target="_blank" rel="noopener noreferrer">4D Champagne Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3625" target="_blank" rel="noopener noreferrer">PPG: 3625</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4D+%22Champagne+Metallic%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ChampagneMetallic.webp" alt="Champagne Metallic"></a></div>
-<div class="color-item"><div class="color-cell jamaica-beige"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2J+%22Jamaican+Beige%22+1982" target="_blank" rel="noopener noreferrer">2J Jamaican Beige</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3472" target="_blank" rel="noopener noreferrer">PPG: 3472</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2J+%22Jamaican+Beige%22+1982" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-JamaicaBeige.webp" alt="Jamaican Beige"></a></div>
-<div class="color-item"><div class="color-cell fawn-beige"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+514+%22Fawn+Beige%22+1974" target="_blank" rel="noopener noreferrer">514 Fawn Beige</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=23853" target="_blank" rel="noopener noreferrer">PPG: 23853</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+514+%22Fawn+Beige%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-FawnBeige.webp" alt="Fawn Beige"></a></div>
-<div class="color-item"><div class="color-cell cameo-tan"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OK+%22Cameo+Tan%22+1980" target="_blank" rel="noopener noreferrer">OK Cameo Tan</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3245" target="_blank" rel="noopener noreferrer">PPG: 3245</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OK+%22Cameo+Tan%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CameoTan.webp" alt="Cameo Tan"></a></div>
-<div class="color-item"><div class="color-cell morocco-buff"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9N+%22Morocco+Buff%22+1979" target="_blank" rel="noopener noreferrer">9N Morocco Buff</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3115" target="_blank" rel="noopener noreferrer">PPG: 3115</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9N+%22Morocco+Buff%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MoroccoBuff.webp" alt="Morocco Buff"></a></div>
-<div class="color-item"><div class="color-cell sand-tan"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6D+%22Sand+Tan%22+1976" target="_blank" rel="noopener noreferrer">6D Sand Tan</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2820" target="_blank" rel="noopener noreferrer">PPG: 2820</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6D+%22Sand+Tan%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SandTan.webp" alt="Sand Tan"></a></div>
-<div class="color-item"><div class="color-cell golden-tan-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+%22Golden+Tan+Metallic%22+1974" target="_blank" rel="noopener noreferrer">— Golden Tan Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=23819" target="_blank" rel="noopener noreferrer">PPG: 23819</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+%22Golden+Tan+Metallic%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-GoldenTanMetallic.webp" alt="Golden Tan Metallic"></a></div>
-<div class="color-item"><div class="color-cell caramel"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OR+%22Caramel%22+1980" target="_blank" rel="noopener noreferrer">OR Caramel</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3249" target="_blank" rel="noopener noreferrer">PPG: 3249</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OR+%22Caramel%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-Caramel.webp" alt="Caramel"></a></div>
-<div class="color-item"><div class="color-cell khaki"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8A+%22Khaki%22+1978" target="_blank" rel="noopener noreferrer">8A Khaki</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3028" target="_blank" rel="noopener noreferrer">PPG: 3028</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8A+%22Khaki%22+1978" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-Khaki.webp" alt="Khaki"></a></div>
-<div class="color-item"><div class="color-cell oak-leaf-brown"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7E+%22Oak+Leaf+Brown%22+1977" target="_blank" rel="noopener noreferrer">7E Oak Leaf Brown</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=24443" target="_blank" rel="noopener noreferrer">PPG: 24443</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7E+%22Oak+Leaf+Brown%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OakLeafBrown.webp" alt="Oak Leaf Brown"></a></div>
-<div class="color-item"><div class="color-cell british-bronze"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8B+%22British+Bronze%22+1978" target="_blank" rel="noopener noreferrer">8B British Bronze</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3029" target="_blank" rel="noopener noreferrer">PPG: 3029</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8B+%22British+Bronze%22+1978" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-BritishBronze.webp" alt="British Bronze"></a></div>
-<div class="color-item"><div class="color-cell alpaca-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9A+%22Alpaca+Brown+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9A Alpaca Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3106" target="_blank" rel="noopener noreferrer">PPG: 3106</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9A+%22Alpaca+Brown+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AlpacaBrownMetallic.webp" alt="Alpaca Brown Metallic"></a></div>
-<div class="color-item"><div class="color-cell russet-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9C+%22Russet+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9C Russet Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3108" target="_blank" rel="noopener noreferrer">PPG: 3108</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9C+%22Russet+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-RussetMetallic.webp" alt="Russet Metallic"></a></div>
-<div class="color-item"><div class="color-cell copper-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1E+%22Copper+Brown+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1E Copper Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3370" target="_blank" rel="noopener noreferrer">PPG: 3370</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1E+%22Copper+Brown+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CopperBrownMetallic.webp" alt="Copper Brown Metallic"></a></div>
-<div class="color-item"><div class="color-cell chestnut-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1H+%22Chestnut+Brown+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1H Chestnut Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3371" target="_blank" rel="noopener noreferrer">PPG: 3371</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1H+%22Chestnut+Brown+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ChestnutBrownMetallic.webp" alt="Chestnut Brown Metallic"></a></div>
-<div class="color-item"><div class="color-cell chestnut-4e"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4E+%22Chestnut+Brown+Metallic%22+1984" target="_blank" rel="noopener noreferrer">4E Chestnut Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3626" target="_blank" rel="noopener noreferrer">PPG: 3626</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4E+%22Chestnut+Brown+Metallic%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ChestnutBrownMetallic4E.webp" alt="Chestnut Brown Metallic 4E"></a></div>
-<div class="color-item"><div class="color-cell mocha-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7B+%22Mocha+Brown+Metallic%22+1977" target="_blank" rel="noopener noreferrer">7B Mocha Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2895" target="_blank" rel="noopener noreferrer">PPG: 2895</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+7B+%22Mocha+Brown+Metallic%22+1977" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MochaBrownMetallic.webp" alt="Mocha Brown Metallic"></a></div>
-<div class="color-item"><div class="color-cell sable-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9K+%22Sable+Brown+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9K Sable Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3112" target="_blank" rel="noopener noreferrer">PPG: 3112</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9K+%22Sable+Brown+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SableBrownMetallic.webp" alt="Sable Brown Metallic"></a></div>
-<div class="color-item"><div class="color-cell dark-cocoa-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H4+%22Dark+Cocoa+Metallic%22+1976" target="_blank" rel="noopener noreferrer">H4 Dark Cocoa Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2796" target="_blank" rel="noopener noreferrer">PPG: 2796</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+H4+%22Dark+Cocoa+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DarkCocoaMetallic.webp" alt="Dark Cocoa Metallic"></a></div>
-<div class="color-item"><div class="color-cell dark-brown-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OM+%22Dark+Brown+Metallic%22+1980" target="_blank" rel="noopener noreferrer">OM Dark Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3247" target="_blank" rel="noopener noreferrer">PPG: 3247</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OM+%22Dark+Brown+Metallic%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DarkBrownMetallic.webp" alt="Dark Brown Metallic"></a></div>
-<div class="color-item"><div class="color-cell dark-brown-5e"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+5E+%22Dark+Brown+Metallic%22+1985" target="_blank" rel="noopener noreferrer">5E Dark Brown Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3697" target="_blank" rel="noopener noreferrer">PPG: 3697</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+5E+%22Dark+Brown+Metallic%22+1985" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-DarkBrownMetallic5E.webp" alt="Dark Brown Metallic 5E"></a></div>
-<div class="color-item"><div class="color-cell champagne-white"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+%22Champagne+White%22+1974" target="_blank" rel="noopener noreferrer">432 Champagne White</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=8818" target="_blank" rel="noopener noreferrer">PPG: 8818</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+%22Champagne+White%22+1974" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ChampagneWhite.webp" alt="Champagne White"></a></div>
-<div class="color-item"><div class="color-cell alpine-white"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+G7+%22Alpine+White%22+1976" target="_blank" rel="noopener noreferrer">G7 Alpine White</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2702" target="_blank" rel="noopener noreferrer">PPG: 2702</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+G7+%22Alpine+White%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-AlpineWhite.webp" alt="Alpine White"></a></div>
-<div class="color-item"><div class="color-cell olympic-white"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9B+%22Olympic+White%22+1979" target="_blank" rel="noopener noreferrer">9B Olympic White</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3107" target="_blank" rel="noopener noreferrer">PPG: 3107</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9B+%22Olympic+White%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-OlympicWhite.webp" alt="Olympic White"></a></div>
-<div class="color-item"><div class="color-cell silver-frost-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6J+%22Silver+Frost+Metallic%22+1976" target="_blank" rel="noopener noreferrer">6J Silver Frost Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=2822" target="_blank" rel="noopener noreferrer">PPG: 2822</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+6J+%22Silver+Frost+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SilverFrostMetallic.webp" alt="Silver Frost Metallic"></a></div>
-<div class="color-item"><div class="color-cell quicksilver"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8C+%22Quicksilver%22+1978" target="_blank" rel="noopener noreferrer">8C Quicksilver</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3030" target="_blank" rel="noopener noreferrer">PPG: 3030</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+8C+%22Quicksilver%22+1978" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-Quicksilver.webp" alt="Quicksilver"></a></div>
-<div class="color-item"><div class="color-cell arrowhead-silver-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9J+%22Arrowhead+Silver+Metallic%22+1979" target="_blank" rel="noopener noreferrer">9J Arrowhead Silver Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3118" target="_blank" rel="noopener noreferrer">PPG: 3118</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+9J+%22Arrowhead+Silver+Metallic%22+1979" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ArrowheadSilverMetallic.webp" alt="Arrowhead Silver Metallic"></a></div>
-<div class="color-item"><div class="color-cell mist-silver-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2A+%22Mist+Silver+Metallic%22+1982" target="_blank" rel="noopener noreferrer">2A Mist Silver Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3466" target="_blank" rel="noopener noreferrer">PPG: 3466</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+2A+%22Mist+Silver+Metallic%22+1982" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-MistSilverMetallic.webp" alt="Mist Silver Metallic"></a></div>
-<div class="color-item"><div class="color-cell sterling-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3D+%22Sterling+Metallic%22+1983" target="_blank" rel="noopener noreferrer">3D Sterling Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3594" target="_blank" rel="noopener noreferrer">PPG: 3594</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+3D+%22Sterling+Metallic%22+1983" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SterlingMetallic.webp" alt="Sterling Metallic"></a></div>
-<div class="color-item"><div class="color-cell silver-met-4k"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4K+%22Silver+Metallic%22+1984" target="_blank" rel="noopener noreferrer">4K Silver Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3629" target="_blank" rel="noopener noreferrer">PPG: 3629</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4K+%22Silver+Metallic%22+1984" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SilverMetallic.webp" alt="Silver Metallic"></a></div>
-<div class="color-item"><div class="color-cell pewter-gray-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+J1+%22Pewter+Gray+Metallic%22+1976" target="_blank" rel="noopener noreferrer">J1 Pewter Gray Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=33160" target="_blank" rel="noopener noreferrer">PPG: 33160</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+J1+%22Pewter+Gray+Metallic%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-PewterGrayMetallic.webp" alt="Pewter Gray Metallic"></a></div>
-<div class="color-item"><div class="color-cell smoke-gray-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OB+%22Smoke+Gray+Metallic%22+1980" target="_blank" rel="noopener noreferrer">OB Smoke Gray Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3239" target="_blank" rel="noopener noreferrer">PPG: 3239</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+OB+%22Smoke+Gray+Metallic%22+1980" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SmokeGrayMetallic.webp" alt="Smoke Gray Metallic"></a></div>
-<div class="color-item"><div class="color-cell steel-gray-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1L+%22Steel+Gray+Metallic%22+1981" target="_blank" rel="noopener noreferrer">1L Steel Gray Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3374" target="_blank" rel="noopener noreferrer">PPG: 3374</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+1L+%22Steel+Gray+Metallic%22+1981" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-SteelGrayMetallic.webp" alt="Steel Gray Metallic"></a></div>
-<div class="color-item"><div class="color-cell charcoal-met"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4M+%22Charcoal+Metallic%22+1985" target="_blank" rel="noopener noreferrer">4M Charcoal Metallic</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=3618" target="_blank" rel="noopener noreferrer">PPG: 3618</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+4M+%22Charcoal+Metallic%22+1985" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-CharcoalMetallic.webp" alt="Charcoal Metallic"></a></div>
-<div class="color-item"><div class="color-cell classic-black"><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+P1+%22Classic+Black%22+1976" target="_blank" rel="noopener noreferrer">P1 Classic Black</a><a class="ppg-link" href="https://paintref.com/cgi-bin/paintdetail.cgi?ppg=9000" target="_blank" rel="noopener noreferrer">PPG: 9000</a></div><a class="img-search" href="https://www.google.com/search?tbm=isch&amp;udm=2&amp;q=%22JEEP%22+%22CJ%22+P1+%22Classic+Black%22+1976" target="_blank" rel="noopener noreferrer"><img class="color-image" src="JeepColors-ClassicBlack.webp" alt="Classic Black"></a></div>
-
-</div>
-<script>
-(function () {
-  var KEY = "jeepCjImgEngine";
-  var engines = {
-    google: function (q) { return "https://www.google.com/search?tbm=isch&udm=2&q=" + encodeURIComponent(q); },
-    bing: function (q) { return "https://www.bing.com/images/search?q=" + encodeURIComponent(q); },
-    ddg: function (q) { return "https://duckduckgo.com/?iax=images&ia=images&q=" + encodeURIComponent(q); }
-  };
-  var links = document.querySelectorAll("a.img-search");
-  var radios = document.querySelectorAll('input[name="engine"]');
-  var engine = "google";
-
-  links.forEach(function (a) {
-    try {
-      a.dataset.q = new URL(a.href).searchParams.get("q") || "";
-    } catch (e) {
-      a.dataset.q = "";
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, max-age=0, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <title>Jeep Colors 1972–1986</title>
+  <script defer src="alpine.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
     }
-  });
 
-  function apply(next) {
-    if (!engines[next]) next = "google";
-    engine = next;
-    links.forEach(function (a) {
-      if (a.dataset.q) a.href = engines[engine](a.dataset.q);
-    });
-    radios.forEach(function (r) { r.checked = r.value === engine; });
-    try { localStorage.setItem(KEY, engine); } catch (e) {}
-  }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 16px;
+      background: #f4f4f4;
+    }
 
-  try {
-    var saved = localStorage.getItem(KEY);
-    if (saved && engines[saved]) engine = saved;
-  } catch (e) {}
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: clamp(18px, 2.4vw, 28px);
+    }
 
-  radios.forEach(function (r) {
-    r.addEventListener("change", function () {
-      if (r.checked) apply(r.value);
-    });
-  });
+    .note {
+      color: #000;
+      font-size: clamp(13px, 1.6vw, 16px);
+      margin-bottom: 12px;
+    }
 
-  apply(engine);
-})();
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      margin: 0 0 20px 0;
+      font-size: clamp(13px, 1.6vw, 16px);
+      color: #555;
+    }
 
-(function () {
-  document.querySelectorAll(".color-item").forEach(function (item) {
-    var cell = item.querySelector(".color-cell");
-    var photo = item.querySelector(":scope > a.img-search");
-    if (!cell || !photo) return;
+    .toolbar label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
 
-    photo.classList.add("photo-cell");
-    cell.classList.forEach(function (name) {
-      if (name !== "color-cell") photo.classList.add(name);
-    });
+    .toolbar select {
+      font: inherit;
+      padding: 4px 8px;
+    }
 
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "collapse-btn";
-    btn.setAttribute("aria-expanded", "true");
-    btn.setAttribute("aria-label", "Collapse row");
-    btn.textContent = "−";
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var collapsed = item.classList.toggle("collapsed");
-      btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
-      btn.setAttribute("aria-label", collapsed ? "Expand row" : "Collapse row");
-      btn.textContent = collapsed ? "+" : "−";
-    });
-    item.appendChild(btn);
-  });
-})();
-</script>
+    .status {
+      color: #a00;
+      margin-bottom: 12px;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(8px, 1.5vw, 16px);
+    }
+
+    .color-item {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) minmax(0, 3fr) auto;
+      gap: clamp(6px, 1vw, 10px);
+      width: min(100%, 72rem);
+      margin-inline: auto;
+      color: inherit;
+      align-items: stretch;
+    }
+
+    .color-cell,
+    .photo-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(10px, 2vw, 16px);
+      font-weight: bold;
+      line-height: 1.25;
+      border: 2px solid #333;
+      padding: clamp(4px, 1vw, 10px);
+      min-height: 0;
+      min-width: 0;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ppg-link {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.22);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: bold;
+    }
+
+    .ppg-link:hover,
+    .ppg-link:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .evidence {
+      margin-top: 4px;
+      font-size: clamp(9px, 1.3vw, 12px);
+      font-weight: normal;
+      line-height: 1.25;
+      opacity: 0.94;
+    }
+
+    .evidence-conf {}
+
+    .evidence-src {
+      font-weight: normal;
+    }
+
+    .color-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 16 / 9;
+      background: transparent;
+    }
+
+    .photo-cell .color-image.is-missing {
+      display: none;
+    }
+
+    .photo-cell {
+      min-height: 4.5rem;
+    }
+
+    .collapse-btn {
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      border: 2px solid #333;
+      background: #fff;
+      color: #111;
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      align-self: center;
+    }
+
+    .color-item.collapsed .ppg-link,
+    .color-item.collapsed .evidence,
+    .color-item.collapsed .color-image {
+      display: none;
+    }
+
+    .color-item.collapsed .color-cell {
+      padding-block: 6px;
+    }
+
+    .to-top {
+      position: fixed;
+      left: 16px;
+      right: auto;
+      bottom: 16px;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 8px 10px;
+      border: 2px solid #333;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .to-top-arrow {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .to-top:hover,
+    .to-top:focus {
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="top"></div>
+  <div x-data="jeepColors()" x-init="init()">
+    <h1>Jeep Colors 1972-1986</h1>
+
+    <p class="note">
+      This tool was built to help choose a color for my rusty old CJ-7. I discovered that while there are many sources
+      for this information, they disagree with each other. With few authoritative sources we look for Factory Service
+      Manuals, Dealer Brochures as the best evidence. Firewall tags are the ultimate evidence I can't travel the world
+      to collect that data. AMC paint Brochures survive as scanned PDFs, but do not differentiate between AMC colors and
+      those used within Jeep. Olenik is a decent old reference as is PaintRef.com but they do not agree with each other.
+      Paintref conflicts with itself if you look at Jeeps by year versus on a color pages' listed years. So instead of
+      another authoritative list that nobody can adjudicate, this is a wholistic list with data confidence grades
+      assigned by year based on the quality of sources which are verified.
+    </p>
+
+    <p class="note">
+      Sources: <a href="">www.paintref.com</a>, <a
+        href="https://www.bing.com/ck/a?!&&p=9d16d99f2424cdb07248778db034245ac04c6ecfb1e42cdad4faaf008b687148JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=1e9cba07-7df1-6255-06d7-af917cd8638c&psq=olenik+jeep+colors+chart&u=a1aHR0cDovL3d3dy44MmphbWJvLmNvbS9kb2N1bWVudHMvUGFpbnQlMjBhbmQlMjBUcmltJTIwQ29kZXMvMTk3Ni0xOTg2JTIwUGFpbnQlMjBDb2Rlcy5wZGY">Olenik</a>,
+      and available PDF FSM and brochures.
+    </p>
+
+    <p class="note">How to Use</p>
+    <ul class="note">
+      <li>Search Color On Web - click a swatch</li>
+      <li>Search PaintCode Info - click PPG hyperlink</li>
+      <li>Filter By Year - pick below</li>
+      <li>Collapse Row with − / + to hide colors</li>
+    </ul>
+
+    <div class="toolbar">
+      <label>
+        Year
+        <select x-model="year">
+          <option value="all">All</option>
+          <template x-for="y in years" :key="y">
+            <option :value="String(y)" x-text="y"></option>
+          </template>
+        </select>
+      </label>
+      <span>Image search:</span>
+      <label><input type="radio" name="engine" value="google" x-model="engine"> Google</label>
+      <label><input type="radio" name="engine" value="ddg" x-model="engine"> DuckDuckGo</label>
+    </div>
+
+    <p class="status" x-show="error" x-text="error"></p>
+
+    <div class="color-grid">
+      <template x-for="color in visibleColors" :key="color.id">
+        <div class="color-item" :class="{ collapsed: collapsed[color.id] }">
+          <div class="color-cell" :style="swatchStyle(color)">
+            <a class="img-search" :href="searchUrl(color)" target="_blank" rel="noopener noreferrer"
+              :style="{ color: color.text }">
+              <span x-text="label(color)"></span>
+            </a>
+            <a class="ppg-link" :href="'https://paintref.com/cgi-bin/paintdetail.cgi?ppg=' + color.ppg" target="_blank"
+              rel="noopener noreferrer">PPG: <span x-text="color.ppg"></span></a>
+            <div class="evidence">
+              <div class="evidence-conf" x-show="year !== 'all' && confidenceLine(color)"
+                x-text="confidenceLine(color)"></div>
+              <div class="evidence-src" x-text="sourcesLine(color)"></div>
+            </div>
+          </div>
+
+          <template x-for="slot in [0, 1]" :key="color.id + '-slot-' + slot">
+            <a class="photo-cell img-search" :href="searchUrl(color)" target="_blank" rel="noopener noreferrer"
+              :style="swatchStyle(color)">
+              <img class="color-image" x-show="photoAt(color, slot)"
+                :src="photoAt(color, slot) ? photoAt(color, slot) + cacheBust : null" :alt="color.name"
+                @error="$el.classList.add('is-missing')">
+            </a>
+          </template>
+
+          <button type="button" class="collapse-btn" :aria-expanded="!collapsed[color.id]"
+            :aria-label="collapsed[color.id] ? 'Expand row' : 'Collapse row'"
+            @click="collapsed[color.id] = !collapsed[color.id]" x-text="collapsed[color.id] ? '+' : '−'"></button>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <a class="to-top" href="#top" aria-label="Back to top">
+    <span class="to-top-arrow" aria-hidden="true">↑</span>
+    Top
+  </a>
+
+  <script>
+    window.JEEP_COLORS = {
+      "meta": {
+        "make": "Jeep",
+        "years": [1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986],
+        "models": ["CJ", "CJ5", "CJ6", "CJ7", "CJ8", "Scrambler", "Wagoneer", "Grand Wagoneer", "Cherokee", "Commando", "J10", "J20"],
+        "source": "Each color.years key is a model year. That year holds code, source tokens s, and optional override o."
+      },
+      "colors": [
+        {
+          "id": "firecracker-red",
+          "code": "6P",
+          "name": "Firecracker Red",
+          "ppg": "2824",
+          "hex": "#C41E3A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-FirecrackerRed.webp", "JeepColors-FirecrackerRed2.webp"],
+          "years": {
+            "1976": { "code": "6P", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "6P", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "6P", "s": ["PR", "FSM", "OL"] },
+            "1979": { "code": "6P", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "cardinal-red",
+          "code": "OP",
+          "name": "Cardinal Red",
+          "ppg": "3248",
+          "hex": "#C41E3A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-CardinalRed.webp", "JeepColors-CardinalRed2.webp"],
+          "years": {
+            "1980": { "code": "OP", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "trans-am-red",
+          "code": "515",
+          "name": "Trans-Am Red",
+          "ppg": "2400",
+          "hex": "#B31B1B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-TransAmRed.webp", "JeepColors-TransAmRed2.webp"],
+          "years": {
+            "1973": { "code": "515", "s": ["PR", "Chip", "Brochure"] },
+            "1974": { "code": "515", "s": ["PR", "Brochure"] },
+            "1975": { "code": "515", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "sebring-red",
+          "code": "3B",
+          "name": "Sebring Red",
+          "ppg": "3592",
+          "hex": "#B22222",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-SebringRed.webp", "JeepColors-SebringRed2.webp"],
+          "years": {
+            "1983": { "code": "3B", "s": ["PR", "OL", "Brochure"] },
+            "1984": { "code": "3B", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "3B", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "3B", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "president-red",
+          "code": "226",
+          "name": "President Red",
+          "ppg": "71334",
+          "hex": "#B31B1B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-PresidentRed.webp", "JeepColors-PresidentRed2.webp"],
+          "years": {
+            "1972": { "code": "226", "s": ["PR", "Chip"] }
+          }
+        },
+        {
+          "id": "oriental-red",
+          "code": "1M",
+          "name": "Oriental Red",
+          "ppg": "3375",
+          "hex": "#A52A2A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-OrientalRed.webp", "JeepColors-OrientalRed2.webp"],
+          "years": {
+            "1981": { "code": "1M", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "1M", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "autumn-red-met",
+          "code": "7C",
+          "name": "Autumn Red Metallic",
+          "ppg": "2992",
+          "hex": "#8B3A3A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-AutumnRedMetallic.webp", "JeepColors-AutumnRedMetallic2.webp"],
+          "years": {
+            "1977": { "code": "7C", "s": ["FSM", "OL"] },
+            "1978": { "code": "7C", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "vintage-red-met",
+          "code": "1J",
+          "name": "Vintage Red Metallic",
+          "ppg": "3372",
+          "hex": "#8B1A1A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-VintageRedMetallic.webp", "JeepColors-VintageRedMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1J", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "garnet-met",
+          "code": "3C",
+          "name": "Garnet Metallic",
+          "ppg": "3593",
+          "hex": "#7A1A2A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-GarnetMetallic.webp", "JeepColors-GarnetMetallic2.webp"],
+          "years": {
+            "1984": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "3C", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "bordeaux-met",
+          "code": "9P",
+          "name": "Bordeaux Metallic",
+          "ppg": "3111",
+          "hex": "#5C1A2A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-BordeauxMetallic.webp", "JeepColors-BordeauxMetallic2.webp"],
+          "years": {
+            "1979": { "code": "9P", "s": ["PR", "FSM", "OL"] },
+            "1980": { "code": "9P", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "deep-maroon-met",
+          "code": "1K",
+          "name": "Deep Maroon Metallic",
+          "ppg": "3373",
+          "hex": "#5C0A1A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-DeepMaroonMetallic.webp", "JeepColors-DeepMaroonMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1K", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "1K", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "1K", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "renegade-plum",
+          "code": "509",
+          "name": "Renegade Plum",
+          "ppg": "50902",
+          "hex": "#5A2A4A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-RenegadePlum.webp", "JeepColors-RenegadePlum2.webp"],
+          "years": {
+            "1972": { "code": "509", "s": ["PR"] },
+            "1973": { "code": "509", "s": ["Chip"] },
+            "1974": { "code": "509", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "sun-orange",
+          "code": "7Z",
+          "name": "Sun Orange",
+          "ppg": "2903",
+          "hex": "#E67E22",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-SunOrange.webp", "JeepColors-SunOrange2.webp"],
+          "years": {
+            "1977": { "code": "7Z", "s": ["OL"] },
+            "1978": { "code": "7Z", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "mandarin-orange",
+          "code": "9W",
+          "name": "Mandarin Orange",
+          "ppg": "3116",
+          "hex": "#E36F1E",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-MandarinOrange.webp", "JeepColors-MandarinOrange2.webp"],
+          "years": {
+            "1979": { "code": "9W", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "tawny-orange",
+          "code": "7Y",
+          "name": "Tawny Orange",
+          "ppg": "2902",
+          "hex": "#D2691E",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-TawnyOrange.webp", "JeepColors-TawnyOrange2.webp"],
+          "years": {
+            "1977": { "code": "7Y", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "sienna-orange",
+          "code": "G6",
+          "name": "Sienna / Renegade Orange",
+          "searchName": "Renegade Orange",
+          "ppg": "2607",
+          "hex": "#E05A2B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-SiennaOrange.webp", "JeepColors-SiennaOrange2.webp"],
+          "years": {
+            "1973": { "code": "G6", "s": ["Chip"] },
+            "1975": { "code": "G6", "s": ["PR", "Brochure"] },
+            "1976": { "code": "G6", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "renegade-orange-508",
+          "code": "508",
+          "name": "Renegade Orange (508)",
+          "searchName": "Renegade Orange",
+          "ppg": "60696",
+          "hex": "#C44B16",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-RenegadeOrange508.webp", "JeepColors-RenegadeOrange5082.webp"],
+          "years": {
+            "1972": { "code": "508", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "orange-bronze",
+          "code": "AD",
+          "name": "Orange Bronze",
+          "ppg": "3701",
+          "hex": "#C4622A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-OrangeBronze.webp", "JeepColors-OrangeBronze2.webp"],
+          "years": {
+            "1985": { "code": "AD", "s": ["PR"] },
+            "1986": { "code": "AD", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "copper-526",
+          "code": "526",
+          "name": "Copper Metallic",
+          "ppg": "24000",
+          "hex": "#B87333",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-CopperMetallic.webp", "JeepColors-CopperMetallic2.webp"],
+          "years": {
+            "1974": { "code": "526", "s": ["PR", "Brochure"] },
+            "1975": { "code": "526", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "cinnamon-met",
+          "code": "3K",
+          "name": "Cinnamon Metallic",
+          "ppg": "3597",
+          "hex": "#A0522D",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-CinnamonMetallic.webp", "JeepColors-CinnamonMetallic2.webp"],
+          "years": {
+            "1984": { "code": "3K", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "sunshine-yellow",
+          "code": "6V",
+          "name": "Sunshine Yellow",
+          "ppg": "2827",
+          "hex": "#F5D76E",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-SunshineYellow.webp", "JeepColors-SunshineYellow2.webp"],
+          "years": {
+            "1976": { "code": "6V", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "6V", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "6V", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "sun-yellow",
+          "code": "2B",
+          "name": "Sun Yellow",
+          "ppg": "3467",
+          "hex": "#F4D03F",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-SunYellow.webp", "JeepColors-SunYellow2.webp"],
+          "years": {
+            "1982": { "code": "2B", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "daisy-yellow",
+          "code": "513",
+          "name": "Daisy Yellow",
+          "ppg": "82071",
+          "hex": "#E8D030",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-DaisyYellow.webp", "JeepColors-DaisyYellow2.webp"],
+          "years": {
+            "1973": { "code": "513", "alt": "520", "s": ["PR", "Chip"] }
+          }
+        },
+        {
+          "id": "canary-yellow",
+          "code": "495",
+          "name": "Canary Yellow",
+          "ppg": "2266",
+          "hex": "#E8D44D",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-CanaryYellow.webp", "JeepColors-CanaryYellow2.webp"],
+          "years": {
+            "1972": { "code": "495", "amc": "A2", "s": ["PR", "Chip"] },
+            "1973": { "code": "495", "amc": "A2", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "mellow-yellow",
+          "code": "528",
+          "name": "Mellow Yellow",
+          "ppg": "81911",
+          "hex": "#E8D44D",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-MellowYellow.webp", "JeepColors-MellowYellow2.webp"],
+          "years": {
+            "1974": { "code": "528", "s": ["PR", "Brochure"] },
+            "1975": { "code": "528", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "saxon-yellow",
+          "code": "9L",
+          "name": "Saxon Yellow",
+          "ppg": "3113",
+          "hex": "#E8C547",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-SaxonYellow.webp", "JeepColors-SaxonYellow2.webp"],
+          "years": {
+            "1979": { "code": "9L", "s": ["PR", "FSM", "OL"] },
+            "1980": { "code": "9L", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "renegade-yellow",
+          "code": "510",
+          "name": "Renegade Yellow",
+          "ppg": "82054",
+          "hex": "#E6C200",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-RenegadeYellow.webp"],
+          "years": {
+            "1972": { "code": "510", "s": ["PR"] },
+            "1973": { "code": "510", "s": ["Chip"] },
+            "1974": { "code": "510", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "baja-yellow",
+          "code": "999",
+          "name": "Baja Yellow",
+          "ppg": "89993",
+          "hex": "#E6C200",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-BajaYellow.webp"],
+          "years": {
+            "1971": { "code": "999", "s": ["PR"] },
+            "1972": { "code": "999", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "autumn-gold",
+          "code": "1D",
+          "name": "Autumn Gold",
+          "ppg": "3369",
+          "hex": "#C9A227",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-AutumnGold.webp", "JeepColors-AutumnGold2.webp"],
+          "years": {
+            "1981": { "code": "1D", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "topaz-gold-met",
+          "code": "2H",
+          "name": "Topaz Gold Metallic",
+          "searchName": "Topaz Gold",
+          "ppg": "3471",
+          "hex": "#C9A227",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-TopazGoldMetallic.webp", "JeepColors-TopazGoldMetallic2.webp"],
+          "years": {
+            "1982": { "code": "2H", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "2H", "s": ["Brochure"] },
+            "1984": { "code": "2H", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "butterscotch-gold",
+          "code": "490",
+          "name": "Butterscotch Gold",
+          "ppg": "2399",
+          "hex": "#C9A227",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-ButterscotchGold.webp", "JeepColors-ButterscotchGold2.webp"],
+          "years": {
+            "1972": { "code": "490", "s": ["PR", "Chip"] },
+            "1973": { "code": "490", "s": ["PR", "Chip", "Brochure"] }
+          }
+        },
+        {
+          "id": "golden-ginger-met",
+          "code": "7M",
+          "name": "Golden Ginger Metallic",
+          "searchName": "Golden Ginger",
+          "ppg": "2899",
+          "hex": "#B8860B",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-GoldenGingerMetallic.webp", "JeepColors-GoldenGingerMetallic2.webp"],
+          "years": {
+            "1977": { "code": "7M", "s": ["OL"] },
+            "1978": { "code": "7M", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "harvest-gold-met",
+          "code": "527",
+          "name": "Harvest Gold Metallic",
+          "searchName": "Harvest Gold",
+          "ppg": "24005",
+          "hex": "#B0893A",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-HarvestGoldMetallic.webp", "JeepColors-HarvestGoldMetallic2.webp"],
+          "years": {
+            "1974": { "code": "527", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "dark-honey-met",
+          "code": "5D",
+          "name": "Dark Honey Metallic",
+          "searchName": "Dark Honey",
+          "ppg": "3696",
+          "hex": "#A67C3D",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-DarkHoneyMetallic.webp", "JeepColors-DarkHoneyMetallic2.webp"],
+          "years": {
+            "1985": { "code": "5D", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "5D", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "green-apple",
+          "code": "561",
+          "name": "Green Apple",
+          "ppg": "2708",
+          "hex": "#A8C63E",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-GreenApple.webp", "JeepColors-GreenApple2.webp"],
+          "years": {
+            "1975": { "code": "561", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "lime-green",
+          "code": "7P",
+          "name": "Lime Green",
+          "ppg": "2900",
+          "hex": "#8BC34A",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-LimeGreen.webp", "JeepColors-LimeGreen2.webp"],
+          "years": {
+            "1976": { "code": "7P", "s": ["PR"] },
+            "1977": { "code": "7P", "s": ["OL"] }
+          }
+        },
+        {
+          "id": "limefire-met",
+          "code": "6K",
+          "name": "Limefire Metallic",
+          "ppg": "2823",
+          "hex": "#7CB342",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-LimefireMetallic.webp"],
+          "years": {
+            "1976": { "code": "6K", "s": ["PR", "OL"] }
+          }
+        },
+        {
+          "id": "julep-green-met",
+          "code": "491",
+          "name": "Julep Green Metallic",
+          "searchName": "Julep Green",
+          "ppg": "44478",
+          "hex": "#6B9A4A",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-JulepGreenMetallic.webp", "JeepColors-JulepGreenMetallic2.webp"],
+          "years": {
+            "1972": { "code": "491", "s": ["PR", "Chip"] },
+            "1973": { "code": "491", "s": ["Chip"] }
+          }
+        },
+        {
+          "id": "avocado-mist-met",
+          "code": "431",
+          "name": "Avocado Mist Metallic",
+          "searchName": "Avocado Mist",
+          "ppg": "44115",
+          "hex": "#5A6B3A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-AvocadoMistMetallic.webp", "JeepColors-AvocadoMistMetallic2.webp"],
+          "years": {
+            "1972": { "code": "431", "s": ["PR", "Chip"] },
+            "1973": { "code": "431", "s": ["PR", "Chip", "Brochure"] }
+          }
+        },
+        {
+          "id": "silver-green-met",
+          "code": "529",
+          "name": "Silver Green Metallic",
+          "searchName": "Silver Green",
+          "ppg": "44905",
+          "hex": "#7A8F73",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-SilverGreenMetallic.webp", "JeepColors-SilverGreenMetallic2.webp"],
+          "years": {
+            "1974": { "code": "529", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "fairway-green-met",
+          "code": "512",
+          "name": "Fairway Green Metallic",
+          "searchName": "Fairway Green",
+          "ppg": "44760",
+          "hex": "#4A7A4A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-FairwayGreenMetallic.webp", "JeepColors-FairwayGreenMetallic2.webp"],
+          "years": {
+            "1973": { "code": "512", "s": ["PR", "Chip", "Brochure"] },
+            "1974": { "code": "512", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "medium-green-met",
+          "code": "5B",
+          "name": "Medium Green Metallic",
+          "searchName": "Medium Green",
+          "ppg": "3693",
+          "hex": "#3A6B4A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-MediumGreenMetallic.webp", "JeepColors-MediumGreenMetallic2.webp"],
+          "years": {
+            "1985": { "code": "5B", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "reef-green-met",
+          "code": "H2",
+          "name": "Reef Green Metallic",
+          "searchName": "Reef Green",
+          "ppg": "45020",
+          "hex": "#2E6B4F",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-ReefGreenMetallic.webp", "JeepColors-ReefGreenMetallic2.webp"],
+          "years": {
+            "1975": { "code": "560", "s": ["PR", "Brochure"] },
+            "1976": { "code": "H2", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "loden-green-met",
+          "code": "7L",
+          "name": "Loden Green Metallic",
+          "searchName": "Loden Green",
+          "ppg": "2898",
+          "hex": "#3D5C45",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-LodenGreenMetallic.webp", "JeepColors-LodenGreenMetallic2.webp"],
+          "years": {
+            "1977": { "code": "7L", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "7L", "s": ["PR", "FSM", "OL"] },
+            "1979": { "code": "7L", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "nordic-green",
+          "code": "4H",
+          "name": "Nordic Green",
+          "ppg": "3627",
+          "hex": "#2E5A3C",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-NordicGreen.webp", "JeepColors-NordicGreen2.webp"],
+          "years": {
+            "1984": { "code": "4H", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "sherwood-green-met",
+          "code": "1C",
+          "name": "Sherwood Green Metallic",
+          "searchName": "Sherwood Green",
+          "ppg": "3368",
+          "hex": "#2E4A3C",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-SherwoodGreenMetallic.webp", "JeepColors-SherwoodGreenMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1C", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "1C", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "1C", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "cumberland-green-met",
+          "code": "9H",
+          "name": "Cumberland Green Metallic",
+          "searchName": "Cumberland Green",
+          "ppg": "3110",
+          "hex": "#2F4F3F",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-CumberlandGreenMetallic.webp", "JeepColors-CumberlandGreenMetallic2.webp"],
+          "years": {
+            "1979": { "code": "9H", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "dark-green-met",
+          "code": "OE",
+          "name": "Dark Green Metallic",
+          "searchName": "Dark Green",
+          "ppg": "3242",
+          "hex": "#1E3A2F",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-DarkGreenMetallic.webp", "JeepColors-DarkGreenMetallic2.webp"],
+          "years": {
+            "1980": { "code": "OE", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "powder-blue",
+          "code": "7D",
+          "name": "Powder Blue",
+          "ppg": "2896",
+          "hex": "#7BA3C9",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-PowderBlue.webp", "JeepColors-PowderBlue2.webp"],
+          "years": {
+            "1977": { "code": "7D", "s": ["OL"] },
+            "1978": { "code": "7D", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "skyway-blue",
+          "code": "494",
+          "name": "Skyway Blue",
+          "ppg": "2391",
+          "hex": "#6BA8C8",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-SkywayBlue.webp", "JeepColors-SkywayBlue2.webp"],
+          "years": {
+            "1972": { "code": "7D", "s": ["PR", "Chip"] }
+          }
+        },
+        {
+          "id": "ice-blue-met",
+          "code": "4C",
+          "name": "Ice Blue Metallic",
+          "searchName": "Ice Blue",
+          "ppg": "3624",
+          "hex": "#6B8FA8",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-IceBlueMetallic.webp", "JeepColors-IceBlueMetallic2.webp"],
+          "years": {
+            "1984": { "code": "4C", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "4C", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "wedgewood-blue",
+          "code": "9E",
+          "name": "Wedgewood Blue",
+          "ppg": "3109",
+          "hex": "#5B8FA8",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-WedgewoodBlue.webp", "JeepColors-WedgewoodBlue2.webp"],
+          "years": {
+            "1979": { "code": "9E", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "moonlight-blue",
+          "code": "1B",
+          "name": "Moonlight Blue",
+          "ppg": "3367",
+          "hex": "#4A6FA5",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-MoonlightBlue.webp", "JeepColors-MoonlightBlue2.webp"],
+          "years": {
+            "1981": { "code": "1B", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "montana-blue",
+          "code": "1A",
+          "name": "Montana Blue",
+          "ppg": "3366",
+          "hex": "#3A6FA0",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-MontanaBlue.webp", "JeepColors-MontanaBlue2.webp"],
+          "years": {
+            "1981": { "code": "1A", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "teal-blue",
+          "code": "OJ",
+          "name": "Teal Blue",
+          "ppg": "3244",
+          "hex": "#2A6B7A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-TealBlue.webp", "JeepColors-TealBlue2.webp"],
+          "years": {
+            "1980": { "code": "OJ", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "medium-blue-met",
+          "code": "G9",
+          "name": "Medium Blue Metallic",
+          "searchName": "Medium Blue",
+          "ppg": "2704",
+          "hex": "#3A5F8A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-MediumBlueMetallic.webp"],
+          "years": {
+            "1975": { "code": "G9", "s": ["PR", "Brochure"] },
+            "1976": { "code": "G9", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "medium-blue-aj",
+          "code": "AJ",
+          "name": "Medium Blue Metallic",
+          "searchName": "Medium Blue",
+          "ppg": "3828",
+          "hex": "#3A5F8A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-MediumBlueMetallicAJ.webp", "JeepColors-MediumBlueMetallicAJ2.webp"],
+          "years": {
+            "1986": { "code": "AJ", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "brilliant-blue",
+          "code": "6R",
+          "name": "Brilliant Blue",
+          "ppg": "2825",
+          "hex": "#2E5A88",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-BrilliantBlue.webp", "JeepColors-BrilliantBlue2.webp"],
+          "years": {
+            "1976": { "code": "6R", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "6R", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "6R", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "jetset-blue-met",
+          "code": "492",
+          "name": "Jetset Blue Metallic",
+          "searchName": "Jetset Blue",
+          "ppg": "14529",
+          "hex": "#3A5A8C",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-JetsetBlueMetallic.webp", "JeepColors-JetsetBlueMetallic2.webp"],
+          "years": {
+            "1972": { "code": "492", "s": ["PR", "Chip"] },
+            "1973": { "code": "492", "s": ["PR", "Brochure", "Chip"] },
+            "1974": { "code": "492", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "slate-blue-met",
+          "code": "2C",
+          "name": "Slate Blue Metallic",
+          "searchName": "Slate Blue",
+          "ppg": "3468",
+          "hex": "#4A5F7A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-SlateBlueMetallic.webp", "JeepColors-SlateBlueMetallic2.webp"],
+          "years": {
+            "1982": { "code": "2C", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "2C", "s": ["PR", "OL", "Brochure"] },
+            "1984": { "code": "2C", "s": ["PR", "OL"] }
+          }
+        },
+        {
+          "id": "renegade-blue",
+          "code": "585",
+          "name": "Renegade Blue",
+          "ppg": "14800",
+          "hex": "#2A4A8A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-RenegadeBlue.webp", "JeepColors-RenegadeBlue2.webp"],
+          "years": {
+            "1975": { "code": "585", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "captain-blue-met",
+          "code": "7W",
+          "name": "Captain Blue Metallic",
+          "searchName": "Captain Blue",
+          "ppg": "2901",
+          "hex": "#2E4A7A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-CaptainBlueMetallic.webp", "JeepColors-CaptainBlueMetallic2.webp"],
+          "years": {
+            "1977": { "code": "7W", "s": ["OL"] },
+            "1978": { "code": "7W", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "ensign-blue",
+          "code": "9T",
+          "name": "Ensign Blue",
+          "ppg": "3117",
+          "hex": "#2C4A6E",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-EnsignBlue.webp", "JeepColors-EnsignBlue2.webp"],
+          "years": {
+            "1979": { "code": "9T", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "nautical-blue-met",
+          "code": "6T",
+          "name": "Nautical Blue Metallic",
+          "searchName": "Nautical Blue",
+          "ppg": "2826",
+          "hex": "#2C4A6E",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-NauticalBlueMetallic.webp"],
+          "years": {
+            "1976": { "code": "6T", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "midnight-blue-met",
+          "code": "7K",
+          "name": "Midnight Blue Metallic",
+          "searchName": "Midnight Blue",
+          "ppg": "2897",
+          "hex": "#1A2F4A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-MidnightBlueMetallic.webp", "JeepColors-MidnightBlueMetallic2.webp"],
+          "years": {
+            "1977": { "code": "7K", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "7K", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "navy-blue",
+          "code": "OH",
+          "name": "Navy Blue",
+          "ppg": "3243",
+          "hex": "#1A2A4A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-NavyBlue.webp", "JeepColors-NavyBlue2.webp"],
+          "years": {
+            "1980": { "code": "OH", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "deep-night-blue",
+          "code": "2D",
+          "name": "Deep Night Blue",
+          "ppg": "3469",
+          "hex": "#14243C",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-DeepNightBlue.webp", "JeepColors-DeepNightBlue2.webp"],
+          "years": {
+            "1982": { "code": "2D", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "2D", "s": ["PR", "OL", "Brochure"] },
+            "1984": { "code": "2D", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "2D", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "2D", "s": ["PR", "OL"] }
+          }
+        },
+        {
+          "id": "almond-beige",
+          "code": "3A",
+          "name": "Almond Beige",
+          "ppg": "3591",
+          "hex": "#E8D5B7",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-AlmondBeige.webp", "JeepColors-AlmondBeige2.webp"],
+          "years": {
+            "1983": { "code": "3A", "s": ["PR"] },
+            "1984": { "code": "3A", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "3A", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "champagne-met",
+          "code": "4D",
+          "name": "Champagne Metallic",
+          "searchName": "Champagne",
+          "ppg": "3625",
+          "hex": "#D4C4A8",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-ChampagneMetallic.webp", "JeepColors-ChampagneMetallic2.webp"],
+          "years": {
+            "1984": { "code": "4D", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "4D", "s": ["PR", "OL"] },
+            "1986": { "code": "4D", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "beige-ab",
+          "code": "AB",
+          "name": "Beige",
+          "ppg": "3826",
+          "hex": "#D2C2A0",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-BeigeAB.webp", "JeepColors-BeigeAB2.webp"],
+          "years": {
+            "1986": { "code": "AB", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "jamaica-beige",
+          "code": "2J",
+          "name": "Jamaican Beige",
+          "ppg": "3472",
+          "hex": "#C9B896",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-JamaicaBeige.webp", "JeepColors-JamaicaBeige2.webp"],
+          "years": {
+            "1982": { "code": "2J", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "2J", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "cameo-tan",
+          "code": "OK",
+          "name": "Cameo Tan",
+          "ppg": "3245",
+          "hex": "#D2B48C",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-CameoTan.webp", "JeepColors-CameoTan2.webp"],
+          "years": {
+            "1980": { "code": "OK", "s": ["PR", "Brochure", "OL"] },
+            "1981": { "code": "OK", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "fawn-beige",
+          "code": "514",
+          "name": "Fawn Beige",
+          "ppg": "23853",
+          "hex": "#C9B08A",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-FawnBeige.webp", "JeepColors-FawnBeige2.webp"],
+          "years": {
+            "1973": { "code": "514", "s": ["PR", "Chip", "Brochure"] },
+            "1974": { "code": "514", "s": ["PR", "Brochure"] },
+            "1975": { "code": "514", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "morocco-buff",
+          "code": "9N",
+          "name": "Morocco Buff",
+          "ppg": "3115",
+          "hex": "#C4A484",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-MoroccoBuff.webp", "JeepColors-MoroccoBuff2.webp"],
+          "years": {
+            "1979": { "code": "9N", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "sand-tan",
+          "code": "6D",
+          "name": "Sand Tan",
+          "ppg": "2820",
+          "hex": "#C2A878",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-SandTan.webp", "JeepColors-SandTan2.webp"],
+          "years": {
+            "1976": { "code": "6D", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "6D", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "6D", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "yuca-tan-met",
+          "code": "493",
+          "name": "Yuca Tan Metallic",
+          "searchName": "Yuca Tan",
+          "ppg": "2397",
+          "hex": "#C4A06A",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-YucaTanMetallic.webp", "JeepColors-YucaTanMetallic2.webp"],
+          "years": {
+            "1972": { "code": "493", "amc": "D2", "s": ["PR", "Chip"] }
+          }
+        },
+        {
+          "id": "golden-tan-met",
+          "code": "",
+          "name": "Golden Tan Metallic",
+          "searchName": "Golden Tan",
+          "ppg": "23819",
+          "hex": "#C4A06A",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-GoldenTanMetallic.webp", "JeepColors-GoldenTanMetallic2.webp"],
+          "years": {
+            "1974": { "code": "", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "caramel",
+          "code": "OR",
+          "name": "Caramel",
+          "ppg": "3249",
+          "hex": "#C68E5B",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-Caramel.webp", "JeepColors-Caramel2.webp"],
+          "years": {
+            "1980": { "code": "OR", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "khaki",
+          "code": "8A",
+          "name": "Khaki",
+          "ppg": "3028",
+          "hex": "#A08B5E",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-Khaki.webp", "JeepColors-Khaki2.webp"],
+          "years": {
+            "1978": { "code": "8A", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "copper-tan-met",
+          "code": "517",
+          "name": "Copper Tan Metallic",
+          "searchName": "Copper Tan",
+          "ppg": "23796",
+          "hex": "#A0522D",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-CopperTanMetallic.webp", "JeepColors-CopperTanMetallic2.webp"],
+          "years": {
+            "1972": { "code": "517", "alt": "524", "s": ["PR"] },
+            "1973": { "code": "517", "alt": "524", "s": ["PR", "Chip", "Brochure"] }
+          }
+        },
+        {
+          "id": "copper-600",
+          "code": "600",
+          "name": "Copper",
+          "searchName": "Copper",
+          "ppg": "24176",
+          "hex": "#8B4518",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-Copper600.webp", "JeepColors-Copper6002.webp"],
+          "years": {
+            "1975": { "code": "600", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "oak-leaf-brown",
+          "code": "7E",
+          "name": "Oak Leaf Brown",
+          "ppg": "24443",
+          "hex": "#8B5A2B",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-OakLeafBrown.webp", "JeepColors-OakLeafBrown2.webp"],
+          "years": {
+            "1977": { "code": "7E", "s": ["OL"] },
+            "1978": { "code": "7E", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "british-bronze",
+          "code": "8B",
+          "name": "British Bronze",
+          "ppg": "3029",
+          "hex": "#8A5A2A",
+          "text": "#fff",
+          "metallic": false,
+          "images": ["JeepColors-BritishBronze.webp", "JeepColors-BritishBronze2.webp"],
+          "years": {
+            "1978": { "code": "8B", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "alpaca-brown-met",
+          "code": "9A",
+          "name": "Alpaca Brown Metallic",
+          "searchName": "Alpaca Brown",
+          "ppg": "3106",
+          "hex": "#8B6914",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-AlpacaBrownMetallic.webp", "JeepColors-AlpacaBrownMetallic2.webp"],
+          "years": {
+            "1979": { "code": "9A", "s": ["PR", "FSM", "OL"] },
+            "1980": { "code": "9A", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "russet-met",
+          "code": "9C",
+          "name": "Russet Metallic",
+          "searchName": "Russet",
+          "ppg": "3108",
+          "hex": "#8B4513",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-RussetMetallic.webp", "JeepColors-RussetMetallic2.webp"],
+          "years": {
+            "1979": { "code": "9C", "s": ["PR", "FSM", "OL"] },
+            "1980": { "code": "9C", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "copper-brown-met",
+          "code": "1E",
+          "name": "Copper Brown Metallic",
+          "searchName": "Copper Brown",
+          "ppg": "3370",
+          "hex": "#8B4513",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-CopperBrownMetallic.webp", "JeepColors-CopperBrownMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1E", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "1E", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "1E", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "chestnut-brown-met",
+          "code": "1H",
+          "name": "Chestnut Brown Metallic",
+          "searchName": "Chestnut Brown",
+          "ppg": "3371",
+          "hex": "#6B3A2A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-ChestnutBrownMetallic.webp", "JeepColors-ChestnutBrownMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1H", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "1H", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "1H", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "chestnut-4e",
+          "code": "4E",
+          "name": "Chestnut Brown Metallic",
+          "searchName": "Chestnut Brown",
+          "ppg": "3626",
+          "hex": "#6B3A2A",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-ChestnutBrownMetallic4E.webp", "JeepColors-ChestnutBrownMetallic4E2.webp"],
+          "years": {
+            "1984": { "code": "4E", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "mocha-brown-met",
+          "code": "7B",
+          "name": "Mocha Brown Metallic",
+          "searchName": "Mocha Brown",
+          "ppg": "2895",
+          "hex": "#5C4033",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-MochaBrownMetallic.webp", "JeepColors-MochaBrownMetallic2.webp"],
+          "years": {
+            "1977": { "code": "7B", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "7B", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "sable-brown-met",
+          "code": "9K",
+          "name": "Sable Brown Metallic",
+          "searchName": "Sable Brown",
+          "ppg": "3112",
+          "hex": "#5D4037",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-SableBrownMetallic.webp", "JeepColors-SableBrownMetallic2.webp"],
+          "years": {
+            "1979": { "code": "9K", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "dark-cocoa-met",
+          "code": "H4",
+          "name": "Dark Cocoa Metallic",
+          "searchName": "Dark Cocoa",
+          "ppg": "2796",
+          "hex": "#4A3728",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-DarkCocoaMetallic.webp", "JeepColors-DarkCocoaMetallic2.webp"],
+          "years": {
+            "1976": { "code": "H4", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "dark-brown-met",
+          "code": "OM",
+          "name": "Dark Brown Metallic",
+          "searchName": "Dark Brown",
+          "ppg": "3247",
+          "hex": "#3D2B1F",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-DarkBrownMetallic.webp", "JeepColors-DarkBrownMetallic2.webp"],
+          "years": {
+            "1980": { "code": "OM", "s": ["PR", "Brochure", "OL"] },
+            "1981": { "code": "OM", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "OM", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "dark-brown-5e",
+          "code": "5E",
+          "name": "Dark Brown Metallic",
+          "searchName": "Dark Brown",
+          "ppg": "3697",
+          "hex": "#3A281C",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-DarkBrownMetallic5E.webp", "JeepColors-DarkBrownMetallic5E2.webp"],
+          "years": {
+            "1985": { "code": "5E", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "5E", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "alpine-white",
+          "code": "G7",
+          "name": "Alpine White",
+          "ppg": "2702",
+          "hex": "#F4F1E8",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-AlpineWhite.webp", "JeepColors-AlpineWhite2.webp"],
+          "years": {
+            "1975": { "code": "G7", "s": ["PR", "Brochure"] },
+            "1976": { "code": "G7", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "G7", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "G7", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "olympic-white",
+          "code": "9B",
+          "name": "Olympic White",
+          "ppg": "3107",
+          "hex": "#F2F0E6",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-OlympicWhite.webp", "JeepColors-OlympicWhite2.webp"],
+          "years": {
+            "1979": { "code": "9B", "s": ["PR", "FSM", "OL"] },
+            "1980": { "code": "9B", "s": ["PR", "Brochure", "OL"] },
+            "1981": { "code": "9B", "s": ["PR", "FSM", "OL"] },
+            "1982": { "code": "9B", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "9B", "s": ["PR", "OL", "Brochure"] },
+            "1984": { "code": "9B", "s": ["PR", "OL", "Brochure"] },
+            "1985": { "code": "9B", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "9B", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "champagne-white",
+          "code": "432",
+          "name": "Champagne White",
+          "ppg": "8818",
+          "hex": "#EFE8D8",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-ChampagneWhite.webp", "JeepColors-ChampagneWhite2.webp"],
+          "years": {
+            "1972": { "code": "432", "s": ["PR", "Chip"] },
+            "1973": { "code": "432", "s": ["PR", "Chip", "Brochure"] },
+            "1974": { "code": "432", "s": ["PR", "Brochure"] }
+          }
+        },
+        {
+          "id": "mist-silver-met",
+          "code": "2A",
+          "name": "Mist Silver Metallic",
+          "searchName": "Mist Silver",
+          "ppg": "3466",
+          "hex": "#C2C6CA",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-MistSilverMetallic.webp", "JeepColors-MistSilverMetallic2.webp"],
+          "years": {
+            "1982": { "code": "2A", "s": ["PR", "FSM", "OL"] },
+            "1983": { "code": "2A", "s": ["PR", "OL", "Brochure"] },
+            "1984": { "code": "2A", "s": ["PR", "OL"] }
+          }
+        },
+        {
+          "id": "quicksilver",
+          "code": "8C",
+          "name": "Quicksilver",
+          "ppg": "3030",
+          "hex": "#B8BDC4",
+          "text": "#000",
+          "metallic": false,
+          "images": ["JeepColors-Quicksilver.webp", "JeepColors-Quicksilver2.webp"],
+          "years": {
+            "1978": { "code": "8C", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "silver-met-4k",
+          "code": "4K",
+          "name": "Silver Metallic",
+          "ppg": "3629",
+          "hex": "#B4B8BE",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-SilverMetallic.webp", "JeepColors-SilverMetallic2.webp"],
+          "years": {
+            "1984": { "code": "4K", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "arrowhead-silver-met",
+          "code": "9J",
+          "name": "Arrowhead Silver Metallic",
+          "searchName": "Arrowhead Silver",
+          "ppg": "3118",
+          "hex": "#B0B6BE",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-ArrowheadSilverMetallic.webp", "JeepColors-ArrowheadSilverMetallic2.webp"],
+          "years": {
+            "1979": { "code": "9J", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "sterling-met",
+          "code": "3D",
+          "name": "Sterling Metallic",
+          "searchName": "Sterling Silver",
+          "ppg": "3594",
+          "hex": "#A8AEB6",
+          "text": "#000",
+          "metallic": true,
+          "images": ["JeepColors-SterlingMetallic.webp", "JeepColors-SterlingMetallic2.webp"],
+          "years": {
+            "1983": { "code": "3D", "s": ["OL"] },
+            "1985": { "code": "3D", "s": ["PR", "OL", "Brochure"] },
+            "1986": { "code": "3D", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "pewter-gray-met",
+          "code": "J1",
+          "name": "Pewter Gray Metallic",
+          "searchName": "Pewter Gray",
+          "ppg": "33160",
+          "hex": "#8A8E94",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-PewterGrayMetallic.webp", "JeepColors-PewterGrayMetallic2.webp"],
+          "years": {
+            "1975": { "code": "559", "s": ["PR", "Brochure"] },
+            "1976": { "code": "J1", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "6J", "s": ["PR", "FSM"] },
+            "1978": { "code": "J1", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "smoke-gray-met",
+          "code": "OB",
+          "name": "Smoke Gray Metallic",
+          "searchName": "Smoke Gray",
+          "ppg": "3239",
+          "hex": "#6E7278",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-SmokeGrayMetallic.webp", "JeepColors-SmokeGrayMetallic2.webp"],
+          "years": {
+            "1980": { "code": "OB", "s": ["PR", "Brochure", "OL"] }
+          }
+        },
+        {
+          "id": "steel-gray-met",
+          "code": "1L",
+          "name": "Steel Gray Metallic",
+          "searchName": "Steel Gray",
+          "ppg": "3374",
+          "hex": "#5C6168",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-SteelGrayMetallic.webp", "JeepColors-SteelGrayMetallic2.webp"],
+          "years": {
+            "1981": { "code": "1L", "s": ["PR", "FSM", "OL"] }
+          }
+        },
+        {
+          "id": "charcoal-met",
+          "code": "4M",
+          "name": "Charcoal Metallic",
+          "ppg": "3618",
+          "hex": "#3A3D42",
+          "text": "#fff",
+          "metallic": true,
+          "images": ["JeepColors-CharcoalMetallic.webp", "JeepColors-CharcoalMetallic2.webp"],
+          "years": {
+            "1986": { "code": "4M", "s": ["PR", "OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "classic-black",
+          "code": "P1",
+          "name": "Raven / Classic Black",
+          "searchName": "Black",
+          "ppg": "9000",
+          "hex": "#111111",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-ClassicBlack.webp", "JeepColors-ClassicBlack2.webp"],
+          "years": {
+            "1972": { "code": "X", "s": ["PR", "Chip"] },
+            "1973": { "code": "", "s": ["PR"] },
+            "1974": { "code": "", "s": ["PR"] },
+            "1975": { "code": "21", "s": ["PR", "Brochure"] },
+            "1976": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+            "1977": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+            "1978": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+            "1979": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+            "1980": { "code": "P1", "s": ["PR", "Brochure", "OL"] },
+            "1981": { "code": "P1", "s": ["FSM", "OL"] },
+            "1982": { "code": "P1", "s": ["FSM", "OL"] },
+            "1983": { "code": "P1", "s": ["OL", "Brochure"] },
+            "1984": { "code": "P1", "s": ["OL", "Brochure"] },
+            "1985": { "code": "P1", "s": ["OL", "Brochure"] },
+            "1986": { "code": "P1", "s": ["OL", "Brochure"] }
+          }
+        },
+        {
+          "id": "transport-yellow",
+          "code": "FA",
+          "name": "Transport Yellow (Fleet)",
+          "searchName": "Transport Yellow",
+          "ppg": "80020",
+          "hex": "#E3C000",
+          "text": "#000",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-TransportYellow.webp", "JeepColors-TransportYellow2.webp"],
+          "years": {
+            "1972": { "code": "81", "s": ["PR", "Chip"] },
+            "1973": { "code": "FA", "s": ["PR"] },
+            "1974": { "code": "81", "s": ["PR"] },
+            "1975": { "code": "81", "s": ["PR"] },
+            "1976": { "code": "FA", "s": ["PR", "OL"] },
+            "1980": { "code": "FA", "s": ["PR"] },
+            "1981": { "code": "FA", "s": ["PR"] },
+            "1982": { "code": "FA", "s": ["PR"] },
+            "1983": { "code": "FA", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "olive-drab",
+          "code": "FH",
+          "name": "Olive Drab (Fleet)",
+          "searchName": "Olive Drab",
+          "ppg": "42955",
+          "hex": "#4B5320",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-OliveDrab.webp", "JeepColors-OliveDrab2.webp"],
+          "years": {
+            "1973": { "code": "FH", "s": ["PR"] },
+            "1974": { "code": "134", "s": ["PR"] },
+            "1975": { "code": "134", "s": ["PR"] },
+            "1976": { "code": "FH", "s": ["PR"] },
+            "1980": { "code": "FH", "s": ["PR"] },
+            "1981": { "code": "FH", "s": ["PR"] },
+            "1982": { "code": "FH", "s": ["PR"] },
+            "1983": { "code": "FH", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "federal-gray",
+          "code": "FC",
+          "name": "Federal Gray (Fleet)",
+          "searchName": "Federal Gray",
+          "ppg": "31817",
+          "hex": "#6B6E72",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": [],
+          "years": {
+            "1972": { "code": "221", "s": ["PR", "Chip"] },
+            "1973": { "code": "221", "s": ["PR"] },
+            "1974": { "code": "221", "s": ["PR"] },
+            "1975": { "code": "221", "s": ["PR"] },
+            "1976": { "code": "FC", "s": ["PR", "OL"] },
+            "1980": { "code": "FC", "s": ["PR"] },
+            "1981": { "code": "FC", "s": ["PR"] },
+            "1982": { "code": "FC", "s": ["PR"] },
+            "1983": { "code": "FC", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "marlin-blue",
+          "code": "394",
+          "name": "Marlin Blue (Fleet)",
+          "searchName": "Marlin Blue",
+          "ppg": "13156",
+          "hex": "#2A4A6E",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-MarlinBlue.webp", "JeepColors-MarlinBlue2.webp"],
+          "years": {
+            "1972": { "code": "394", "s": ["PR", "Chip"] },
+            "1973": { "code": "394", "s": ["PR"] },
+            "1974": { "code": "394", "s": ["PR"] },
+            "1975": { "code": "394", "s": ["PR"] },
+            "1976": { "code": "394", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "omaha-orange",
+          "code": "FB",
+          "name": "Omaha Orange (Fleet)",
+          "searchName": "Omaha Orange",
+          "ppg": "60281",
+          "hex": "#FF8C00",
+          "text": "#000",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-OmahaOrange.webp", "JeepColors-OmahaOrange2.webp"],
+          "years": {
+            "1972": { "code": "135", "s": ["PR", "Chip"] },
+            "1973": { "code": "FB", "s": ["PR"] },
+            "1974": { "code": "135", "s": ["PR"] },
+            "1975": { "code": "135", "s": ["PR"] },
+            "1976": { "code": "FB", "s": ["PR", "OL"] },
+            "1980": { "code": "FB", "s": ["PR"] },
+            "1981": { "code": "FB", "s": ["PR"] },
+            "1982": { "code": "FB", "s": ["PR"] },
+            "1983": { "code": "FB", "s": ["PR"] },
+            "1985": { "code": "FB", "s": ["PR"] }
+          }
+        },
+        {
+          "id": "forest-green",
+          "code": "FE",
+          "name": "Forest Green (Fleet)",
+          "searchName": "Forest Green",
+          "ppg": "44586",
+          "hex": "#2F4F2F",
+          "text": "#fff",
+          "metallic": false,
+          "fleet": true,
+          "images": ["JeepColors-ForestGreen.webp", "JeepColors-ForestGreen2.webp"],
+          "years": {
+            "1972": { "code": "504", "s": ["PR", "Chip"] },
+            "1974": { "code": "504", "s": ["PR"] },
+            "1975": { "code": "504", "s": ["PR"] },
+            "1976": { "code": "FE", "s": ["PR", "OL"] },
+            "1980": { "code": "504", "s": ["PR"] },
+            "1981": { "code": "504", "s": ["PR"] },
+            "1982": { "code": "504", "s": ["PR"] },
+            "1983": { "code": "504", "s": ["PR"] }
+          }
+        }
+      ]
+    };
+
+    function jeepColors() {
+      const ENGINE_KEY = "jeepImgEngine";
+      const engines = {
+        google: function (q) { return "https://www.google.com/search?tbm=isch&udm=2&q=" + encodeURIComponent(q); },
+        ddg: function (q) { return "https://duckduckgo.com/?iax=images&ia=images&q=" + encodeURIComponent(q); }
+      };
+      const srcLabel = { PR: "PaintRef", FSM: "FSM", OL: "Olenik", Brochure: "Brochure" };
+
+      function yearKeys(color) {
+        return Object.keys(color.years || {});
+      }
+
+      function yearEntry(color, year) {
+        const map = color.years || {};
+        return map[year] || map[String(year)] || null;
+      }
+
+      function sourcesIn(entry) {
+        return (entry && entry.s) ? entry.s.slice() : [];
+      }
+
+      function hasSrc(list, code) {
+        return list.indexOf(code) !== -1;
+      }
+
+      function yearMarks(color) {
+        return yearKeys(color).sort().map(function (y) {
+          var list = sourcesIn(yearEntry(color, y));
+          var pr = hasSrc(list, "PR");
+          var ol = hasSrc(list, "OL");
+          var extra = false;
+          var i;
+          for (i = 0; i < list.length; i++) {
+            if (list[i] !== "PR" && list[i] !== "OL") extra = true;
+          }
+          var star = !extra && ((pr && !ol) || (ol && !pr));
+          return (star ? "*" : "") + y;
+        });
+      }      
+
+      function derivedBand(list) {
+        const s = {};
+        (list || []).forEach(function (x) { s[String(x).toLowerCase()] = true; });
+
+        const fsm = !!s.fsm;
+        const brochure = !!s.brochure;
+        const chip = !!s.chip;
+        const pr = !!s.pr;
+        const olenik = !!s.olenik;
+
+        if (fsm || brochure) return "confirmed";
+        if (chip && (pr || olenik)) return "high";
+        if (pr && olenik) return "high";
+        if (pr || olenik || chip) return "moderate";
+        return "";
+      }
+
+      function uniqueSources(color, year) {
+        const seen = [];
+        const keys = year && year !== "all" ? [String(year)] : yearKeys(color);
+        keys.forEach(function (y) {
+          sourcesIn(yearEntry(color, y)).forEach(function (code) {
+            const name = srcLabel[code] || code;
+            if (seen.indexOf(name) === -1) seen.push(name);
+          });
+        });
+        return seen;
+      }
+
+      return {
+        data: null,
+        year: "all",
+        engine: "google",
+        error: "",
+        collapsed: {},
+        cacheBust: "?v=" + Math.floor(Date.now() / 86400000),
+
+        get years() {
+          return (this.data && this.data.meta && this.data.meta.years) || [];
+        },
+        get visibleColors() {
+          const colors = (this.data && this.data.colors) || [];
+          if (this.year === "all") return colors;
+          const key = String(this.year);
+          return colors.filter(function (c) { return !!(c.years && c.years[key]); });
+        },
+
+        init() {
+          try {
+            const saved = localStorage.getItem(ENGINE_KEY);
+            if (saved && engines[saved]) this.engine = saved;
+          } catch (e) { }
+
+          this.data = window.JEEP_COLORS || null;
+          if (!this.data || !this.data.colors) {
+            this.error = "Color data failed to load.";
+          }
+
+          this.$watch("engine", function (next) {
+            try { localStorage.setItem(ENGINE_KEY, next); } catch (e) { }
+          });
+        },
+
+        displayCode(color) {
+          if (this.year !== "all") {
+            const entry = yearEntry(color, this.year);
+            if (entry && entry.code !== undefined) return entry.code;
+          }
+          return color.code || "";
+        },
+
+        label(color) {
+          const code = this.displayCode(color);
+          return (code ? code + " " : "") + color.name;
+        },
+
+        confidenceLine(color) {
+          const entry = yearEntry(color, this.year);
+          const list = sourcesIn(entry);
+          let band = derivedBand(list);
+          const raw = entry && entry.o ? String(entry.o).toLowerCase() : "";
+          if (raw === "confirmed" || raw === "high" || raw === "moderate") band = raw;
+          if (!band) return "";
+          const word = { confirmed: "Confirmed", high: "High", moderate: "Moderate" }[band];
+          return "Data Confidence: " + word + " (" + this.year + ")";
+        },
+
+        photoAt(color, slot) {
+          const list = color.images || [];
+          return list[slot] || "";
+        },
+
+        sourcesLine(color) {
+          if (this.year === "all") {
+            var marks = yearMarks(color);
+            return "Years: " + (marks.length ? marks.join(", ") : "—");
+          }
+          var names = uniqueSources(color, this.year);
+          return "Sources: " + (names.length ? names.join(", ") : "—");
+        },
+
+        searchQuery(color) {
+          const name = color.searchName || color.name || "";
+          const parts = ['"Jeep"', '"' + name + '"'];
+
+          const yearKeys = Object.keys(color.years || {}).sort();
+          if (yearKeys.length === 1) {
+            parts.push(yearKeys[0]);
+          } else if (yearKeys.length >= 2 && yearKeys.length <= 4) {
+            parts.push("(" + yearKeys.join(" OR ") + ")");
+          }
+
+          parts.push("(CJ OR FSJ OR J10 OR J20 OR Wagoneer OR Cherokee OR Comanche)");
+
+          if (this.engine === "google") {
+            parts.push("-Wrangler -YJ -TJ -JK -JL -Gladiator");
+          }
+          return parts.join(" ");
+        },
+
+        searchUrl(color) {
+          const build = engines[this.engine] || engines.google;
+          return build(this.searchQuery(color));
+        },
+
+        swatchStyle(color) {
+          return {
+            background: color.hex,
+            color: color.text || "#000"
+          };
+        }
+      };
+    }
+  </script>
 </body>
+
 </html>
