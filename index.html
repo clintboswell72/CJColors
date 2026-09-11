@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Cache-Control" content="no-cache, max-age=0, must-revalidate">
+  <meta http-equiv="Cache-Control" content="max-age=300">
   <meta http-equiv="Pragma" content="no-cache">
   <title>Jeep Colors 1972–1986</title>
   <script defer src="alpine.min.js"></script>
@@ -195,7 +195,6 @@
     .to-top:focus {
       background: #eee;
     }
-
   </style>
 </head>
 
@@ -265,9 +264,8 @@
           <template x-for="slot in [0, 1]" :key="color.id + '-slot-' + slot">
             <a class="photo-cell img-search" :href="searchUrl(color)" target="_blank" rel="noopener noreferrer"
               :style="swatchStyle(color)">
-              <img class="color-image" x-show="photoAt(color, slot)"
-                :src="photoAt(color, slot) ? photoAt(color, slot) + cacheBust : null" :alt="color.name"
-                @error="$el.classList.add('is-missing')">
+              <img class="color-image" x-show="photoAt(color, slot)" :src="photoAt(color, slot) || null"
+                :alt="color.name" @error="$el.classList.add('is-missing')">
             </a>
           </template>
 
