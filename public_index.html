@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="max-age=300">
+  <meta http-equiv="Pragma" content="no-cache">
+  <title>Jeep Colors 1972–1986</title>
+  <script defer src="alpine.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 16px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 20pt;
+      font-weight: bold;
+      line-height: 1.1;
+      color: #111;
+      font-family: inherit;
+    }
+
+    .note {
+      color: #000;
+      font-size: clamp(13px, 1.6vw, 16px);
+      margin-bottom: 12px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      margin: 0 0 20px 0;
+      font-size: clamp(13px, 1.6vw, 16px);
+      color: #555;
+    }
+
+    .toolbar label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .toolbar select {
+      font: inherit;
+      padding: 4px 8px;
+    }
+
+    .status {
+      color: #a00;
+      margin-bottom: 12px;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(8px, 1.5vw, 16px);
+    }
+
+    .color-item {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) minmax(0, 3fr) auto;
+      gap: clamp(6px, 1vw, 10px);
+      width: min(100%, 72rem);
+      margin-inline: auto;
+      color: inherit;
+      align-items: stretch;
+    }
+
+    .color-cell,
+    .photo-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(10px, 2vw, 16px);
+      font-weight: bold;
+      line-height: 1.25;
+      border: 2px solid #333;
+      padding: clamp(4px, 1vw, 10px);
+      min-height: 0;
+      min-width: 0;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ppg-link {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.22);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: bold;
+    }
+
+    .ppg-link:hover,
+    .ppg-link:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .evidence {
+      margin-top: 4px;
+      font-size: clamp(9px, 1.3vw, 12px);
+      font-weight: normal;
+      line-height: 1.25;
+      opacity: 0.94;
+    }
+
+    .evidence-conf {}
+
+    .evidence-src {
+      font-weight: normal;
+    }
+
+    .color-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 16 / 9;
+      background: transparent;
+    }
+
+    .photo-cell .color-image.is-missing {
+      display: none;
+    }
+
+    .photo-cell {
+      min-height: 4.5rem;
+    }
+
+    .collapse-btn {
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      border: 2px solid #333;
+      background: #fff;
+      color: #111;
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      align-self: center;
+    }
+
+    .color-item.collapsed .ppg-link,
+    .color-item.collapsed .evidence,
+    .color-item.collapsed .color-image {
+      display: none;
+    }
+
+    .color-item.collapsed .color-cell {
+      padding-block: 6px;
+    }
+
+    .to-top {
+      position: fixed;
+      left: 16px;
+      right: auto;
+      bottom: 16px;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 8px 10px;
+      border: 2px solid #333;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .to-top-arrow {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .to-top:hover,
+    .to-top:focus {
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="top"></div>
+  <div x-data="jeepColors()" x-init="init()">
+    <h1>Jeep Colors 1972-1986</h1>
+
+    <p class="note">
+      This started as a way to pick a color for my rusty CJ-7. The published lists disagree, and there are few
+      authoritative sources. Factory service manuals and
+      dealer brochures are the strongest paper evidence; firewall tags would be better, but nobody can collect them all.
+      Surviving AMC paint brochures do not
+      separate AMC colors from Jeep colors, and supplier chips are not authoritative. Olenik and PaintRef.com are useful
+      but conflict with each other—and PaintRef
+      sometimes conflicts with itself by year versus by color. So this is one list with a confidence grade per year,
+      based on the quality of the sources behind it.
+      Sources: <a href="">www.paintref.com</a>, <a
+        href="https://www.bing.com/ck/a?!&&p=9d16d99f2424cdb07248778db034245ac04c6ecfb1e42cdad4faaf008b687148JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=1e9cba07-7df1-6255-06d7-af917cd8638c&psq=olenik+jeep+colors+chart&u=a1aHR0cDovL3d3dy44MmphbWJvLmNvbS9kb2N1bWVudHMvUGFpbnQlMjBhbmQlMjBUcmltJTIwQ29kZXMvMTk3Ni0xOTg2JTIwUGFpbnQlMjBDb2Rlcy5wZGY">Olenik</a>,
+      and available PDF FSMs and brochures.
+
+    </p>
+
+    <p class="note">How to Use</p>
+    <ul class="note">
+      <li>Click an image to search photos of that color</li>
+      <li>Click the PPG link for paint-code details</li>
+      <li>Use the year menu to show only that model year</li>
+      <li>Use − / + to collapse or expand a row</li>
+    </ul>
+
+    <div class="toolbar">
+      <label>
+        Year
+        <select x-model="year">
+          <option value="all">All</option>
+          <template x-for="y in years" :key="y">
+            <option :value="String(y)" x-text="y"></option>
+          </template>
+        </select>
+      </label>
+      <span>Image search:</span>
+      <label><input type="radio" name="engine" value="google" x-model="engine"> Google</label>
+      <label><input type="radio" name="engine" value="ddg" x-model="engine"> DuckDuckGo</label>
+    </div>
+
+    <p class="status" x-show="error" x-text="error"></p>
+
+
+    <div class="color-grid">
+      <template x-for="color in visibleColors" :key="color.id">
+        <div class="color-item" :class="{ collapsed: collapsed[color.id] }">
+          <div class="color-cell" :style="swatchStyle(color)">
+            <a class="img-search" :href="searchUrl(color)" target="_blank" rel="noopener noreferrer"
+              :style="{ color: color.text }">
+              <span x-text="label(color)"></span>
+            </a>
+            <a class="ppg-link" :href="'https://paintref.com/cgi-bin/paintdetail.cgi?ppg=' + color.ppg" target="_blank"
+              rel="noopener noreferrer">PPG: <span x-text="color.ppg"></span></a>
+            <div class="evidence">
+              <div class="evidence-conf" x-show="year !== 'all' && confidenceLine(color)"
+                x-text="confidenceLine(color)"></div>
+              <div class="evidence-src" x-text="sourcesLine(color)"></div>
+            </div>
+          </div>
+
+          <template x-for="slot in [0, 1]" :key="color.id + '-slot-' + slot">
+            <a class="photo-cell img-search" :href="searchUrl(color)" target="_blank" rel="noopener noreferrer"
+              :style="swatchStyle(color)">
+              <img class="color-image" x-show="photoAt(color, slot)" :src="photoAt(color, slot) || null"
+                :alt="color.name" @error="$el.classList.add('is-missing')">
+            </a>
+          </template>
+
+          <button type="button" class="collapse-btn" :aria-expanded="!collapsed[color.id]"
+            :aria-label="collapsed[color.id] ? 'Expand row' : 'Collapse row'"
+            @click="collapsed[color.id] = !collapsed[color.id]" x-text="collapsed[color.id] ? '+' : '−'"></button>
+        </div>
+      </template>
+    </div>
+  </div>
+
+
+  <a class="to-top" href="#top" aria-label="Back to top">
+    <span class="to-top-arrow" aria-hidden="true">↑</span>
+    Top
+  </a>
+
+  <script>
+    window.JEEP_COLORS = [];
+
+    function jeepColors() {
+      const engines = {
+        google: function (q) { return "https://www.google.com/search?tbm=isch&udm=2&q=" + encodeURIComponent(q); },
+        ddg: function (q) { return "https://duckduckgo.com/?iax=images&ia=images&q=" + encodeURIComponent(q); }
+      };
+      const srcLabel = { PR: "PaintRef", FSM: "FSM", OL: "Olenik", Brochure: "Brochure", Chip: "OEM Paint Chip" };
+
+      function yearKeys(color) {
+        return Object.keys(color.years || {});
+      }
+
+      function yearEntry(color, year) {
+        const map = color.years || {};
+        return map[year] || map[String(year)] || null;
+      }
+
+      function sourcesIn(entry) {
+        return (entry && entry.s) ? entry.s.slice() : [];
+      }
+
+      function hasSrc(list, code) {
+        return list.indexOf(code) !== -1;
+      }
+
+      function yearMarks(color) {
+        return yearKeys(color).sort().map(function (y) {
+          var list = sourcesIn(yearEntry(color, y));
+          var pr = hasSrc(list, "PR");
+          var ol = hasSrc(list, "OL");
+          var extra = false;
+          var i;
+          for (i = 0; i < list.length; i++) {
+            if (list[i] !== "PR" && list[i] !== "OL") extra = true;
+          }
+          var star = !extra && ((pr && !ol) || (ol && !pr));
+          return (star ? "*" : "") + y;
+        });
+      }
+
+      function derivedBand(list) {
+        const s = {};
+        (list || []).forEach(function (x) { s[String(x).toLowerCase()] = true; });
+
+        const fsm = !!s.fsm;
+        const brochure = !!s.brochure;
+        const chip = !!s.chip;
+        const pr = !!s.pr;
+        const olenik = !!s.ol;
+
+        if (fsm || brochure) return "confirmed";
+        if (chip && (pr || olenik)) return "confirmed";
+        if (chip) return "high";
+        if (pr && olenik) return "high";
+        if (pr || olenik) return "moderate";
+        return "";
+      }
+
+      function uniqueSources(color, year) {
+        const seen = [];
+        const keys = year && year !== "all" ? [String(year)] : yearKeys(color);
+        keys.forEach(function (y) {
+          sourcesIn(yearEntry(color, y)).forEach(function (code) {
+            const name = srcLabel[code] || code;
+            if (seen.indexOf(name) === -1) seen.push(name);
+          });
+        });
+        return seen;
+      }
+
+      return {
+        data: null,
+        year: "all",
+        engine: "google",
+        error: "",
+        collapsed: {},
+
+        get years() {
+          return (this.data && this.data.meta && this.data.meta.years) || [];
+        },
+
+        get visibleColors() {
+          const colors = (this.data && this.data.colors) || [];
+          if (this.year === "all") return colors;
+          const key = String(this.year);
+          return colors.filter(function (c) { return !!(c.years && c.years[key]); });
+        },
+
+        get yearLabel() {
+          return this.year === "all" ? "1972–1986" : String(this.year);
+        },
+
+        init() {
+          fetch('colors.json')
+            .then(function (r) {
+              if (!r.ok) throw new Error(r.status);
+              return r.json();
+            })
+            .then(function (data) {
+              window.JEEP_COLORS = data;
+              this.data = data;
+              this.error = "";
+            }.bind(this))
+            .catch(function (err) {
+              console.error(err);
+              this.data = window.JEEP_COLORS || null;
+              this.error = "Color data failed to load.";
+            }.bind(this));
+        },
+
+        displayCode(color) {
+          if (this.year !== "all") {
+            const entry = yearEntry(color, this.year);
+            if (entry && entry.code !== undefined) return entry.code;
+          }
+          return color.code || "";
+        },
+
+        label(color) {
+          const code = this.displayCode(color);
+          return color.name + (code ? " " + code : "");
+        },
+
+        confidenceLine(color) {
+          const entry = yearEntry(color, this.year);
+          const list = sourcesIn(entry);
+          let band = derivedBand(list);
+          const raw = entry && entry.o ? String(entry.o).toLowerCase() : "";
+          if (raw === "confirmed" || raw === "high" || raw === "moderate") band = raw;
+          if (!band) return "";
+          const word = { confirmed: "Confirmed", high: "High", moderate: "Moderate" }[band];
+          return "Data Confidence: " + word + " (" + this.year + ")";
+        },
+
+        photoAt(color, slot) {
+          const list = color.images || [];
+          return list[slot] || "";
+        },
+
+        sourcesLine(color) {
+          if (this.year === "all") {
+            var marks = yearMarks(color);
+            return "Years: " + (marks.length ? marks.join(", ") : "—");
+          }
+          var names = uniqueSources(color, this.year);
+          return "Sources: " + (names.length ? names.join(", ") : "—");
+        },
+
+        searchQuery(color) {
+          const name = color.searchName || color.name || "";
+          const parts = ['"Jeep"', '"' + name + '"'];
+
+          const yearKeys = Object.keys(color.years || {}).sort();
+          if (yearKeys.length === 1) {
+            parts.push(yearKeys[0]);
+          } else if (yearKeys.length >= 2 && yearKeys.length <= 4) {
+            parts.push("(" + yearKeys.join(" OR ") + ")");
+          }
+
+          parts.push("(CJ OR FSJ OR J10 OR J20 OR Wagoneer OR Cherokee OR Comanche)");
+
+          if (this.engine === "google") {
+            parts.push("-Wrangler -YJ -TJ -JK -JL -Gladiator");
+          }
+          return parts.join(" ");
+        },
+
+        searchUrl(color) {
+          const build = engines[this.engine] || engines.google;
+          return build(this.searchQuery(color));
+        },
+
+        swatchStyle(color) {
+          return {
+            background: color.hex,
+            color: color.text || "#000"
+          };
+        }
+      };
+    }
+  </script>
+</body>
+
+</html>
