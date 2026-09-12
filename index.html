@@ -287,7 +287,6 @@
     window.JEEP_COLORS = [];
 
     function jeepColors() {
-      const ENGINE_KEY = "jeepImgEngine";
       const engines = {
         google: function (q) { return "https://www.google.com/search?tbm=isch&udm=2&q=" + encodeURIComponent(q); },
         ddg: function (q) { return "https://duckduckgo.com/?iax=images&ia=images&q=" + encodeURIComponent(q); }
@@ -379,15 +378,6 @@
         },
 
         init() {
-          try {
-            const saved = localStorage.getItem(ENGINE_KEY);
-            if (saved && engines[saved]) this.engine = saved;
-          } catch (e) { }
-
-          this.$watch("engine", function (next) {
-            try { localStorage.setItem(ENGINE_KEY, next); } catch (e) { }
-          });
-
           fetch('colors.json')
             .then(function (r) {
               if (!r.ok) throw new Error(r.status);
