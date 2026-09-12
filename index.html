@@ -400,7 +400,7 @@
             }.bind(this))
             .catch(function (err) {
               console.error(err);
-              this.data = null;
+              this.data = window.JEEP_COLORS || null;
               this.error = "Color data failed to load.";
             }.bind(this));
         },
