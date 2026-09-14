@@ -48,38 +48,10 @@
         "JeepColors-FirecrackerRed2.webp"
       ],
       "years": {
-        "1976": {
-          "code": "6P",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "6P",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "6P",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1979": {
-          "code": "6P",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1976": { "code": "6P", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "6P", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "6P", "s": ["PR", "FSM", "OL"] },
+        "1979": { "code": "6P", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -95,14 +67,7 @@
         "JeepColors-CardinalRed2.webp"
       ],
       "years": {
-        "1980": {
-          "code": "OP",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
+        "1980": { "code": "OP", "s": ["PR", "Brochure", "OL"] }
       }
     },
     {
@@ -118,38 +83,10 @@
         "JeepColors-SebringRed2.webp"
       ],
       "years": {
-        "1983": {
-          "code": "3B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "3B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "3B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "3B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1983": { "code": "3B", "s": ["PR", "OL", "Brochure"] },
+        "1984": { "code": "3B", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "3B", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "3B", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -165,22 +102,8 @@
         "JeepColors-OrientalRed2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1M",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "1M",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1981": { "code": "1M", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "1M", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -196,13 +119,7 @@
         "JeepColors-PresidentRed2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "226",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        }
+        "1972": { "code": "226", "s": ["PR", "Chip"] }
       }
     },
     {
@@ -218,28 +135,9 @@
         "JeepColors-TransAmRed2.webp"
       ],
       "years": {
-        "1973": {
-          "code": "515",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        },
-        "1974": {
-          "code": "515",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1975": {
-          "code": "515",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1973": { "code": "515", "s": ["PR", "Chip", "Brochure"] },
+        "1974": { "code": "515", "s": ["PR", "Brochure"] },
+        "1975": { "code": "515", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -255,21 +153,8 @@
         "JeepColors-AutumnRedMetallic2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7C",
-          "s": [
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7C",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1977": { "code": "7C", "s": ["FSM", "OL"] },
+        "1978": { "code": "7C", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -285,14 +170,7 @@
         "JeepColors-VintageRedMetallic2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1J",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1981": { "code": "1J", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -308,30 +186,9 @@
         "JeepColors-GarnetMetallic2.webp"
       ],
       "years": {
-        "1984": {
-          "code": "3C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "3C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "3C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1984": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "3C", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "3C", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -347,22 +204,8 @@
         "JeepColors-BordeauxMetallic2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9P",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "9P",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
+        "1979": { "code": "9P", "s": ["PR", "FSM", "OL"] },
+        "1980": { "code": "9P", "s": ["PR", "Brochure", "OL"] }
       }
     },
     {
@@ -378,30 +221,9 @@
         "JeepColors-DeepMaroonMetallic2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1K",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "1K",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "1K",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1981": { "code": "1K", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "1K", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "1K", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -417,25 +239,9 @@
         "JeepColors-RenegadePlum2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "509",
-          "s": [
-            "PR"
-          ]
-        },
-        "1973": {
-          "code": "509",
-          "s": [
-            "Chip"
-          ]
-        },
-        "1974": {
-          "code": "509",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "509", "s": ["PR"] },
+        "1973": { "code": "509", "s": ["Chip"] },
+        "1974": { "code": "509", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -452,27 +258,26 @@
         "JeepColors-SiennaOrange2.webp"
       ],
       "years": {
-        "1973": {
-          "code": "G6",
-          "s": [
-            "Chip"
-          ]
-        },
-        "1975": {
-          "code": "G6",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1976": {
-          "code": "G6",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1973": { "code": "G6", "s": ["Chip"] },
+        "1975": { "code": "G6", "s": ["PR", "Brochure"] },
+        "1976": { "code": "G6", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "renegade-orange-508",
+      "code": "508",
+      "name": "Renegade Orange (508)",
+      "searchName": "Renegade Orange",
+      "ppg": "60696",
+      "hex": "#C44B16",
+      "text": "#fff",
+      "metallic": false,
+      "images": [
+        "JeepColors-RenegadeOrange508.webp",
+        "JeepColors-RenegadeOrange5082.webp"
+      ],
+      "years": {
+        "1972": { "code": "508", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -488,20 +293,8 @@
         "JeepColors-SunOrange2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7Z",
-          "s": [
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7Z",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1977": { "code": "7Z", "s": ["OL"] },
+        "1978": { "code": "7Z", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -517,14 +310,7 @@
         "JeepColors-MandarinOrange2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9W",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1979": { "code": "9W", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -542,62 +328,15 @@
         "JeepColors-OmahaOrange2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "135",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "FB",
-          "s": [
-            "PR"
-          ]
-        },
-        "1974": {
-          "code": "135",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "135",
-          "s": [
-            "PR"
-          ]
-        },
-        "1976": {
-          "code": "FB",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "FB",
-          "s": [
-            "PR"
-          ]
-        },
-        "1981": {
-          "code": "FB",
-          "s": [
-            "PR"
-          ]
-        },
-        "1982": {
-          "code": "FB",
-          "s": [
-            "PR"
-          ]
-        },
-        "1983": {
-          "code": "FB",
-          "s": [
-            "PR"
-          ]
-        }
+        "1972": { "code": "135", "s": ["PR", "Chip"] },
+        "1973": { "code": "FB", "s": ["PR"] },
+        "1974": { "code": "135", "s": ["PR"] },
+        "1975": { "code": "135", "s": ["PR"] },
+        "1976": { "code": "FB", "s": ["PR", "OL"] },
+        "1980": { "code": "FB", "s": ["PR"] },
+        "1981": { "code": "FB", "s": ["PR"] },
+        "1982": { "code": "FB", "s": ["PR"] },
+        "1983": { "code": "FB", "s": ["PR"] }
       }
     },
     {
@@ -613,116 +352,7 @@
         "JeepColors-TawnyOrange2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7Y",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "renegade-orange-508",
-      "code": "508",
-      "name": "Renegade Orange (508)",
-      "searchName": "Renegade Orange",
-      "ppg": "60696",
-      "hex": "#C44B16",
-      "text": "#fff",
-      "metallic": false,
-      "images": [
-        "JeepColors-RenegadeOrange508.webp",
-        "JeepColors-RenegadeOrange5082.webp"
-      ],
-      "years": {
-        "1972": {
-          "code": "508",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "orange-bronze",
-      "code": "AD",
-      "name": "Orange Bronze",
-      "ppg": "3701",
-      "hex": "#C4622A",
-      "text": "#fff",
-      "metallic": false,
-      "images": [
-        "JeepColors-OrangeBronze.webp",
-        "JeepColors-OrangeBronze2.webp"
-      ],
-      "years": {
-        "1985": {
-          "code": "AD",
-          "s": [
-            "PR"
-          ]
-        },
-        "1986": {
-          "code": "AD",
-          "s": [
-            "PR"
-          ]
-        }
-      }
-    },
-    {
-      "id": "copper-526",
-      "code": "526",
-      "name": "Copper Metallic",
-      "ppg": "24000",
-      "hex": "#B87333",
-      "text": "#FFF",
-      "metallic": true,
-      "images": [
-        "JeepColors-CopperMetallic.webp",
-        "JeepColors-CopperMetallic2.webp"
-      ],
-      "years": {
-        "1974": {
-          "code": "526",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1975": {
-          "code": "526",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "cinnamon-met",
-      "code": "3K",
-      "name": "Cinnamon Metallic",
-      "ppg": "3597",
-      "hex": "#C08A62",
-      "text": "#000",
-      "metallic": true,
-      "images": [
-        "JeepColors-CinnamonMetallic.webp",
-        "JeepColors-CinnamonMetallic2.webp"
-      ],
-      "years": {
-        "1984": {
-          "code": "3K",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1977": { "code": "7Y", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -739,12 +369,7 @@
         "JeepColors-HarvestGoldMetallic2.webp"
       ],
       "years": {
-        "1974": {
-          "code": "527",
-          "s": [
-            "PR"
-          ]
-        }
+        "1974": { "code": "527", "s": ["PR"] }
       }
     },
     {
@@ -761,52 +386,8 @@
         "JeepColors-GoldenGingerMetallic2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7M",
-          "s": [
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7M",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "copper-tan-met",
-      "code": "517",
-      "name": "Copper Tan Metallic",
-      "searchName": "Copper Tan",
-      "ppg": "23796",
-      "hex": "#C08A62",
-      "text": "#000",
-      "metallic": true,
-      "images": [
-        "JeepColors-CopperTanMetallic.webp",
-        "JeepColors-CopperTanMetallic2.webp"
-      ],
-      "years": {
-        "1972": {
-          "code": "517",
-          "alt": "524",
-          "s": [
-            "PR"
-          ]
-        },
-        "1973": {
-          "code": "517",
-          "alt": "524",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        }
+        "1977": { "code": "7M", "s": ["OL"] },
+        "1978": { "code": "7M", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -823,230 +404,8 @@
         "JeepColors-DarkHoneyMetallic2.webp"
       ],
       "years": {
-        "1985": {
-          "code": "5D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "5D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "alpaca-brown-met",
-      "code": "9A",
-      "name": "Alpaca Brown Metallic",
-      "searchName": "Alpaca Brown",
-      "ppg": "3106",
-      "hex": "#8B6914",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-AlpacaBrownMetallic.webp",
-        "JeepColors-AlpacaBrownMetallic2.webp"
-      ],
-      "years": {
-        "1979": {
-          "code": "9A",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "9A",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "sunshine-yellow",
-      "code": "6V",
-      "name": "Sunshine Yellow",
-      "ppg": "2827",
-      "hex": "#F5D76E",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-SunshineYellow.webp",
-        "JeepColors-SunshineYellow2.webp"
-      ],
-      "years": {
-        "1976": {
-          "code": "6V",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "6V",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "6V",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "canary-yellow",
-      "code": "495",
-      "name": "Canary Yellow",
-      "ppg": "2266",
-      "hex": "#E8D44D",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-CanaryYellow.webp",
-        "JeepColors-CanaryYellow2.webp"
-      ],
-      "years": {
-        "1972": {
-          "code": "495",
-          "amc": "A2",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "495",
-          "amc": "A2",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "mellow-yellow",
-      "code": "528",
-      "name": "Mellow Yellow",
-      "ppg": "81911",
-      "hex": "#E8D44D",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-MellowYellow.webp",
-        "JeepColors-MellowYellow2.webp"
-      ],
-      "years": {
-        "1974": {
-          "code": "528",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1975": {
-          "code": "528",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "sun-yellow",
-      "code": "2B",
-      "name": "Sun Yellow",
-      "ppg": "3467",
-      "hex": "#F4D03F",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-SunYellow.webp",
-        "JeepColors-SunYellow2.webp"
-      ],
-      "years": {
-        "1982": {
-          "code": "2B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "saxon-yellow",
-      "code": "9L",
-      "name": "Saxon Yellow",
-      "ppg": "3113",
-      "hex": "#E8C547",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-SaxonYellow.webp",
-        "JeepColors-SaxonYellow2.webp"
-      ],
-      "years": {
-        "1979": {
-          "code": "9L",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "9L",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "daisy-yellow",
-      "code": "513",
-      "name": "Daisy Yellow",
-      "ppg": "82071",
-      "hex": "#E8D030",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-DaisyYellow.webp",
-        "JeepColors-DaisyYellow2.webp"
-      ],
-      "years": {
-        "1973": {
-          "code": "513",
-          "alt": "520",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        }
+        "1985": { "code": "5D", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "5D", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -1062,14 +421,7 @@
         "JeepColors-AutumnGold2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1D",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1981": { "code": "1D", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -1086,26 +438,9 @@
         "JeepColors-TopazGoldMetallic2.webp"
       ],
       "years": {
-        "1982": {
-          "code": "2H",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "2H",
-          "s": [
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "2H",
-          "s": [
-            "PR"
-          ]
-        }
+        "1982": { "code": "2H", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "2H", "s": ["Brochure"] },
+        "1984": { "code": "2H", "s": ["PR"] }
       }
     },
     {
@@ -1121,21 +456,109 @@
         "JeepColors-ButterscotchGold2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "490",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "490",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "490", "s": ["PR", "Chip"] },
+        "1973": { "code": "490", "s": ["PR", "Chip", "Brochure"] }
+      }
+    },
+    {
+      "id": "sunshine-yellow",
+      "code": "6V",
+      "name": "Sunshine Yellow",
+      "ppg": "2827",
+      "hex": "#F5D76E",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-SunshineYellow.webp",
+        "JeepColors-SunshineYellow2.webp"
+      ],
+      "years": {
+        "1976": { "code": "6V", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "6V", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "6V", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "canary-yellow",
+      "code": "495",
+      "name": "Canary Yellow",
+      "ppg": "2266",
+      "hex": "#E8D44D",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-CanaryYellow.webp",
+        "JeepColors-CanaryYellow2.webp"
+      ],
+      "years": {
+        "1972": { "code": "495", "amc": "A2", "s": ["PR", "Chip"] },
+        "1973": { "code": "495", "amc": "A2", "s": ["PR", "Brochure"] }
+      }
+    },
+    {
+      "id": "mellow-yellow",
+      "code": "528",
+      "name": "Mellow Yellow",
+      "ppg": "81911",
+      "hex": "#E8D44D",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-MellowYellow.webp",
+        "JeepColors-MellowYellow2.webp"
+      ],
+      "years": {
+        "1974": { "code": "528", "s": ["PR", "Brochure"] },
+        "1975": { "code": "528", "s": ["PR", "Brochure"] }
+      }
+    },
+    {
+      "id": "sun-yellow",
+      "code": "2B",
+      "name": "Sun Yellow",
+      "ppg": "3467",
+      "hex": "#F4D03F",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-SunYellow.webp",
+        "JeepColors-SunYellow2.webp"
+      ],
+      "years": {
+        "1982": { "code": "2B", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "saxon-yellow",
+      "code": "9L",
+      "name": "Saxon Yellow",
+      "ppg": "3113",
+      "hex": "#E8C547",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-SaxonYellow.webp",
+        "JeepColors-SaxonYellow2.webp"
+      ],
+      "years": {
+        "1979": { "code": "9L", "s": ["PR", "FSM", "OL"] },
+        "1980": { "code": "9L", "s": ["PR", "Brochure", "OL"] }
+      }
+    },
+    {
+      "id": "daisy-yellow",
+      "code": "513",
+      "name": "Daisy Yellow",
+      "ppg": "82071",
+      "hex": "#E8D030",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-DaisyYellow.webp",
+        "JeepColors-DaisyYellow2.webp"
+      ],
+      "years": {
+        "1973": { "code": "513", "alt": "520", "s": ["PR", "Chip"] }
       }
     },
     {
@@ -1153,62 +576,15 @@
         "JeepColors-TransportYellow2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "81",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "FA",
-          "s": [
-            "PR"
-          ]
-        },
-        "1974": {
-          "code": "81",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "81",
-          "s": [
-            "PR"
-          ]
-        },
-        "1976": {
-          "code": "FA",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "FA",
-          "s": [
-            "PR"
-          ]
-        },
-        "1981": {
-          "code": "FA",
-          "s": [
-            "PR"
-          ]
-        },
-        "1982": {
-          "code": "FA",
-          "s": [
-            "PR"
-          ]
-        },
-        "1983": {
-          "code": "FA",
-          "s": [
-            "PR"
-          ]
-        }
+        "1972": { "code": "81", "s": ["PR", "Chip"] },
+        "1973": { "code": "FA", "s": ["PR"] },
+        "1974": { "code": "81", "s": ["PR"] },
+        "1975": { "code": "81", "s": ["PR"] },
+        "1976": { "code": "FA", "s": ["PR", "OL"] },
+        "1980": { "code": "FA", "s": ["PR"] },
+        "1981": { "code": "FA", "s": ["PR"] },
+        "1982": { "code": "FA", "s": ["PR"] },
+        "1983": { "code": "FA", "s": ["PR"] }
       }
     },
     {
@@ -1224,25 +600,9 @@
         "JeepColors-RenegadeYellow2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "510",
-          "s": [
-            "PR"
-          ]
-        },
-        "1973": {
-          "code": "510",
-          "s": [
-            "Chip"
-          ]
-        },
-        "1974": {
-          "code": "510",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "510", "s": ["PR"] },
+        "1973": { "code": "510", "s": ["Chip"] },
+        "1974": { "code": "510", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -1258,18 +618,508 @@
         "JeepColors-BajaYellow2.webp"
       ],
       "years": {
-        "1971": {
-          "code": "999",
-          "s": [
-            "PR"
-          ]
-        },
-        "1972": {
-          "code": "999",
-          "s": [
-            "PR"
-          ]
-        }
+        "1971": { "code": "999", "s": ["PR"] },
+        "1972": { "code": "999", "s": ["PR"] }
+      }
+    },
+    {
+      "id": "champagne-met",
+      "code": "4D",
+      "name": "Champagne Metallic",
+      "searchName": "Champagne",
+      "ppg": "3625",
+      "hex": "#D4C4A8",
+      "text": "#000",
+      "metallic": true,
+      "images": [
+        "JeepColors-ChampagneMetallic.webp",
+        "JeepColors-ChampagneMetallic2.webp"
+      ],
+      "years": {
+        "1984": { "code": "4D", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "4D", "s": ["PR", "OL"] },
+        "1986": { "code": "4D", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "almond-beige",
+      "code": "3A",
+      "name": "Almond Beige",
+      "ppg": "3591",
+      "hex": "#E8D5B7",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-AlmondBeige.webp",
+        "JeepColors-AlmondBeige2.webp"
+      ],
+      "years": {
+        "1983": { "code": "3A", "s": ["PR"] },
+        "1984": { "code": "3A", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "3A", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "beige-ab",
+      "code": "AB",
+      "name": "Beige",
+      "ppg": "3826",
+      "hex": "#D2C2A0",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-BeigeAB.webp",
+        "JeepColors-BeigeAB2.webp"
+      ],
+      "years": {
+        "1986": { "code": "AB", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "jamaica-beige",
+      "code": "2J",
+      "name": "Jamaican Beige",
+      "ppg": "3472",
+      "hex": "#C9B896",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-JamaicaBeige.webp",
+        "JeepColors-JamaicaBeige2.webp"
+      ],
+      "years": {
+        "1982": { "code": "2J", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "2J", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "fawn-beige",
+      "code": "514",
+      "name": "Fawn Beige",
+      "ppg": "23853",
+      "hex": "#C9B08A",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-FawnBeige.webp",
+        "JeepColors-FawnBeige2.webp"
+      ],
+      "years": {
+        "1973": { "code": "514", "s": ["PR", "Chip", "Brochure"] },
+        "1974": { "code": "514", "s": ["PR", "Brochure"] },
+        "1975": { "code": "514", "s": ["PR", "Brochure"] }
+      }
+    },
+    {
+      "id": "morocco-buff",
+      "code": "9N",
+      "name": "Morocco Buff",
+      "ppg": "3115",
+      "hex": "#C4A484",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-MoroccoBuff.webp",
+        "JeepColors-MoroccoBuff2.webp"
+      ],
+      "years": {
+        "1979": { "code": "9N", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "sand-tan",
+      "code": "6D",
+      "name": "Sand Tan",
+      "ppg": "2820",
+      "hex": "#C2A878",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-SandTan.webp",
+        "JeepColors-SandTan2.webp"
+      ],
+      "years": {
+        "1976": { "code": "6D", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "6D", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "6D", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "yuca-tan-met",
+      "code": "493",
+      "name": "Yuca Tan Metallic",
+      "searchName": "Yuca Tan",
+      "ppg": "2397",
+      "hex": "#C4A06A",
+      "text": "#000",
+      "metallic": true,
+      "images": [
+        "JeepColors-YucaTanMetallic.webp",
+        "JeepColors-YucaTanMetallic2.webp"
+      ],
+      "years": {
+        "1972": { "code": "493", "amc": "D2", "s": ["PR", "Chip"] }
+      }
+    },
+    {
+      "id": "golden-tan-met",
+      "code": "",
+      "name": "Golden Tan Metallic",
+      "searchName": "Golden Tan",
+      "ppg": "23819",
+      "hex": "#C4A06A",
+      "text": "#000",
+      "metallic": true,
+      "images": [
+        "JeepColors-GoldenTanMetallic.webp",
+        "JeepColors-GoldenTanMetallic2.webp"
+      ],
+      "years": {
+        "1974": { "code": "", "s": ["PR", "Brochure"] }
+      }
+    },
+    {
+      "id": "cameo-tan",
+      "code": "OK",
+      "name": "Cameo Tan",
+      "ppg": "3245",
+      "hex": "#D2B48C",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-CameoTan.webp",
+        "JeepColors-CameoTan2.webp"
+      ],
+      "years": {
+        "1980": { "code": "OK", "s": ["PR", "Brochure", "OL"] },
+        "1981": { "code": "OK", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "copper-tan-met",
+      "code": "517",
+      "name": "Copper Tan Metallic",
+      "searchName": "Copper Tan",
+      "ppg": "23796",
+      "hex": "#C08A62",
+      "text": "#000",
+      "metallic": true,
+      "images": [
+        "JeepColors-CopperTanMetallic.webp",
+        "JeepColors-CopperTanMetallic2.webp"
+      ],
+      "years": {
+        "1972": { "code": "517", "alt": "524", "s": ["PR"] },
+        "1973": { "code": "517", "alt": "524", "s": ["PR", "Chip", "Brochure"] }
+      }
+    },
+    {
+      "id": "caramel",
+      "code": "OR",
+      "name": "Caramel",
+      "ppg": "3249",
+      "hex": "#C68E5B",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-Caramel.webp",
+        "JeepColors-Caramel2.webp"
+      ],
+      "years": {
+        "1980": { "code": "OR", "s": ["PR", "Brochure", "OL"] }
+      }
+    },
+    {
+      "id": "khaki",
+      "code": "8A",
+      "name": "Khaki",
+      "ppg": "3028",
+      "hex": "#A08B5E",
+      "text": "#000",
+      "metallic": false,
+      "images": [
+        "JeepColors-Khaki.webp"
+      ],
+      "years": {
+        "1978": { "code": "8A", "s": ["PR"] }
+      }
+    },
+    {
+      "id": "orange-bronze",
+      "code": "AD",
+      "name": "Orange Bronze",
+      "ppg": "3701",
+      "hex": "#C4622A",
+      "text": "#fff",
+      "metallic": false,
+      "images": [
+        "JeepColors-OrangeBronze.webp",
+        "JeepColors-OrangeBronze2.webp"
+      ],
+      "years": {
+        "1985": { "code": "AD", "s": ["PR"] },
+        "1986": { "code": "AD", "s": ["PR"] }
+      }
+    },
+    {
+      "id": "copper-526",
+      "code": "526",
+      "name": "Copper Metallic",
+      "ppg": "24000",
+      "hex": "#B87333",
+      "text": "#FFF",
+      "metallic": true,
+      "images": [
+        "JeepColors-CopperMetallic.webp",
+        "JeepColors-CopperMetallic2.webp"
+      ],
+      "years": {
+        "1974": { "code": "526", "s": ["PR", "Brochure"] },
+        "1975": { "code": "526", "s": ["PR", "Brochure"] }
+      }
+    },
+    {
+      "id": "copper-600",
+      "code": "600",
+      "name": "Copper",
+      "searchName": "Copper",
+      "ppg": "24176",
+      "hex": "#8B4518",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-Copper600.webp"
+      ],
+      "years": {
+        "1975": { "code": "600", "s": ["PR"] }
+      }
+    },
+    {
+      "id": "british-bronze",
+      "code": "8B",
+      "name": "British Bronze",
+      "ppg": "3029",
+      "hex": "#8A5A2A",
+      "text": "#fff",
+      "metallic": false,
+      "images": [
+        "JeepColors-BritishBronze.webp"
+      ],
+      "years": {
+        "1978": { "code": "8B", "s": ["PR"] }
+      }
+    },
+    {
+      "id": "cinnamon-met",
+      "code": "3K",
+      "name": "Cinnamon Metallic",
+      "ppg": "3597",
+      "hex": "#C08A62",
+      "text": "#000",
+      "metallic": true,
+      "images": [
+        "JeepColors-CinnamonMetallic.webp",
+        "JeepColors-CinnamonMetallic2.webp"
+      ],
+      "years": {
+        "1984": { "code": "3K", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "russet-met",
+      "code": "9C",
+      "name": "Russet Metallic",
+      "searchName": "Russet",
+      "ppg": "3108",
+      "hex": "#8B4513",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-RussetMetallic.webp",
+        "JeepColors-RussetMetallic2.webp"
+      ],
+      "years": {
+        "1979": { "code": "9C", "s": ["PR", "FSM", "OL"] },
+        "1980": { "code": "9C", "s": ["PR", "Brochure", "OL"] }
+      }
+    },
+    {
+      "id": "copper-brown-met",
+      "code": "1E",
+      "name": "Copper Brown Metallic",
+      "searchName": "Copper Brown",
+      "ppg": "3370",
+      "hex": "#8B4513",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-CopperBrownMetallic.webp",
+        "JeepColors-CopperBrownMetallic2.webp"
+      ],
+      "years": {
+        "1981": { "code": "1E", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "1E", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "1E", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "alpaca-brown-met",
+      "code": "9A",
+      "name": "Alpaca Brown Metallic",
+      "searchName": "Alpaca Brown",
+      "ppg": "3106",
+      "hex": "#8B6914",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-AlpacaBrownMetallic.webp",
+        "JeepColors-AlpacaBrownMetallic2.webp"
+      ],
+      "years": {
+        "1979": { "code": "9A", "s": ["PR", "FSM", "OL"] },
+        "1980": { "code": "9A", "s": ["PR", "Brochure", "OL"] }
+      }
+    },
+    {
+      "id": "oak-leaf-brown",
+      "code": "7E",
+      "name": "Oak Leaf Brown",
+      "ppg": "24443",
+      "hex": "#8B5A2B",
+      "text": "#fff",
+      "metallic": false,
+      "images": [
+        "JeepColors-OakLeafBrown.webp",
+        "JeepColors-OakLeafBrown2.webp"
+      ],
+      "years": {
+        "1977": { "code": "7E", "s": ["OL"] },
+        "1978": { "code": "7E", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "chestnut-brown-met",
+      "code": "1H",
+      "name": "Chestnut Brown Metallic",
+      "searchName": "Chestnut Brown",
+      "ppg": "3371",
+      "hex": "#6B3A2A",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-ChestnutBrownMetallic.webp",
+        "JeepColors-ChestnutBrownMetallic2.webp"
+      ],
+      "years": {
+        "1981": { "code": "1H", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "1H", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "1H", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "chestnut-4e",
+      "code": "4E",
+      "name": "Chestnut Brown Metallic",
+      "searchName": "Chestnut Brown",
+      "ppg": "3626",
+      "hex": "#6B3A2A",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-ChestnutBrownMetallic4E.webp",
+        "JeepColors-ChestnutBrownMetallic4E2.webp"
+      ],
+      "years": {
+        "1984": { "code": "4E", "s": ["PR", "OL", "Brochure"] }
+      }
+    },
+    {
+      "id": "sable-brown-met",
+      "code": "9K",
+      "name": "Sable Brown Metallic",
+      "searchName": "Sable Brown",
+      "ppg": "3112",
+      "hex": "#5D4037",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-SableBrownMetallic.webp",
+        "JeepColors-SableBrownMetallic2.webp"
+      ],
+      "years": {
+        "1979": { "code": "9K", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "mocha-brown-met",
+      "code": "7B",
+      "name": "Mocha Brown Metallic",
+      "searchName": "Mocha Brown",
+      "ppg": "2895",
+      "hex": "#5C4033",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-MochaBrownMetallic.webp",
+        "JeepColors-MochaBrownMetallic2.webp"
+      ],
+      "years": {
+        "1977": { "code": "7B", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "7B", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "dark-cocoa-met",
+      "code": "H4",
+      "name": "Dark Cocoa Metallic",
+      "searchName": "Dark Cocoa",
+      "ppg": "2796",
+      "hex": "#4A3728",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-DarkCocoaMetallic.webp",
+        "JeepColors-DarkCocoaMetallic2.webp"
+      ],
+      "years": {
+        "1976": { "code": "H4", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "dark-brown-met",
+      "code": "OM",
+      "name": "Dark Brown Metallic",
+      "searchName": "Dark Brown",
+      "ppg": "3247",
+      "hex": "#3D2B1F",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-DarkBrownMetallic.webp",
+        "JeepColors-DarkBrownMetallic2.webp"
+      ],
+      "years": {
+        "1980": { "code": "OM", "s": ["PR", "Brochure", "OL"] },
+        "1981": { "code": "OM", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "OM", "s": ["PR", "FSM", "OL"] }
+      }
+    },
+    {
+      "id": "dark-brown-5e",
+      "code": "5E",
+      "name": "Dark Brown Metallic",
+      "searchName": "Dark Brown",
+      "ppg": "3697",
+      "hex": "#3A281C",
+      "text": "#fff",
+      "metallic": true,
+      "images": [
+        "JeepColors-DarkBrownMetallic5E.webp",
+        "JeepColors-DarkBrownMetallic5E2.webp"
+      ],
+      "years": {
+        "1985": { "code": "5E", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "5E", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -1285,18 +1135,8 @@
         "JeepColors-LimeGreen2.webp"
       ],
       "years": {
-        "1976": {
-          "code": "7P",
-          "s": [
-            "PR"
-          ]
-        },
-        "1977": {
-          "code": "7P",
-          "s": [
-            "OL"
-          ]
-        }
+        "1976": { "code": "7P", "s": ["PR"] },
+        "1977": { "code": "7P", "s": ["OL"] }
       }
     },
     {
@@ -1312,13 +1152,7 @@
         "JeepColors-GreenApple2.webp"
       ],
       "years": {
-        "1975": {
-          "code": "561",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1975": { "code": "561", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -1333,13 +1167,7 @@
         "JeepColors-LimefireMetallic.webp"
       ],
       "years": {
-        "1976": {
-          "code": "6K",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        }
+        "1976": { "code": "6K", "s": ["PR", "OL"] }
       }
     },
     {
@@ -1356,19 +1184,8 @@
         "JeepColors-JulepGreenMetallic2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "491",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "491",
-          "s": [
-            "Chip"
-          ]
-        }
+        "1972": { "code": "491", "s": ["PR", "Chip"] },
+        "1973": { "code": "491", "s": ["Chip"] }
       }
     },
     {
@@ -1385,13 +1202,7 @@
         "JeepColors-SilverGreenMetallic2.webp"
       ],
       "years": {
-        "1974": {
-          "code": "529",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1974": { "code": "529", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -1408,21 +1219,8 @@
         "JeepColors-FairwayGreenMetallic2.webp"
       ],
       "years": {
-        "1973": {
-          "code": "512",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        },
-        "1974": {
-          "code": "512",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1973": { "code": "512", "s": ["PR", "Chip", "Brochure"] },
+        "1974": { "code": "512", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -1439,21 +1237,8 @@
         "JeepColors-AvocadoMistMetallic2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "431",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "431",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "431", "s": ["PR", "Chip"] },
+        "1973": { "code": "431", "s": ["PR", "Chip", "Brochure"] }
       }
     },
     {
@@ -1471,55 +1256,14 @@
         "JeepColors-OliveDrab2.webp"
       ],
       "years": {
-        "1973": {
-          "code": "FH",
-          "alt": "134",
-          "s": [
-            "PR"
-          ]
-        },
-        "1974": {
-          "code": "134",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "134",
-          "s": [
-            "PR"
-          ]
-        },
-        "1976": {
-          "code": "FH",
-          "s": [
-            "PR"
-          ]
-        },
-        "1980": {
-          "code": "FH",
-          "s": [
-            "PR"
-          ]
-        },
-        "1981": {
-          "code": "FH",
-          "s": [
-            "PR"
-          ]
-        },
-        "1982": {
-          "code": "FH",
-          "s": [
-            "PR"
-          ]
-        },
-        "1983": {
-          "code": "FH",
-          "s": [
-            "PR"
-          ]
-        }
+        "1973": { "code": "FH", "alt": "134", "s": ["PR"] },
+        "1974": { "code": "134", "s": ["PR"] },
+        "1975": { "code": "134", "s": ["PR"] },
+        "1976": { "code": "FH", "s": ["PR"] },
+        "1980": { "code": "FH", "s": ["PR"] },
+        "1981": { "code": "FH", "s": ["PR"] },
+        "1982": { "code": "FH", "s": ["PR"] },
+        "1983": { "code": "FH", "s": ["PR"] }
       }
     },
     {
@@ -1536,14 +1280,7 @@
         "JeepColors-MediumGreenMetallic2.webp"
       ],
       "years": {
-        "1985": {
-          "code": "5B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1985": { "code": "5B", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -1560,28 +1297,9 @@
         "JeepColors-LodenGreenMetallic2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7L",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7L",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1979": {
-          "code": "7L",
-          "s": [
-            "PR"
-          ]
-        }
+        "1977": { "code": "7L", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "7L", "s": ["PR", "FSM", "OL"] },
+        "1979": { "code": "7L", "s": ["PR"] }
       }
     },
     {
@@ -1598,21 +1316,8 @@
         "JeepColors-ReefGreenMetallic2.webp"
       ],
       "years": {
-        "1975": {
-          "code": "560",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1976": {
-          "code": "H2",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1975": { "code": "560", "s": ["PR", "Brochure"] },
+        "1976": { "code": "H2", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -1628,14 +1333,7 @@
         "JeepColors-NordicGreen2.webp"
       ],
       "years": {
-        "1984": {
-          "code": "4H",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1984": { "code": "4H", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -1653,56 +1351,14 @@
         "JeepColors-ForestGreen2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "504",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1974": {
-          "code": "504",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "604",
-          "s": [
-            "PR"
-          ]
-        },
-        "1976": {
-          "code": "FE",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "FE",
-          "s": [
-            "PR"
-          ]
-        },
-        "1981": {
-          "code": "FE",
-          "s": [
-            "PR"
-          ]
-        },
-        "1982": {
-          "code": "FE",
-          "s": [
-            "PR"
-          ]
-        },
-        "1983": {
-          "code": "FE",
-          "s": [
-            "PR"
-          ]
-        }
+        "1972": { "code": "504", "s": ["PR", "Chip"] },
+        "1974": { "code": "504", "s": ["PR"] },
+        "1975": { "code": "604", "s": ["PR"] },
+        "1976": { "code": "FE", "s": ["PR", "OL"] },
+        "1980": { "code": "FE", "s": ["PR"] },
+        "1981": { "code": "FE", "s": ["PR"] },
+        "1982": { "code": "FE", "s": ["PR"] },
+        "1983": { "code": "FE", "s": ["PR"] }
       }
     },
     {
@@ -1719,14 +1375,7 @@
         "JeepColors-CumberlandGreenMetallic2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9H",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1979": { "code": "9H", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -1743,30 +1392,9 @@
         "JeepColors-SherwoodGreenMetallic2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1C",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "1C",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "1C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1981": { "code": "1C", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "1C", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "1C", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -1783,14 +1411,7 @@
         "JeepColors-DarkGreenMetallic2.webp"
       ],
       "years": {
-        "1980": {
-          "code": "OE",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
+        "1980": { "code": "OE", "s": ["PR", "Brochure", "OL"] }
       }
     },
     {
@@ -1806,14 +1427,7 @@
         "JeepColors-TealBlue2.webp"
       ],
       "years": {
-        "1980": {
-          "code": "OJ",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
+        "1980": { "code": "OJ", "s": ["PR", "Brochure", "OL"] }
       }
     },
     {
@@ -1829,18 +1443,8 @@
         "JeepColors-PowderBlue2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7D",
-          "s": [
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7D",
-          "s": [
-            "PR"
-          ]
-        }
+        "1977": { "code": "7D", "s": ["OL"] },
+        "1978": { "code": "7D", "s": ["PR"] }
       }
     },
     {
@@ -1855,13 +1459,7 @@
         "JeepColors-SkywayBlue.webp"
       ],
       "years": {
-        "1972": {
-          "code": "7D",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        }
+        "1972": { "code": "7D", "s": ["PR", "Chip"] }
       }
     },
     {
@@ -1878,22 +1476,8 @@
         "JeepColors-IceBlueMetallic2.webp"
       ],
       "years": {
-        "1984": {
-          "code": "4C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "4C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1984": { "code": "4C", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "4C", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -1909,14 +1493,7 @@
         "JeepColors-WedgewoodBlue2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9E",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1979": { "code": "9E", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -1933,29 +1510,9 @@
         "JeepColors-SlateBlueMetallic2.webp"
       ],
       "years": {
-        "1982": {
-          "code": "2C",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "2C",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "2C",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        }
+        "1982": { "code": "2C", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "2C", "s": ["PR", "OL", "Brochure"] },
+        "1984": { "code": "2C", "s": ["PR", "OL"] }
       }
     },
     {
@@ -1972,37 +1529,11 @@
         "JeepColors-MarlinBlue.webp"
       ],
       "years": {
-        "1972": {
-          "code": "394",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "394",
-          "s": [
-            "PR"
-          ]
-        },
-        "1974": {
-          "code": "394",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "394",
-          "s": [
-            "PR"
-          ]
-        },
-        "1976": {
-          "code": "394",
-          "s": [
-            "PR"
-          ]
-        }
+        "1972": { "code": "394", "s": ["PR", "Chip"] },
+        "1973": { "code": "394", "s": ["PR"] },
+        "1974": { "code": "394", "s": ["PR"] },
+        "1975": { "code": "394", "s": ["PR"] },
+        "1976": { "code": "394", "s": ["PR"] }
       }
     },
     {
@@ -2018,14 +1549,7 @@
         "JeepColors-MontanaBlue2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1A",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1981": { "code": "1A", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2042,28 +1566,9 @@
         "JeepColors-JetsetBlueMetallic2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "492",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "492",
-          "s": [
-            "PR",
-            "Brochure",
-            "Chip"
-          ]
-        },
-        "1974": {
-          "code": "492",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "492", "s": ["PR", "Chip"] },
+        "1973": { "code": "492", "s": ["PR", "Brochure", "Chip"] },
+        "1974": { "code": "492", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -2080,21 +1585,8 @@
         "JeepColors-MediumBlueMetallic2.webp"
       ],
       "years": {
-        "1975": {
-          "code": "G9",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1976": {
-          "code": "G9",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1975": { "code": "G9", "s": ["PR", "Brochure"] },
+        "1976": { "code": "G9", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2111,13 +1603,7 @@
         "JeepColors-MediumBlueMetallicAJ2.webp"
       ],
       "years": {
-        "1986": {
-          "code": "AJ",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1986": { "code": "AJ", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -2133,30 +1619,9 @@
         "JeepColors-BrilliantBlue2.webp"
       ],
       "years": {
-        "1976": {
-          "code": "6R",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "6R",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "6R",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1976": { "code": "6R", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "6R", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "6R", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2172,13 +1637,7 @@
         "JeepColors-RenegadeBlue2.webp"
       ],
       "years": {
-        "1975": {
-          "code": "585",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1975": { "code": "585", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -2195,20 +1654,8 @@
         "JeepColors-CaptainBlueMetallic2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7W",
-          "s": [
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7W",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1977": { "code": "7W", "s": ["OL"] },
+        "1978": { "code": "7W", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2224,14 +1671,7 @@
         "JeepColors-MoonlightBlue2.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1981": { "code": "1B", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2247,14 +1687,7 @@
         "JeepColors-EnsignBlue2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9T",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1979": { "code": "9T", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2270,14 +1703,7 @@
         "JeepColors-NauticalBlueMetallic.webp"
       ],
       "years": {
-        "1976": {
-          "code": "6T",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1976": { "code": "6T", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -2294,20 +1720,8 @@
         "JeepColors-MidnightBlueMetallic2.webp"
       ],
       "years": {
-        "1977": {
-          "code": "7K",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7K",
-          "s": [
-            "PR"
-          ]
-        }
+        "1977": { "code": "7K", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "7K", "s": ["PR"] }
       }
     },
     {
@@ -2323,14 +1737,7 @@
         "JeepColors-NavyBlue2.webp"
       ],
       "years": {
-        "1980": {
-          "code": "OH",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
+        "1980": { "code": "OH", "s": ["PR", "Brochure", "OL"] }
       }
     },
     {
@@ -2346,753 +1753,11 @@
         "JeepColors-DeepNightBlue2.webp"
       ],
       "years": {
-        "1982": {
-          "code": "2D",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "2D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "2D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "2D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "2D",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "almond-beige",
-      "code": "3A",
-      "name": "Almond Beige",
-      "ppg": "3591",
-      "hex": "#E8D5B7",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-AlmondBeige.webp",
-        "JeepColors-AlmondBeige2.webp"
-      ],
-      "years": {
-        "1983": {
-          "code": "3A",
-          "s": [
-            "PR"
-          ]
-        },
-        "1984": {
-          "code": "3A",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "3A",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "champagne-met",
-      "code": "4D",
-      "name": "Champagne Metallic",
-      "searchName": "Champagne",
-      "ppg": "3625",
-      "hex": "#D4C4A8",
-      "text": "#000",
-      "metallic": true,
-      "images": [
-        "JeepColors-ChampagneMetallic.webp",
-        "JeepColors-ChampagneMetallic2.webp"
-      ],
-      "years": {
-        "1984": {
-          "code": "4D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "4D",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        },
-        "1986": {
-          "code": "4D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "beige-ab",
-      "code": "AB",
-      "name": "Beige",
-      "ppg": "3826",
-      "hex": "#D2C2A0",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-BeigeAB.webp",
-        "JeepColors-BeigeAB2.webp"
-      ],
-      "years": {
-        "1986": {
-          "code": "AB",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "jamaica-beige",
-      "code": "2J",
-      "name": "Jamaican Beige",
-      "ppg": "3472",
-      "hex": "#C9B896",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-JamaicaBeige.webp",
-        "JeepColors-JamaicaBeige2.webp"
-      ],
-      "years": {
-        "1982": {
-          "code": "2J",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "2J",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "cameo-tan",
-      "code": "OK",
-      "name": "Cameo Tan",
-      "ppg": "3245",
-      "hex": "#D2B48C",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-CameoTan.webp",
-        "JeepColors-CameoTan2.webp"
-      ],
-      "years": {
-        "1980": {
-          "code": "OK",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        },
-        "1981": {
-          "code": "OK",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "fawn-beige",
-      "code": "514",
-      "name": "Fawn Beige",
-      "ppg": "23853",
-      "hex": "#C9B08A",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-FawnBeige.webp",
-        "JeepColors-FawnBeige2.webp"
-      ],
-      "years": {
-        "1973": {
-          "code": "514",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        },
-        "1974": {
-          "code": "514",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1975": {
-          "code": "514",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "morocco-buff",
-      "code": "9N",
-      "name": "Morocco Buff",
-      "ppg": "3115",
-      "hex": "#C4A484",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-MoroccoBuff.webp",
-        "JeepColors-MoroccoBuff2.webp"
-      ],
-      "years": {
-        "1979": {
-          "code": "9N",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "sand-tan",
-      "code": "6D",
-      "name": "Sand Tan",
-      "ppg": "2820",
-      "hex": "#C2A878",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-SandTan.webp",
-        "JeepColors-SandTan2.webp"
-      ],
-      "years": {
-        "1976": {
-          "code": "6D",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "6D",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "6D",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "yuca-tan-met",
-      "code": "493",
-      "name": "Yuca Tan Metallic",
-      "searchName": "Yuca Tan",
-      "ppg": "2397",
-      "hex": "#C4A06A",
-      "text": "#000",
-      "metallic": true,
-      "images": [
-        "JeepColors-YucaTanMetallic.webp",
-        "JeepColors-YucaTanMetallic2.webp"
-      ],
-      "years": {
-        "1972": {
-          "code": "493",
-          "amc": "D2",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        }
-      }
-    },
-    {
-      "id": "golden-tan-met",
-      "code": "",
-      "name": "Golden Tan Metallic",
-      "searchName": "Golden Tan",
-      "ppg": "23819",
-      "hex": "#C4A06A",
-      "text": "#000",
-      "metallic": true,
-      "images": [
-        "JeepColors-GoldenTanMetallic.webp",
-        "JeepColors-GoldenTanMetallic2.webp"
-      ],
-      "years": {
-        "1974": {
-          "code": "",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "caramel",
-      "code": "OR",
-      "name": "Caramel",
-      "ppg": "3249",
-      "hex": "#C68E5B",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-Caramel.webp",
-        "JeepColors-Caramel2.webp"
-      ],
-      "years": {
-        "1980": {
-          "code": "OR",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "khaki",
-      "code": "8A",
-      "name": "Khaki",
-      "ppg": "3028",
-      "hex": "#A08B5E",
-      "text": "#000",
-      "metallic": false,
-      "images": [
-        "JeepColors-Khaki.webp"
-      ],
-      "years": {
-        "1978": {
-          "code": "8A",
-          "s": [
-            "PR"
-          ]
-        }
-      }
-    },
-    {
-      "id": "oak-leaf-brown",
-      "code": "7E",
-      "name": "Oak Leaf Brown",
-      "ppg": "24443",
-      "hex": "#8B5A2B",
-      "text": "#fff",
-      "metallic": false,
-      "images": [
-        "JeepColors-OakLeafBrown.webp",
-        "JeepColors-OakLeafBrown2.webp"
-      ],
-      "years": {
-        "1977": {
-          "code": "7E",
-          "s": [
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7E",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "british-bronze",
-      "code": "8B",
-      "name": "British Bronze",
-      "ppg": "3029",
-      "hex": "#8A5A2A",
-      "text": "#fff",
-      "metallic": false,
-      "images": [
-        "JeepColors-BritishBronze.webp"
-      ],
-      "years": {
-        "1978": {
-          "code": "8B",
-          "s": [
-            "PR"
-          ]
-        }
-      }
-    },
-    {
-      "id": "copper-600",
-      "code": "600",
-      "name": "Copper",
-      "searchName": "Copper",
-      "ppg": "24176",
-      "hex": "#8B4518",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-Copper600.webp"
-      ],
-      "years": {
-        "1975": {
-          "code": "600",
-          "s": [
-            "PR"
-          ]
-        }
-      }
-    },
-    {
-      "id": "russet-met",
-      "code": "9C",
-      "name": "Russet Metallic",
-      "searchName": "Russet",
-      "ppg": "3108",
-      "hex": "#8B4513",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-RussetMetallic.webp",
-        "JeepColors-RussetMetallic2.webp"
-      ],
-      "years": {
-        "1979": {
-          "code": "9C",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "9C",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "copper-brown-met",
-      "code": "1E",
-      "name": "Copper Brown Metallic",
-      "searchName": "Copper Brown",
-      "ppg": "3370",
-      "hex": "#8B4513",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-CopperBrownMetallic.webp",
-        "JeepColors-CopperBrownMetallic2.webp"
-      ],
-      "years": {
-        "1981": {
-          "code": "1E",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "1E",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "1E",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "chestnut-brown-met",
-      "code": "1H",
-      "name": "Chestnut Brown Metallic",
-      "searchName": "Chestnut Brown",
-      "ppg": "3371",
-      "hex": "#6B3A2A",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-ChestnutBrownMetallic.webp",
-        "JeepColors-ChestnutBrownMetallic2.webp"
-      ],
-      "years": {
-        "1981": {
-          "code": "1H",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "1H",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "1H",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "chestnut-4e",
-      "code": "4E",
-      "name": "Chestnut Brown Metallic",
-      "searchName": "Chestnut Brown",
-      "ppg": "3626",
-      "hex": "#6B3A2A",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-ChestnutBrownMetallic4E.webp",
-        "JeepColors-ChestnutBrownMetallic4E2.webp"
-      ],
-      "years": {
-        "1984": {
-          "code": "4E",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
-      }
-    },
-    {
-      "id": "sable-brown-met",
-      "code": "9K",
-      "name": "Sable Brown Metallic",
-      "searchName": "Sable Brown",
-      "ppg": "3112",
-      "hex": "#5D4037",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-SableBrownMetallic.webp",
-        "JeepColors-SableBrownMetallic2.webp"
-      ],
-      "years": {
-        "1979": {
-          "code": "9K",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "mocha-brown-met",
-      "code": "7B",
-      "name": "Mocha Brown Metallic",
-      "searchName": "Mocha Brown",
-      "ppg": "2895",
-      "hex": "#5C4033",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-MochaBrownMetallic.webp",
-        "JeepColors-MochaBrownMetallic2.webp"
-      ],
-      "years": {
-        "1977": {
-          "code": "7B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "7B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "dark-cocoa-met",
-      "code": "H4",
-      "name": "Dark Cocoa Metallic",
-      "searchName": "Dark Cocoa",
-      "ppg": "2796",
-      "hex": "#4A3728",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-DarkCocoaMetallic.webp",
-        "JeepColors-DarkCocoaMetallic2.webp"
-      ],
-      "years": {
-        "1976": {
-          "code": "H4",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "dark-brown-met",
-      "code": "OM",
-      "name": "Dark Brown Metallic",
-      "searchName": "Dark Brown",
-      "ppg": "3247",
-      "hex": "#3D2B1F",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-DarkBrownMetallic.webp",
-        "JeepColors-DarkBrownMetallic2.webp"
-      ],
-      "years": {
-        "1980": {
-          "code": "OM",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        },
-        "1981": {
-          "code": "OM",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "OM",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
-      }
-    },
-    {
-      "id": "dark-brown-5e",
-      "code": "5E",
-      "name": "Dark Brown Metallic",
-      "searchName": "Dark Brown",
-      "ppg": "3697",
-      "hex": "#3A281C",
-      "text": "#fff",
-      "metallic": true,
-      "images": [
-        "JeepColors-DarkBrownMetallic5E.webp",
-        "JeepColors-DarkBrownMetallic5E2.webp"
-      ],
-      "years": {
-        "1985": {
-          "code": "5E",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "5E",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1982": { "code": "2D", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "2D", "s": ["PR", "OL", "Brochure"] },
+        "1984": { "code": "2D", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "2D", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "2D", "s": ["PR", "OL"] }
       }
     },
     {
@@ -3108,37 +1773,10 @@
         "JeepColors-AlpineWhite2.webp"
       ],
       "years": {
-        "1975": {
-          "code": "G7",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1976": {
-          "code": "G7",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "G7",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "G7",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1975": { "code": "G7", "s": ["PR", "Brochure"] },
+        "1976": { "code": "G7", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "G7", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "G7", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -3154,70 +1792,14 @@
         "JeepColors-OlympicWhite2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        },
-        "1981": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "9B",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1979": { "code": "9B", "s": ["PR", "FSM", "OL"] },
+        "1980": { "code": "9B", "s": ["PR", "Brochure", "OL"] },
+        "1981": { "code": "9B", "s": ["PR", "FSM", "OL"] },
+        "1982": { "code": "9B", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "9B", "s": ["PR", "OL", "Brochure"] },
+        "1984": { "code": "9B", "s": ["PR", "OL", "Brochure"] },
+        "1985": { "code": "9B", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "9B", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -3233,28 +1815,9 @@
         "JeepColors-ChampagneWhite2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "432",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "432",
-          "s": [
-            "PR",
-            "Chip",
-            "Brochure"
-          ]
-        },
-        "1974": {
-          "code": "432",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "432", "s": ["PR", "Chip"] },
+        "1973": { "code": "432", "s": ["PR", "Chip", "Brochure"] },
+        "1974": { "code": "432", "s": ["PR", "Brochure"] }
       }
     },
     {
@@ -3271,29 +1834,9 @@
         "JeepColors-MistSilverMetallic2.webp"
       ],
       "years": {
-        "1982": {
-          "code": "2A",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "2A",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "2A",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        }
+        "1982": { "code": "2A", "s": ["PR", "FSM", "OL"] },
+        "1983": { "code": "2A", "s": ["PR", "OL", "Brochure"] },
+        "1984": { "code": "2A", "s": ["PR", "OL"] }
       }
     },
     {
@@ -3309,12 +1852,7 @@
         "JeepColors-Quicksilver2.webp"
       ],
       "years": {
-        "1978": {
-          "code": "8C",
-          "s": [
-            "PR"
-          ]
-        }
+        "1978": { "code": "8C", "s": ["PR"] }
       }
     },
     {
@@ -3330,14 +1868,7 @@
         "JeepColors-SilverMetallic2.webp"
       ],
       "years": {
-        "1984": {
-          "code": "4K",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1984": { "code": "4K", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -3354,14 +1885,7 @@
         "JeepColors-ArrowheadSilverMetallic2.webp"
       ],
       "years": {
-        "1979": {
-          "code": "9J",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1979": { "code": "9J", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -3378,28 +1902,9 @@
         "JeepColors-SterlingMetallic2.webp"
       ],
       "years": {
-        "1983": {
-          "code": "3D",
-          "s": [
-            "OL"
-          ]
-        },
-        "1985": {
-          "code": "3D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "3D",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1983": { "code": "3D", "s": ["OL"] },
+        "1985": { "code": "3D", "s": ["PR", "OL", "Brochure"] },
+        "1986": { "code": "3D", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -3416,36 +1921,10 @@
         "JeepColors-PewterGrayMetallic2.webp"
       ],
       "years": {
-        "1975": {
-          "code": "559",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1976": {
-          "code": "J1",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "6J",
-          "s": [
-            "PR",
-            "FSM"
-          ]
-        },
-        "1978": {
-          "code": "J1",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1975": { "code": "559", "s": ["PR", "Brochure"] },
+        "1976": { "code": "J1", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "6J", "s": ["PR", "FSM"] },
+        "1978": { "code": "J1", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -3462,14 +1941,7 @@
         "JeepColors-SmokeGrayMetallic2.webp"
       ],
       "years": {
-        "1980": {
-          "code": "OB",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        }
+        "1980": { "code": "OB", "s": ["PR", "Brochure", "OL"] }
       }
     },
     {
@@ -3486,62 +1958,15 @@
         "JeepColors-FederalGray.webp"
       ],
       "years": {
-        "1972": {
-          "code": "221",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "221",
-          "s": [
-            "PR"
-          ]
-        },
-        "1974": {
-          "code": "221",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "221",
-          "s": [
-            "PR"
-          ]
-        },
-        "1976": {
-          "code": "FC",
-          "s": [
-            "PR",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "FC",
-          "s": [
-            "PR"
-          ]
-        },
-        "1981": {
-          "code": "FC",
-          "s": [
-            "PR"
-          ]
-        },
-        "1982": {
-          "code": "FC",
-          "s": [
-            "PR"
-          ]
-        },
-        "1983": {
-          "code": "FC",
-          "s": [
-            "PR"
-          ]
-        }
+        "1972": { "code": "221", "s": ["PR", "Chip"] },
+        "1973": { "code": "221", "s": ["PR"] },
+        "1974": { "code": "221", "s": ["PR"] },
+        "1975": { "code": "221", "s": ["PR"] },
+        "1976": { "code": "FC", "s": ["PR", "OL"] },
+        "1980": { "code": "FC", "s": ["PR"] },
+        "1981": { "code": "FC", "s": ["PR"] },
+        "1982": { "code": "FC", "s": ["PR"] },
+        "1983": { "code": "FC", "s": ["PR"] }
       }
     },
     {
@@ -3557,14 +1982,7 @@
         "JeepColors-SteelGrayMetallic.webp"
       ],
       "years": {
-        "1981": {
-          "code": "1L",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        }
+        "1981": { "code": "1L", "s": ["PR", "FSM", "OL"] }
       }
     },
     {
@@ -3580,14 +1998,7 @@
         "JeepColors-CharcoalMetallic2.webp"
       ],
       "years": {
-        "1986": {
-          "code": "4M",
-          "s": [
-            "PR",
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1986": { "code": "4M", "s": ["PR", "OL", "Brochure"] }
       }
     },
     {
@@ -3605,114 +2016,21 @@
         "JeepColors-ClassicBlack2.webp"
       ],
       "years": {
-        "1972": {
-          "code": "X",
-          "s": [
-            "PR",
-            "Chip"
-          ]
-        },
-        "1973": {
-          "code": "",
-          "s": [
-            "PR"
-          ]
-        },
-        "1974": {
-          "code": "",
-          "s": [
-            "PR"
-          ]
-        },
-        "1975": {
-          "code": "21",
-          "s": [
-            "PR",
-            "Brochure"
-          ]
-        },
-        "1976": {
-          "code": "P1",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1977": {
-          "code": "P1",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1978": {
-          "code": "P1",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1979": {
-          "code": "P1",
-          "s": [
-            "PR",
-            "FSM",
-            "OL"
-          ]
-        },
-        "1980": {
-          "code": "P1",
-          "s": [
-            "PR",
-            "Brochure",
-            "OL"
-          ]
-        },
-        "1981": {
-          "code": "P1",
-          "s": [
-            "FSM",
-            "OL"
-          ]
-        },
-        "1982": {
-          "code": "P1",
-          "s": [
-            "FSM",
-            "OL"
-          ]
-        },
-        "1983": {
-          "code": "P1",
-          "s": [
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1984": {
-          "code": "P1",
-          "s": [
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1985": {
-          "code": "P1",
-          "s": [
-            "OL",
-            "Brochure"
-          ]
-        },
-        "1986": {
-          "code": "P1",
-          "s": [
-            "OL",
-            "Brochure"
-          ]
-        }
+        "1972": { "code": "X", "s": ["PR", "Chip"] },
+        "1973": { "code": "", "s": ["PR"] },
+        "1974": { "code": "", "s": ["PR"] },
+        "1975": { "code": "21", "s": ["PR", "Brochure"] },
+        "1976": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+        "1977": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+        "1978": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+        "1979": { "code": "P1", "s": ["PR", "FSM", "OL"] },
+        "1980": { "code": "P1", "s": ["PR", "Brochure", "OL"] },
+        "1981": { "code": "P1", "s": ["FSM", "OL"] },
+        "1982": { "code": "P1", "s": ["FSM", "OL"] },
+        "1983": { "code": "P1", "s": ["OL", "Brochure"] },
+        "1984": { "code": "P1", "s": ["OL", "Brochure"] },
+        "1985": { "code": "P1", "s": ["OL", "Brochure"] },
+        "1986": { "code": "P1", "s": ["OL", "Brochure"] }
       }
     }
   ]
