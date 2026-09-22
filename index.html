@@ -121,8 +121,6 @@
       opacity: 0.94;
     }
 
-    .evidence-conf {}
-
     .evidence-src {
       font-weight: normal;
     }
@@ -213,10 +211,10 @@
       but conflict with each other—and PaintRef
       sometimes conflicts with itself by year versus by color. So this is one list with a confidence grade per year,
       based on the quality of the sources behind it.
-      Sources: <a href="">www.paintref.com</a>, <a
-        href="https://www.bing.com/ck/a?!&&p=9d16d99f2424cdb07248778db034245ac04c6ecfb1e42cdad4faaf008b687148JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=1e9cba07-7df1-6255-06d7-af917cd8638c&psq=olenik+jeep+colors+chart&u=a1aHR0cDovL3d3dy44MmphbWJvLmNvbS9kb2N1bWVudHMvUGFpbnQlMjBhbmQlMjBUcmltJTIwQ29kZXMvMTk3Ni0xOTg2JTIwUGFpbnQlMjBDb2Rlcy5wZGY">Olenik</a>,
+      Sources: <a href="https://www.paintref.com">www.paintref.com</a>,
+      <a href="http://www.82jambo.com/documents/Paint%20and%20Trim%20Codes/1976-1986%20Paint%20Codes.pdf">Olenik</a>,
+      <a href="http://www.79silver.com/">www.79silver.com</a>,
       and available PDF FSMs and brochures.
-
     </p>
 
     <p class="note">How to Use</p>
@@ -284,7 +282,7 @@
     Top
   </a>
 
-  <script>
+    <script>
     window.JEEP_COLORS = [];
 
     function jeepColors() {
@@ -292,7 +290,15 @@
         google: function (q) { return "https://www.google.com/search?tbm=isch&udm=2&q=" + encodeURIComponent(q); },
         ddg: function (q) { return "https://duckduckgo.com/?iax=images&ia=images&q=" + encodeURIComponent(q); }
       };
-      const srcLabel = { PR: "PaintRef", FSM: "FSM", OL: "Olenik", Brochure: "Brochure", Chip: "OEM Paint Chip" };
+      const srcLabel = {
+        PR: "PaintRef",
+        FSM: "FSM",
+        OL: "Olenik",
+        Brochure: "Brochure",
+        Chip: "OEM Paint Chip",
+        "79S": "79silver"
+      };
+      const bandWord = { confirmed: "Confirmed", high: "High", moderate: "Moderate" };
 
       function yearKeys(color) {
         return Object.keys(color.years || {});
@@ -332,11 +338,12 @@
 
         const fsm = !!s.fsm;
         const brochure = !!s.brochure;
+        const silver = !!s["79s"];
         const chip = !!s.chip;
         const pr = !!s.pr;
         const olenik = !!s.ol;
 
-        if (fsm || brochure) return "confirmed";
+        if (fsm || brochure || silver) return "confirmed";
         if (chip && (pr || olenik)) return "confirmed";
         if (chip) return "high";
         if (pr && olenik) return "high";
@@ -411,13 +418,18 @@
 
         confidenceLine(color) {
           const entry = yearEntry(color, this.year);
-          const list = sourcesIn(entry);
-          let band = derivedBand(list);
-          const raw = entry && entry.o ? String(entry.o).toLowerCase() : "";
-          if (raw === "confirmed" || raw === "high" || raw === "moderate") band = raw;
+          if (!entry) return "";
+
+          const raw = entry.o != null && String(entry.o).trim() !== "" ? String(entry.o).trim() : "";
+          if (raw) {
+            const key = raw.toLowerCase();
+            const word = bandWord[key] || raw;
+            return "Data Confidence: " + word + " (" + this.year + ")";
+          }
+
+          const band = derivedBand(sourcesIn(entry));
           if (!band) return "";
-          const word = { confirmed: "Confirmed", high: "High", moderate: "Moderate" }[band];
-          return "Data Confidence: " + word + " (" + this.year + ")";
+          return "Data Confidence: " + bandWord[band] + " (" + this.year + ")";
         },
 
         photoAt(color, slot) {
@@ -438,11 +450,11 @@
           const name = color.searchName || color.name || "";
           const parts = ['"Jeep"', '"' + name + '"'];
 
-          const yearKeys = Object.keys(color.years || {}).sort();
-          if (yearKeys.length === 1) {
-            parts.push(yearKeys[0]);
-          } else if (yearKeys.length >= 2 && yearKeys.length <= 4) {
-            parts.push("(" + yearKeys.join(" OR ") + ")");
+          const keys = Object.keys(color.years || {}).sort();
+          if (keys.length === 1) {
+            parts.push(keys[0]);
+          } else if (keys.length >= 2 && keys.length <= 4) {
+            parts.push("(" + keys.join(" OR ") + ")");
           }
 
           parts.push("(CJ OR FSJ OR J10 OR J20 OR Wagoneer OR Cherokee OR Comanche)");
