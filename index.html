@@ -282,7 +282,7 @@
     Top
   </a>
 
-    <script>
+      <script>
     window.JEEP_COLORS = [];
 
     function jeepColors() {
@@ -296,7 +296,8 @@
         OL: "Olenik",
         Brochure: "Brochure",
         Chip: "OEM Paint Chip",
-        "79S": "79silver"
+        "79S": "79silver",
+        M: "Survivor Verified"
       };
       const bandWord = { confirmed: "Confirmed", high: "High", moderate: "Moderate" };
 
@@ -336,6 +337,7 @@
         const s = {};
         (list || []).forEach(function (x) { s[String(x).toLowerCase()] = true; });
 
+        const owner = !!s.m;
         const fsm = !!s.fsm;
         const brochure = !!s.brochure;
         const silver = !!s["79s"];
@@ -343,7 +345,7 @@
         const pr = !!s.pr;
         const olenik = !!s.ol;
 
-        if (fsm || brochure || silver) return "confirmed";
+        if (owner || fsm || brochure || silver) return "confirmed";
         if (chip && (pr || olenik)) return "confirmed";
         if (chip) return "high";
         if (pr && olenik) return "high";

@@ -1854,7 +1854,7 @@
       ],
       "years": {
         "1978": { "code": "8C", "s": ["PR"], "o": "Very Low - Special package for 1979 ONLY per www.79silver.com" },
-        "1979": { "code": "8C", "s": ["79S"], "o": "Confirmed - Special package for 1979 ONLY per www.79silver.com; Data tag verified on 9/22/2026"  }
+        "1979": { "code": "8C", "s": ["79S", "M"], "o": "Confirmed - Special package for 1979 ONLY per www.79silver.com; Data tag verified on 9/22/2026"  }
       }
     },
     {
